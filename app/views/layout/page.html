@@ -1,0 +1,7 @@
+<include href="layout/header.html" />
+<check if="{{ @view }}">
+    <true>
+        <include href="{{@view|raw}}" />
+    </true>
+</check>
+<include href="layout/footer.html" />

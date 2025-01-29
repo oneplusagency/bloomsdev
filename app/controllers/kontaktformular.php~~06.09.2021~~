@@ -1,0 +1,155 @@
+<?php
+/**
+ * @file: kontaktformular.php
+ * @package:    d:\OSPanel\domains\localhost\f3-blooms\app\controllers
+ * @created:    Sun Jul 26 2020
+ * @author:     oppo, webiprog.de
+ * @version:    1.0.0
+ * @modified:   Sunday July 26th 2020 9:53:11 am
+ * @copyright   (c) 2008-2020 Webiprog GmbH, UA. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ */
+
+class kontaktformular extends Controller
+{
+
+        /**
+     * @return mixed
+     */
+   
+
+	public function index()
+	{
+            
+        $this->f3->set('isHomePage',false);
+        $this->f3->set('title', "kontaktformular");
+        $this->f3->set('view', 'kontaktformular.html');
+        $this->f3->set('classfoot', 'kontaktformular');
+        // ADD JS
+        $addscripts = ['js/layout/validator.min.js','js/layout/kontaktformular.js'];
+        $this->f3->set('addscripts', $addscripts);
+       
+        $this->f3->set( 'ESCAPE', false );
+    }
+    
+    
+   
+    public function sendinfo(){
+        
+        $errorMSG = "";
+        $name='';
+        $email='';
+        $phone='';
+        $message='';
+        $uploaddir = ONEPLUS_DIR_PATH.'/upload/kontakt/';
+        $from_name='';
+        $from_mail='kontakt@bloom-s.de';
+        //$from_mail='info@developservice.de';
+        $replyto='';
+        
+        // NAME
+        if (empty($_POST["name"])) {
+            $errorMSG = "Name is required ";
+        } else {
+            $name = $_POST["name"];
+            $from_name = $name;
+        }
+
+        // EMAIL
+        if (empty($_POST["email"])) {
+            $errorMSG .= "Email is required ";
+        } else {
+            $email = $_POST["email"];
+            $replyto = $email;
+        }
+        
+        if (empty($_POST["phone"])) {
+            $errorMSG .= "Phone is required ";
+        } else {
+            $phone = $_POST["phone"];
+        }
+
+        // MESSAGE
+        if (empty($_POST["message"])) {
+            $errorMSG .= "Message is required ";
+        } else {
+            $message = $_POST["message"];
+        }
+
+       $fullPath='';
+        if(isset($_FILES['file']) && $_FILES['file']['name'] !=""){            
+            
+            $allowed = array('pdf', 'jpg','jpeg');
+            $filenameCheck = $_FILES['file']['name'];
+            $ext = pathinfo($filenameCheck, PATHINFO_EXTENSION);
+           
+            if (!in_array($ext, $allowed)) {
+                $errorMSG .= "Falsches Dateiformat";
+            }else{
+                $filename = basename($_FILES['file']['name']);
+                $fullPath = $uploaddir . basename($_FILES['file']['name']);
+                move_uploaded_file($_FILES['file']['tmp_name'], $fullPath);
+            }
+            
+            
+        }
+        
+        if($errorMSG !=""){
+            echo '<div class="alert alert-danger rounded-0" role="alert">'.$errorMSG.'</div>';
+        }else{
+            
+            // prepare email body text
+            $Body = "<p>";
+            $Body .= "Name: ";
+            $Body .= $name;
+            $Body .= "</p>";
+            $Body .= "<p>Email: ";
+            $Body .= $email;
+            $Body .= "</p>";
+            $Body .= "<p>Telefon: ";
+            $Body .= $email;
+            $Body .= "</p>";
+            $Body .= "<p>Message: ";
+            $Body .= $message;
+            $Body .= "</p>";
+            $Subject="Nachricht von Webseite";
+            $EmailTo= 'bewerbung@bloom-s.de';
+            // send email
+            //$status = mail($EmailTo, $Subject, $Body, $header);
+            $status = $this->sendEmail($EmailTo,$Subject,$from_mail,$from_name,$replyto,$Body,$fullPath);
+            // redirect to success page
+            if($status){
+                echo '<div class="alert alert-success rounded-0 mt-2 mb-2" role="alert">Die Anfrage wurde versendet.</div>';
+            }else{
+                echo '<div class="alert alert-danger rounded-0 mt-2 mb-2" role="alert">Something went wrong. Please try after some time.</div>';
+            }
+        }
+        die();
+    }
+    
+    function sendEmail($mailto='', $subject='', $from_mail='', $from_name='', $replyto='no-reply@developservice.de',  $body='',$attachment){
+        require ONEPLUS_DIR_PATH.'/app/libraries/PHPMailer/Exception.php';
+        require ONEPLUS_DIR_PATH.'/app/libraries/PHPMailer/PHPMailer.php';
+        require ONEPLUS_DIR_PATH.'/app/libraries/PHPMailer/SMTP.php';
+        try {
+            $mail = new PHPMailer\PHPMailer\PHPMailer();
+            $mail->CharSet  = 'UTF-8';
+            $mail->isHTML( true );
+            $mail->ClearReplyTos();
+            $mail->AddReplyTo( $replyto, '' );
+            $mail->setFrom( 'kontakt@bloom-s.de', $from_name );
+            $mail->addAddress($mailto);       
+            $mail->Subject = "Nachricht von Webseite";
+            $mail->Body = $body;
+            if($attachment!=""){
+                $mail->addAttachment($attachment);
+            }
+            
+            return $mail->send();
+        }catch ( Exception $e ) {
+            return 0;
+            $logger = new \Log( $this->f3->get( 'LOGS' ).date( "d.m.Y" ).'mail_error.log' );
+            $logger->write( "Mail error: ".$mail->ErrorInfo, 'r' );
+        }
+    }
+}

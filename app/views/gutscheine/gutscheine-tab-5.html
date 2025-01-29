@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="text-md-left text-center mb-4">
+            <h3>5. Bezahlung</h3>
+        </div>
+
+        <p>Bitte geben Sie Ihre Kreditkarteninformationen ein.</p>
+        <!-- autocomplete="off" -->
+        <form class="mt-3 w-100" role="form" id="bezahlungform" name="bezahlungform" action="" novalidate="" method="POST">
+            <div class="row">
+                <div class="col-md-6 col-12 order-md-0 order-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="card-name-input">Name</label>
+                                <input name="cc_cardholder" type="text" class="form-control" id="card-name-input" aria-describedby="gutscheinecardholderInput" required placeholder="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number-input">Kartennummer</label>
+                                <input name="cc_number" type="text" class="form-control card-number" id="card-number-input" aria-describedby="gutscheineVornameInput" required placeholder="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cvv-input">Kartenprüfnummer</label>
+                                <input name="cc_cvc" type="text" class="form-control" id="cvv-input card-cvc" aria-describedby="CVVCreditCardInput" placeholder="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-exp-month">Ablaufdatum (MM/YYYY)</label>
+                                <div class="d-flex flex-row">
+                                    <input name="exp_month" type="text" class="form-control cc-mm card-expiry-month card-expiry" id="cc-exp-month" aria-describedby="gutscheineVornameInput" placeholder="MM" />
+                                    <p class="mx-2">/</p>
+                                    <input name="exp_year" type="text" class="form-control cc-yyyy card-expiry-year card-expiry" id="cc-exp-year" aria-describedby="gutscheineVornameInput" placeholder="YYYY" />
+                                </div>
+
+                                <input class="hide" type="text" name="cc_date_combined" id="ccExpiresCombined" value="" style="width:245px;height:26px;" readonly="readonly">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- number: number, exp_month: exp_month, exp_year: exp_year, cvc: cvc, cardholder: cardholder, -->
+
+
+                <div class="col-md-6 col-12 order-md-1 order-0 mb-md-0 mb-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-4 text-center">
+                                <img src="{{@ASSETS}}images/visa_logo.gif" alt="Visa Logo" />
+                                <img src="{{@ASSETS}}images/mastercard_logo.gif" alt="MasterCard Logo" />
+                                <!-- <img src="images/paymill_logo.gif" alt="Paymill Logo"/> -->
+                                <img src="{{@ASSETS}}images/paypal_logo.png" alt="Paypal Logo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

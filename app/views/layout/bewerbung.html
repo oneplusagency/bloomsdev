@@ -1,0 +1,734 @@
+<div class="row">
+    <div class="col-md-12">
+        <include href="layout/blooms-logo.html" />
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <include href="layout/menu_all.html" />
+                    </div>
+                </section>
+            </div>
+        </nav>
+        <!-- add banner  @FIX by oppo * @Date: 27.07.2020 18:11 -->
+        <check if="{{@BANNERS}}">
+            <true>
+                <article id="page-slide-index">
+                    <section class="layout-slider container mt-5 p-md-0 px-2">
+                        <!-- BEGIN slider-images -->
+                        <div id="slider-images" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <repeat group="{{@BANNERS}}" key="{{@KEY}}" value="{{@BANNER}}">
+                                    <check if="{{@BANNER['type'] == 'img'}}">
+                                        <check if="{{@KEY == 0}}">
+                                            <true>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item-img carousel-item active">
+                                                    <img src="{{@BANNER['src']}}" class="d-block w-100" alt="Banner" />
+                                                </div>
+                                            </true>
+                                            <false>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item-img carousel-item">
+                                                    <img src="{{@BANNER['src']}}" class="d-block w-100" alt="Banner" />
+                                                </div>
+                                            </false>
+                                        </check>
+                                    </check>
+                                    <check if="{{@BANNER['type'] == 'youtube'}}">
+                                        <check if="{{@KEY == 0}}">
+                                            <true>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item--youtube carousel-item active">
+                                                    <div class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay" class="provider-youtube embed-responsive-item" src="{{@BANNER['src']}}" height="550" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+                                                    </div>
+                                                </div>
+                                            </true>
+                                            <false>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item--youtube carousel-item">
+                                                    <div class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay" class="provider-youtube embed-responsive-item" src="{{@BANNER['src']}}" height="550" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+                                                    </div>
+                                                </div>
+                                            </false>
+                                        </check>
+                                    </check>
+                                </repeat>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <repeat group="{{@BANNERS}}" key="{{@KEY}}" value="{{@BANNER}}">
+                                    <check if="{{@KEY == 0}}">
+                                        <true>
+                                            <li data-target="#slider-images" data-slide-to="{{@KEY}}" class="active"></li>
+                                        </true>
+                                        <false>
+                                            <li data-target="#slider-images" data-slide-to="{{@KEY}}"></li>
+                                        </false>
+                                    </check>
+                                </repeat>
+                            </ol>
+                        </div>
+                        <!-- END slider-images -->
+                    </section>
+                </article>
+            </true>
+        </check>
+        <article id="page-bewerbung" class="container p-md-0 mt-5">
+            <section class="layout-bewerbung">
+                <div id="selection-tabs" class="text-center">
+                    <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#bewerbung-contact-data');">Kontakt</button>
+                    <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#bewerbung-info-data');">Facts</button>
+                    <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#werte-view')">WERTE</button>
+                    <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#bewerbung-team-data');">Team</button>
+                </div>
+                <section id="bewerbung-contact-data" class="layout-bewerbung-contact text-dark mt-5 px-3">
+                    <div class="row">
+                        <div class="col-12 order-md-0 order-1 mt-md-0 mt-4">
+                            <div class="text-center">
+                                <h3 class="text-center text-light futuraLtBk">Jetzt einfach Kontakt aufnehmen..</h3>
+                            </div>
+                            <div class="mt-5 d-flex flex-md-row justify-content-md-between flex-column align-items-center">
+                                <!-- data-toggle="modal" data-target="#employeeModal" -->
+                                <div class="box-kontakt-data mt-md-0 mt-2 div_clickable">
+                                    <p class="text-center"><i class="fa fa-phone fa-3x"></i>
+                                    </p>
+                                    <h4 class="text-center">
+                                        <a title="Rufen Sie +496215680444 an" class="clickable free-addr addr text-dark" href="tel:+496215680444">+491776596128</a>
+                                    </h4>
+                                </div>
+                                <!--       <div class="box-kontakt-data mt-md-0 mt-2" data-toggle="modal" data-target="#employeeModal2">
+                                    <p class="text-center"><i class="fa fa-envelope-square fa-3x"></i></p>
+                                    <h4 class="text-center">E-Mail</h4>
+                                </div> -->
+                                <div class="box-kontakt-data mt-md-0 mt-2">
+                                    <a href="kontakt.html" class="text-dark">
+                                        <p class="text-center text-dark"><i class="fa fa-envelope-square fa-3x"></i>
+                                        </p>
+                                        <h4 class="text-center text-dark">E-Mail</h4>
+                                    </a>
+                                </div>
+                                <!-- @FIX by oppo hide Facebook * @Date: 2020-08-24 14:17:58  -->
+                                <div class="d-none box-kontakt-data mt-md-0 mt-2" data-toggle="modal" data-target="#employeeModal3">
+                                    <p class="text-center"><i class="fa fa-facebook-f fa-3x"></i>
+                                    </p>
+                                    <h4 class="text-center">Facebook</h4>
+                                </div>
+                                <!-- data-toggle="modal" data-target="#employeeModal4" -->
+                                <div class="box-kontakt-data mt-md-0 mt-2 div_clickable">
+                                    <p class="text-center"><i class="fa fa-whatsapp fa-3x"></i>
+                                    </p>
+                                    <h4 class="text-center">
+                                        <a title="Kontakt mit bloom´s aufnehmen" class="clickable free-addr addr text-dark" href="https://wa.me/01776596128?text=Kontakt%20mit%20bloom%C2%B4s%20aufnehmen">Whatsapp</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="bewerbung-info-data" class="layout-bewerbung-info mt-5">
+                    <div class="text-center">
+                        <p>Herzlich Willkommen. Wir freuen uns auf Sie!</br>Ihre Zufriedenheit ist uns wichtig und wir haben einiges zu bieten</p>
+                    </div>
+                    <section class="layout-bewerbung-info-data text-center">
+                        <div id="section2-content">
+                            <!-- 
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3">
+                                <div class="col-md-4 col-12 px-0 tzipa-seredina">
+                                    <img src="{{@ASSETS}}images/bleach.PNG" alt="Bleach hair Image" class="img-fluid" />
+                                </div>
+                                <div class="col-md-8 col-12 mt-md-0">
+                                    <p class="p-2">Bei bloom´s wird jeder Kunde individuell und ausführlich beraten </p>
+                                </div>
+                            </div> -->
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0 ">
+                                    <img src="{{@ASSETS}}images/bewerbung/Professioneller-Arbeitsvertrag.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Professioneller Arbeitsvertrag</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/gute-bezahlung.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Gute Bezahlung jenseits vom Mindestlohn</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/punktliche-gehaltszahlung.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">pünktliche Gehaltszahlung</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/betriebliche-altersvorsorge.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">betriebliche Altersvorsorge</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/top-ambiente.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Top Ambiente in der Innenstadt</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/modebewusste-kunden.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Wunderbare, modebewusste Kunden</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/individuelle-einarbeitungszeit.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">individuelle Einarbeitungszeit</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/individuelle-weiterentwicklung.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">individuelle Weiterentwicklung</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/familiares-miteinander.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">kollegiales, familiäres Miteinander</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/krisensicherer-arbeitsplatz.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">krisensicherer Arbeitsplatz</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/seminare und-trainings.svg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Seminare und Trainings</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/mitarbeiterevents.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Mitarbeiterevents</p>
+                                </div>
+                            </div>
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                                <div class="col-md-2 col-12 px-0">
+                                    <img src="{{@ASSETS}}images/bewerbung/eigene-akademie.jpg" />
+                                </div>
+                                <div class="col-md-10 col-12 mt-md-0">
+                                    <p class="p-2">Eigene Akademie</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section id="bewerbung-team-data" class="layout-bewerbung-team mt-5">
+                    <div class="row">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/valerie_inci_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Valerie</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Valerie </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„bloom’s steht für Qualität und das war mir nach meiner Ausbildung sehr wichtig. Es ist wie eine Familie hier, ehrlich, fair und sehr mitarbeiterorientiert. Ich liebe und lebe das Konzept und bin mit bloom’s reif und erwachsen geworden und die Person,  die ich heute bin.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/steven_brand_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Steven </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Steven </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„Ich bin bei bloom’s wegen der tollen Zusammenarbeit und Weiterentwicklung, die bloom’s mir ermöglicht.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/steven_lee_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Steven Lee</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Steven Lee </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„Ich bin bei bloom’s, weil ich bloom’s schon immer toll gefunden habe. Hier kann man viel lernen und trendgerecht arbeiten.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/deniz_deveci_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Deniz </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Deniz </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„bloom’s ist mein zweites Zuhause. Wir sind eine große Familie. Niemals ohne mein Team.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/eva_heckl_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Eva</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Eva </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„bloom’s gibt mir die Möglichkeit, mich frei in meinem Friseurhandwerk zu entfalten. Zudem ist es ein familiengeführtes Unternehmen, was sich im Teamalltag wiederspiegelt.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/burcin_usluoglu_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Burcin </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Burcin </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„Ich liebe den Kontakt zu Kunden und meine Kreativität frei auszuleben. Das familiäre Team bei bloom’s zeigt mir jeden Tag auf‘s neue wie schön es ist aufzustehen und arbeiten zu gehen.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/tina_atefi_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Tina</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Tina </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„Ich arbeite gerne mit Menschen und bei bloom’s habe ich die Möglichkeit meine Kreativität frei zu entfalten.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/bewerbung/riham_shehab_1.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Riham</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-12 bg-white text-dark p-3">
+                                    <h3>Riham </h3>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="Ich liebe mein Team">„Ich bin bei bloom’s groß geworden seit meiner Ausbildung. Ich arbeite hier gerne, weil ich meine Chefs sehr schätze und die Entwicklung von bloom’s bewundere.“</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+            <div class="row pt-5"> 
+<div class="col-md-10 mx-auto text-center">
+    <h5 class="text-center white"> und viele viele mehr...</h5>
+</div>
+                             </div>
+                    <!--                     <div class="row">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/sarah_emp.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Sarahz</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12 bg-white text-dark p-3">
+                                    <h3>Sarah</h3>
+                                    <p>Salonleitung, Friseurmeisterin</p>
+                                    <p>Bayalage hochstecken</p>
+                                    <p>Fachtrainerin</p>
+                                    <p>Erfahrung:10 Jahre bei bloom´s</p>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="“Ich liebe mein Team">“Ich liebe mein
+                                                Team</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="{{@ASSETS}}images/kevin_emp.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                            <p class="over-image-text px-3">Kevin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12 bg-white text-dark p-3">
+                                    <h3>Kevin</h3>
+                                    <p>Salonleitung, Friseurmeisterin</p>
+                                    <p>Bayalage hochstecken</p>
+                                    <p>Fachtrainerin</p>
+                                    <p>Erfahrung:10 Jahre bei bloom´s</p>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="“Ich liebe mein Team">“Ich liebe mein
+                                                Team</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-2 col-12 px-md-0">
+                                    <div class="position-relative d-flex justify-content-center text-center">
+                                        <img src="{{@ASSETS}}images/anna_emp.jpg" alt="Employee Image" class="bewerbung-team-employee-image">
+                                        <p class="over-image-text px-3">Anna</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12 bg-white text-dark p-3">
+                                    <h3>Anna</h3>
+                                    <p>Salonleitung, Friseurmeisterin</p>
+                                    <p>Bayalage hochstecken</p>
+                                    <p>Fachtrainerin</p>
+                                    <p>Erfahrung:10 Jahre bei bloom´s</p>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="“Ich liebe mein Team">“Ich liebe mein Team</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </section>
+                <section id="werte-view" class="layout-blooms-werte-data">
+                    <div id="section2-content">
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms">
+                            <div class="col-md-4 col-12 px-0 icon d-flex algin-item-center">
+                                <img src="{{@ASSETS}}images/bewerbung/Bluehen.jpg" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-4 ">
+                                <h3 class="pt-2">Blühen</h3>
+                                <p class="">Wir möchten Ihr Potential zum vorschein bringen. Nicht: höher, schneller, weiter sondern schöner, bewußter, klarer und wacher. Bei bloom´s sollen Sie blühen uns wachsen!</p>
+                            </div>
+                        </div>
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms">
+                            <div class="col-md-4 col-12 px-0 icon d-flex algin-item-center">
+                                <img src="{{@ASSETS}}images/bewerbung/Liebe.jpg" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-4 ">
+                                <h3 class="pt-2">Liebe</h3>
+                                <p class="">Ohne Liebe ist alles nichts! Wir begegnen allen Menschen offen, herzlich, liebvoll und mit Respekt. Gegenüber Kunden aber auch gegenüber allen unseren Kollegen.</p>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms d-flex algin-item-center pl-2">
+                            <div class="col-md-3 col-12 px-0 icon">
+                                
+                            </div>
+                            <div class="col-md-9 col-12 mt-md-0">
+                                
+                            </div>
+                        </div> -->
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms">
+                            <div class="col-md-4 col-12 px-0 icon d-flex algin-item-center">
+                                <img src="{{@ASSETS}}images/bewerbung/Offenheit.jpg" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-4 ">
+                                <h3 class="pt-2">Offenheit  </h3>
+                                <p class="">Offenheit gegenüber Neuerungen und Veränderungen. Wie lieben die Dynamik und die Herausforderung die Veränderung bringt. Wir möchten und weiterent - wickeln und verbessern.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms">
+                            <div class="col-md-4 col-12 px-0 icon d-flex algin-item-center">
+                                <img src="{{@ASSETS}}images/bewerbung/Organisation.jpg" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-4 ">
+                                <h3 class="pt-2">Organisation  </h3>
+                                <p class="">Der Unterschied zwischen einer durchschnittlichen Di enstleistung und eine excellenten Dienstleis tung liegt in ganz vielen Details, die wir perfekt organisieren!</p>
+                            </div>
+                        </div>
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms">
+                            <div class="col-md-4 col-12 px-0 icon d-flex algin-item-center">
+                                <img src="{{@ASSETS}}images/bewerbung/Mitmachen.jpg" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-4 ">
+                                <h3 class="pt-2">Mitmachen </h3>
+                                <p class="">Alle machen mit und unterstützen sich ge genseitig. Alle bringen sich ein und arbeiten am Gesamterfolg mit. Keiner hält sich raus, Gemeinsam im Team sind wir stark und erfolgreich.</p>
+                            </div>
+                        </div>
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item blooms">
+                            <div class="col-md-4 col-12 px-0 icon d-flex algin-item-center">
+                                <img src="{{@ASSETS}}images/blooms/Gluhbirne.svg" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-4 ">
+                                <h3 class="pt-2">Schulung </h3>
+                                <p class="">Schulung ist unsere Leidenschaft. Je nachdem ob Sie viel oder weniger Erfahrung haben, trainieren wir Sie in unserer Akademie und machen Sie erfolg reich. Erfolgreich für Ihr ganzes Berufsleben!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </section>
+        </article>
+    </div>
+</div>
+<!-- END ROW -->
+<!--modal phone-->
+<div class="modal fade modal-stylist-modal" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center text-dark">
+                <h3 class="mt-5 ml-5 text-left">01776596128</h3>
+                <h3 class="mt-5 ml-5 text-left">Sie erreichen uns zwischen 9 und 18 Uhr.</h3>
+                <h3 class="mt-5 ml-5 text-left">Vielen Dank.</h3>
+                <h3 class="mt-5 ml-5 mb-5 text-left">Rückrufbitte via SMS</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal mail-->
+<div class="modal fade modal-stylist-modal" id="employeeModal2" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center text-dark modal-biluy">
+                <div class="w-100">
+                    <div class="row justify-content-center">
+                        <!-- col-md-6 col-12 order-md-0 order-1 -->
+                        <div class="col-12 col-md-12 pb-0">
+                            <!--Form with header-->
+                            <form role="form" method="post" id="bloom_kontakt_form" class="w-100 has-validator has-recaptcha-v3">
+                                <div class="card border-light rounded-0">
+                                    <div class="card-header p-0">
+                                        <div class="bg-dark text-white text-center py-2">
+                                            <h3><i class="fa fa-envelope"></i> Kontakt</h3>
+                                            <p class="m-0">Einfach Mail schreiben oder anrufen <a title="Rufen Sie +496215680444 an" class="free-addr addr text-white" href="tel:+496215680444"><span class="text-white">0621 5680444</span></a>.</p>
+                                        </div>
+                                    </div>
+                                    <!-- ajax message -->
+                                    <div class="mt-2" id="bloom_kontakt_status"></div>
+                                    <div class="card-body p-3">
+                                        <!--Body-->
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-user text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Name und Nachname" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-envelope text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="email" name="email" id="jform_email" placeholder="E-Mail" class="form-control input-lg required" required="required" maxlenght="50" autocomplete="on" aria-required="true" aria-invalid="false" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-map-marker text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" name="strasse" id="strasse" maxlenght="50" class="form-control" required placeholder="Straße" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-map-marker text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" name="city" id="city" maxlenght="50" class="form-control" required placeholder="Stadt" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-phone text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="tel" name="phone" id="phone" maxlenght="20" class="form-control" required placeholder="Telefon" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-tag prefix text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" id="professional" name="professional" maxlenght="50" class="form-control" required placeholder="Fachkraft vs. Azubi" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-comment text-secondary"></i>
+                                                    </div>
+                                                </div>
+                                                <textarea maxlenght="500" id="bloom_kontakt_message" name="message" class="form-control" placeholder="Bemerkung:" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" data-original-text="Senden" data-loading-text="Laden..." id="bloom_kontakt_submit" class="rounded-0 py-2 btn btn-dark btn-submit position-relative">Senden</button>
+                                        </div>
+                                        <div class="row gutscheinauswahl-form-agb">
+                                            <div class="col-12">
+                                                <div class="mt-3">
+                                                    <p class="mb-0 mt-md-0 mt-4">Bitte nehmen Sie unsere <a href="{{@BASE}}/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--Form with header-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal facebook-->
+<div class="modal fade modal-stylist-modal" id="employeeModal3" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center text-dark">
+                <h3 class="mt-5 ml-5 text-left">Facebook</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal chat -->
+<div class="modal fade modal-stylist-modal" id="employeeModal4" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center text-dark">
+                <h3 class="mt-5 ml-5 text-left">Chatfenster</h3>
+            </div>
+        </div>
+    </div>
+</div>

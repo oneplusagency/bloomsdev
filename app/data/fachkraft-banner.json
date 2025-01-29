@@ -1,0 +1,17 @@
+{
+    "6582a548875fe3.99700699": {
+        "where": "fachkraft-banner",
+        "sort": 0,
+        "title": "youtube",
+        "desc": "",
+        "text": "Vollst\u00e4ndiges Video Anschauen",
+        "src": "",
+        "url": "",
+        "video_url": "https:\/\/www.youtube.com\/embed\/SLdQCKeqCj0",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1703060808,
+        "carousel_interval": "2000"
+    }
+}

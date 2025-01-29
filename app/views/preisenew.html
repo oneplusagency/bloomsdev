@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="col-md-12">
+    <include href="layout/blooms-logo.html" />
+
+    <nav
+      class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0"
+    >
+      <div class="container p-md-0 w-100">
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#myTogglerNav"
+          aria-controls="#myTogglerNav"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <section
+          class="collapse navbar-collapse pr-3 order-md-1 order-2"
+          id="myTogglerNav"
+        >
+          <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+            <button
+              type="button"
+              class="btn-close-mobile-nav d-md-none"
+              data-toggle="collapse"
+              data-target="#myTogglerNav"
+              aria-controls="#myTogglerNav"
+              aria-label="Toggle Navigation"
+            >
+              X
+            </button>
+            <include href="layout/menu_all.html" />
+          </div>
+        </section>
+      </div>
+    </nav>
+
+    <article id="page-preise" class="container p-md-0 px-2">
+      <section class="layout-preise">
+        <!--  <p class="text-center m-0">Aussage Qualität: ausführliche ehrliche Beratung, handwerkliche Perfektion.Wir freuen uns auf Sie! Essenz aus dem Preisvideo</p> -->
+
+        <section class="layout-preise-select-salon mx-auto">
+          <div
+            class="cancelationDaysRow layout-preise-select-salon-info mt-5"
+            id="salon-info"
+          >
+            <div id="price-table" class="table-responsive">
+              <div id="price-table" class="table-responsive">
+                <repeat
+                  group="{{@categories}}"
+                  key="{{@KEY}}"
+                  value="{{@category}}"
+                >
+                  <table
+                    id="1-tbprice"
+                    class="table table-borderless table-price"
+                  >
+                    <thead>
+                      <tr>
+                        <th colspan="2" scope="col-m">
+                          <h3>{{ @category['name'] }}</h3>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <repeat
+                        group="{{@category['items']}}"
+                        key="{{@KEY2}}"
+                        value="{{@item}}"
+                      >
+                        <tr>
+                          <td scope="row" class="w-75 groshi-name">
+                            {{ @item['title'] }} {{
+                            @createExtraInfoLabel(@$item)}}
+                          </td>
+                          <td class="td-gold groshi-price">
+                            {{ @item['price']}}
+                            <span class="currency-symbol">€</span>
+                          </td>
+                        </tr>
+                      </repeat>
+                    </tbody>
+                  </table>
+                </repeat>
+              </div>
+            </div>
+
+            <p class="text-center mt-3">
+              Preise können je nach Haarlänge und Farbverbrauch variieren.
+            </p>
+            <div class="text-center mt-3">
+              <a
+                class="btn position-relative btn-hotel"
+                id="termin-link"
+                href="{{@BASE}}/termine.html"
+                ><strong>Termin vereinbaren</strong></a
+              >
+            </div>
+          </div>
+        </section>
+        <!-- end section layout-preise-select-salon -->
+      </section>
+    </article>
+  </div>
+</div>

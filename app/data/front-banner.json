@@ -1,0 +1,62 @@
+{
+    "6593353d040071.49900565": {
+        "where": "banner",
+        "sort": 0,
+        "title": "6593353c_startseite-06-23-4.jpg",
+        "desc": "",
+        "text": "",
+        "src": "6593353c_startseite-06-23-4.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1704146237,
+        "carousel_interval": 2000
+    },
+    "65933558b72737.46920142": {
+        "where": "banner",
+        "sort": 0,
+        "title": "65933558_startseite-06-23-5.jpg",
+        "desc": "",
+        "text": "",
+        "src": "65933558_startseite-06-23-5.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1704146264,
+        "carousel_interval": 2000
+    },
+    "659335a3588d27.19411679": {
+        "where": "banner",
+        "sort": 0,
+        "title": "659335a2_startseite-06-23-1.jpg",
+        "desc": "",
+        "text": "",
+        "src": "659335a2_startseite-06-23-1.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1704146339,
+        "carousel_interval": 2000
+    },
+    "659335beb215f8.77816923": {
+        "where": "banner",
+        "sort": 0,
+        "title": "659335be_startseite-06-23-2.jpg",
+        "desc": "",
+        "text": "",
+        "src": "659335be_startseite-06-23-2.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1704146366,
+        "carousel_interval": 2000
+    }
+}
