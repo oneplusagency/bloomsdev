@@ -1,0 +1,32 @@
+(function($) {
+    $('#stylistModal').on('show.bs.modal', function(event) {
+        var img_click_modal = $(event.relatedTarget); // Button that triggered the modal
+        // alert(img_click_modal)
+        // console.log('img_click_modal: ' + JSON.stringify(img_click_modal));
+        var modal_employee = $(this);
+        var title_employee = img_click_modal.data('title_employee');
+        var employeeid = img_click_modal.data('employeeid');
+        var salonid = img_click_modal.data('salonid');
+        var img_employee = img_click_modal.data('img_employee');
+        var termine_url = img_click_modal.data('termine_url');
+        if (employeeid) {
+            var termine_url = termine_url + '/mitarbeiter/' + employeeid;
+        }
+        modal_employee.find('.modal-title>span').text(title_employee);
+        modal_employee.find('.termine-url').prop('href', termine_url);
+        //  http://localhost/f3-url-shortener/termine/salon/8/mitarbeiter/967
+        var stylebook_url = BloombaseUrl + '/stylebook/salon/' + salonid + '/mitarbeiter/' + employeeid;
+        modal_employee.find('.stylebook-url').prop('href', stylebook_url);
+        // modal_stylebook.find('.data-termine-url').prop('src', img_employee);
+        modal_employee.find('.modal-stylebook-img').css("background-image", "url(" + img_employee + ")");
+    });
+})(jQuery);
+
+
+// LAZZY LOAD
+// [].slice.apply(document.querySelectorAll('#page-stylebook-gallery .stylebook-gallery-grid-img img[data-stylebook_src].gop-image')).forEach(function(img) {
+//     img.setAttribute('src', img.getAttribute('data-stylebook_src'));
+//     img.onload = function() {
+//         img.removeAttribute('data-stylebook_src');
+//     };
+// });
