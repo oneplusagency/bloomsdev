@@ -1,0 +1,4 @@
+<!-- menu_all -->
+<repeat group="@LINKS" key="@URL_LINK" value="@URL_LABEL">
+    <a class="nav-item nav-link px-0 main-menu-blm-top {{ @ACTIVE && strpos(@URL_LINK, @ACTIVE )!==false ? 'active' : '' }}" href="{{ @URL_LINK }}">{{ @URL_LABEL | raw }}</a>
+</repeat>

@@ -1,0 +1,47 @@
+{
+    "629870cb187b80.23080114": {
+        "where": "bewerbung-banner",
+        "sort": 2,
+        "title": "629870c9_azubi1-1-1.jpg",
+        "desc": "",
+        "text": "",
+        "src": "629870c9_azubi1-1-1.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1654157515,
+        "carousel_interval": "2000"
+    },
+    "6298a868dc0c51.53100044": {
+        "where": "bewerbung-banner",
+        "sort": 3,
+        "title": "6298a867_azubi2.jpg",
+        "desc": "",
+        "text": "",
+        "src": "6298a867_azubi2.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1654171752,
+        "carousel_interval": "2000"
+    },
+    "6298a880678c66.92016806": {
+        "where": "bewerbung-banner",
+        "sort": 1,
+        "title": "6298a87f_azubi3.jpg",
+        "desc": "",
+        "text": "",
+        "src": "6298a87f_azubi3.jpg",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1654171776,
+        "carousel_interval": "2000"
+    }
+}

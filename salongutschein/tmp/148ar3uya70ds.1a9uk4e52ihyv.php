@@ -1,0 +1,100 @@
+<div class="row termine-tab3">
+    <form role="form" id="persDataConfirm" class="form-person-wizard w-100" name="persDataConfirm" action="" method="post">
+        <div class="row" id="tab3-confirm-meinedaten">
+            <!-- <div class="col-md-8 offset-md-2 col-12"></div> -->
+            <!-- @FIX by oppo 02.07.2020 **need to be reduced by 30%. Now it is very large. In the text below you need to indent. -->
+            <div class="col-md-8 offset-md-2 col-12 pt-3">
+                <div class="text-md-left text-left mb-4">
+                    <h3 class="futuraItBk">Meine Daten</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="form-group tt-form-group">
+                                    <!-- <label for="vorname">Vorname*</label> -->
+                                    <input type="text" name="vorname" class="form-control" id="vorname" aria-describedby="termineVornameInput" required placeholder="Vorname*" />
+                                </div>
+                                
+                                 <div class="form-group tt-form-group">
+                                  <!--   <label for="nachname">Nachname*</label> -->
+                                    <input type="text" name="nachname" class="form-control" id="nachname" aria-describedby="termineVornameInput" required placeholder="Nachname*" />
+                                </div>
+
+                               
+
+                                <div class="form-group tt-form-group">
+                                    <!-- +4917624567655 016092884554 -->
+                                  <!--   <label text="bitte geben sie eine deutsche Handynummer ein" for="mobilenumber">
+                                        </label> -->
+                                    <input type="tel" name="mobilenumber" class="form-control" id="mobilenumber" aria-describedby="termineVornameInput" placeholder="Handynummer*" required/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-12">
+                        <div class="row">
+                            <div class="col-12">
+ <div class="form-group tt-form-group">
+                                    <!-- alexander@1plus-agency.com oleg@blooms.com -->
+                                    <!-- <label for="email">E-Mail*</label> -->
+                                    <input type="email" name="email" class="form-control" id="email" aria-describedby="termineEmailInput" required placeholder="E-Mail*" />
+                                </div>
+                                  <div class="form-group tt-form-group">
+                                                              <!--   <label title="Die Eingabe Ihrer E-Mail-Adresse stimmt nicht überein." for="emailConfirm"></label> -->
+                                    <input type="email" name="emailConfirm" class="form-control" id="emailConfirm" aria-describedby="termineEmail2Input" required placeholder="E-Mail Wiederholung*" />
+                                </div>
+                          
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="col-12">
+                        <div class="text-thirty py-4 font-size-for-p">
+                    
+
+                           
+
+                        
+                        </div>
+					</div>
+
+                    <div class="col-12">
+                        <div class="text-thirty form-check pt-2 pl-0 tt-form-group">
+
+                           <!--  <input type="checkbox" class="form-check-input checkbox-btn" id="pagecon_appointment_reconnect_id" name="pagecon_appointment_reconnect_id" value="1" required /> -->
+
+
+                            <input type="checkbox" name="pagecon_appointment_reconnect_id" value="1" class="radio-btn" id="pagecon_appointment_reconnect_id" >
+
+                            <label class="text-wowann" for="pagecon_appointment_reconnect_id">         
+                               <!--  Hiermit willige ich ein, dass meine Daten im Rahmen der <strong>Komfortfunktion</strong>
+                                verarbeitet werden. <p class="lesen">Mit dem Klick auf "Weiter" bestätige ich die AGBs. <a href="<?= ($BASE) ?>/agb.html" target="_blank">Klicken Sie hier um die AGBs zu
+                                    lesen.</a> -->
+
+                                    Daten für künftige Termine im Browser speichern.<br>
+                                    Mit dem Klick auf “Weiter” bestätige ich die <a href="./termineagb.html" target="_blank"><span>AGBs</span></a>   und die <a href="./datenschutz.html" target="_blank"><span>Datenschutzerklärung</span></a> 
+                              </p>
+                            </label>
+
+
+                            <!-- <label class="form-check-label" for="pagecon_appointment_reconnect_id"> Hiermit willige ich ein, dass meine Daten im Rahmen der <strong>Komfortfunktion</strong>
+                                verarbeitet werden. <p class="lesen">Mit dem Klick auf "Weiter" bestätige ich die AGBs. <a href="<?= ($BASE) ?>/agb.html" target="_blank">Klicken Sie hier um die AGBs zu
+                                    lesen.</a>
+                            </p>
+                            </label> -->
+                        </div>
+                    </div>
+
+            
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

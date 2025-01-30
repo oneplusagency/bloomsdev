@@ -1,0 +1,24 @@
+[12-01-2024 14:13:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[12-01-2024 14:13:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:13:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[12-01-2024 14:13:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[12-01-2024 14:13:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[12-01-2024 14:13:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[12-01-2024 14:20:47] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[12-01-2024 14:20:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:20:48] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[12-01-2024 14:20:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[12-01-2024 14:20:48] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[12-01-2024 14:20:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[12-01-2024 14:23:31] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[12-01-2024 14:23:31] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:23:31] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MWQTZMA33N888425K4099133
+[12-01-2024 14:23:32] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:23:32] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-MWQTZMA33N888425K4099133/execute
+[12-01-2024 14:23:33] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:25:06] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[12-01-2024 14:25:06] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:25:06] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MWQTVXY3AF20527LY341473S
+[12-01-2024 14:25:06] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[12-01-2024 14:25:06] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-MWQTVXY3AF20527LY341473S/execute
+[12-01-2024 14:25:07] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200

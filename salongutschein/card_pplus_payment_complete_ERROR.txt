@@ -1,0 +1,3420 @@
+PayPal\Exception\PayPalConnectionException::__set_state(array(
+   'url' => 'https://api.paypal.com/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154/execute',
+   'data' => '{"name":"INSTRUMENT_DECLINED","message":"The instrument presented was either declined by the processor or bank, or it can\'t be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INSTRUMENT_DECLINED","debug_id":"2857a215af0d5"}',
+   'message' => 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154/execute.',
+   'string' => '',
+   'code' => 400,
+   'file' => '/home/www/httpdocs/1plus07122020/salongutschein/vendor/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php',
+   'line' => 207,
+   'trace' => 
+  array (
+    0 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/vendor/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php',
+      'line' => 78,
+      'function' => 'execute',
+      'class' => 'PayPal\\Core\\PayPalHttpConnection',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => '{"payer_id":"ANLM8HGXUGHK6"}',
+      ),
+    ),
+    1 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/vendor/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php',
+      'line' => 104,
+      'function' => 'execute',
+      'class' => 'PayPal\\Transport\\PayPalRestCall',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        array (
+          0 => 'PayPal\\Handler\\RestHandler',
+        ),
+        1 => '/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154/execute',
+        2 => 'POST',
+        3 => '{"payer_id":"ANLM8HGXUGHK6"}',
+        4 => 
+        array (
+        ),
+      ),
+    ),
+    2 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php',
+      'line' => 650,
+      'function' => 'executeCall',
+      'class' => 'PayPal\\Common\\PayPalResourceModel',
+      'type' => '::',
+      'args' => 
+      array (
+        0 => '/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154/execute',
+        1 => 'POST',
+        2 => '{"payer_id":"ANLM8HGXUGHK6"}',
+        3 => NULL,
+        4 => 
+        PayPal\Rest\ApiContext::__set_state(array(
+           'requestId' => NULL,
+           'credential' => 
+          PayPal\Auth\OAuthTokenCredential::__set_state(array(
+             'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+             'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+             'targetSubject' => NULL,
+             'accessToken' => 'A21AAMzyQ2xtjHNAowTsIAN7Q9UQn7FPiBDRyvHwzhWHCu3hD8qUZvS28dmvY7E2QzqHlvw2Uwah_o_geKkNMZLYAG17u8GJg',
+             'tokenExpiresIn' => 32198,
+             'tokenCreateTime' => 1728893432,
+             'cipher' => 
+            PayPal\Security\Cipher::__set_state(array(
+               'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+            )),
+             '_propMap' => 
+            array (
+            ),
+          )),
+        )),
+        5 => 
+        PayPal\Transport\PayPalRestCall::__set_state(array(
+           'logger' => 
+          PayPal\Core\PayPalLoggingManager::__set_state(array(
+             'logger' => 
+            PayPal\Log\PayPalLogger::__set_state(array(
+               'loggingLevels' => 
+              array (
+                0 => 'emergency',
+                1 => 'alert',
+                2 => 'critical',
+                3 => 'error',
+                4 => 'warning',
+                5 => 'notice',
+                6 => 'info',
+                7 => 'debug',
+              ),
+               'loggingLevel' => 'info',
+               'loggerFile' => '/home/www/httpdocs/1plus07122020/salongutschein/14.10.2024_card_paypal_plus.log',
+               'isLoggingEnabled' => true,
+               'loggerName' => 'PayPal\\Transport\\PayPalRestCall',
+            )),
+             'loggerName' => 'PayPal\\Transport\\PayPalRestCall',
+          )),
+           'apiContext' => 
+          PayPal\Rest\ApiContext::__set_state(array(
+             'requestId' => NULL,
+             'credential' => 
+            PayPal\Auth\OAuthTokenCredential::__set_state(array(
+               'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+               'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+               'targetSubject' => NULL,
+               'accessToken' => 'A21AAMzyQ2xtjHNAowTsIAN7Q9UQn7FPiBDRyvHwzhWHCu3hD8qUZvS28dmvY7E2QzqHlvw2Uwah_o_geKkNMZLYAG17u8GJg',
+               'tokenExpiresIn' => 32198,
+               'tokenCreateTime' => 1728893432,
+               'cipher' => 
+              PayPal\Security\Cipher::__set_state(array(
+                 'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+              )),
+               '_propMap' => 
+              array (
+              ),
+            )),
+          )),
+        )),
+      ),
+    ),
+    3 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/app/controllers/gutscheine.php',
+      'line' => 1041,
+      'function' => 'execute',
+      'class' => 'PayPal\\Api\\Payment',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        PayPal\Api\PaymentExecution::__set_state(array(
+           '_propMap' => 
+          array (
+            'payer_id' => 'ANLM8HGXUGHK6',
+          ),
+        )),
+        1 => 
+        PayPal\Rest\ApiContext::__set_state(array(
+           'requestId' => NULL,
+           'credential' => 
+          PayPal\Auth\OAuthTokenCredential::__set_state(array(
+             'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+             'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+             'targetSubject' => NULL,
+             'accessToken' => 'A21AAMzyQ2xtjHNAowTsIAN7Q9UQn7FPiBDRyvHwzhWHCu3hD8qUZvS28dmvY7E2QzqHlvw2Uwah_o_geKkNMZLYAG17u8GJg',
+             'tokenExpiresIn' => 32198,
+             'tokenCreateTime' => 1728893432,
+             'cipher' => 
+            PayPal\Security\Cipher::__set_state(array(
+               'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+            )),
+             '_propMap' => 
+            array (
+            ),
+          )),
+        )),
+      ),
+    ),
+    4 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/app/controllers/gutscheine.php',
+      'line' => 1114,
+      'function' => 'completePayment',
+      'class' => 'gutscheine',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 'PAYID-M4GNCLY2RW25500DU7909154',
+        1 => 'ANLM8HGXUGHK6',
+      ),
+    ),
+    5 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/base.php',
+      'line' => 1955,
+      'function' => 'completeplus',
+      'class' => 'gutscheine',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        Base::__set_state(array(
+           'hive' => 
+          array (
+            'HEADERS' => 
+            array (
+              'Content-Length' => '0',
+              'Connection' => 'close',
+              'Cookie' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+              'Priority' => 'u=0, i',
+              'Accept-Language' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+              'Accept-Encoding' => 'gzip, deflate, br, zstd',
+              'Referer' => 'https://www.paypal.com/',
+              'Sec-Fetch-Dest' => 'document',
+              'Sec-Fetch-User' => '?1',
+              'Sec-Fetch-Mode' => 'navigate',
+              'Sec-Fetch-Site' => 'none',
+              'X-Requested-With' => 'de.ozerov.fully',
+              'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+              'User-Agent' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'Upgrade-Insecure-Requests' => '1',
+              'Sec-Ch-Ua-Platform' => '"Android"',
+              'Sec-Ch-Ua-Mobile' => '?0',
+              'Sec-Ch-Ua' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+              'X-Forwarded-For' => '178.5.210.160',
+              'X-Real-Ip' => '178.5.210.160',
+              'Host' => 'bloom-s.de',
+              'Authorization' => '',
+            ),
+            'LANGUAGE' => 'de-DE,de,en-US,en',
+            'AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+            'AJAX' => false,
+            'ALIAS' => NULL,
+            'ALIASES' => 
+            array (
+            ),
+            'AUTOLOAD' => 
+            array (
+              0 => 'app/controllers/;app/models/;app/helper/',
+              1 => 
+              Closure::__set_state(array(
+              )),
+            ),
+            'BASE' => '/salongutschein',
+            'BITMASK' => 10,
+            'BODY' => '',
+            'CACHE' => 'apcu',
+            'CASELESS' => true,
+            'CLI' => false,
+            'CORS' => 
+            array (
+              'headers' => '',
+              'origin' => false,
+              'credentials' => false,
+              'expose' => false,
+              'ttl' => 0,
+            ),
+            'DEBUG' => 3,
+            'DIACRITICS' => 
+            array (
+            ),
+            'DNSBL' => '',
+            'EMOJI' => 
+            array (
+            ),
+            'ENCODING' => 'UTF-8',
+            'ERROR' => NULL,
+            'ESCAPE' => true,
+            'EXCEPTION' => NULL,
+            'EXEMPT' => NULL,
+            'FALLBACK' => 'en',
+            'FORMATS' => 
+            array (
+            ),
+            'FRAGMENT' => '',
+            'HALT' => true,
+            'HIGHLIGHT' => false,
+            'HOST' => 'bloom-s.de',
+            'IP' => '178.5.210.160',
+            'JAR' => 
+            array (
+              'expire' => 0,
+              'lifetime' => 0,
+              'path' => '/salongutschein',
+              'domain' => 'bloom-s.de',
+              'secure' => true,
+              'httponly' => true,
+              'samesite' => 'Lax',
+            ),
+            'LOCALES' => './',
+            'LOCK' => 2,
+            'LOGGABLE' => '*',
+            'LOGS' => './',
+            'MB' => true,
+            'ONERROR' => 
+            Closure::__set_state(array(
+            )),
+            'ONREROUTE' => NULL,
+            'PACKAGE' => 'Fat-Free Framework',
+            'PARAMS' => 
+            array (
+              0 => '/gutscheine/completeplus',
+              'action' => 'completeplus',
+              'controller' => 'gutscheine',
+            ),
+            'PATH' => '/gutscheine/completeplus',
+            'PATTERN' => '/@controller/@action',
+            'PLUGINS' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/',
+            'PORT' => '443',
+            'PREFIX' => NULL,
+            'PREMAP' => '',
+            'QUERY' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+            'QUIET' => false,
+            'RAW' => false,
+            'REALM' => 'https://bloom-s.de/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+            'RESPONSE' => '',
+            'ROOT' => '/home/www/httpdocs/1plus07122020',
+            'ROUTES' => 
+            array (
+              '/clearcache' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => 
+                    Closure::__set_state(array(
+                    )),
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin/@action/@id/edit' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->@id',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->@id',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin/@action/@id' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin/@action' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\home->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\home->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id/@mitarbeiter/@empid' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id/@palazka-@cid' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id.html' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller.html' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+            ),
+            'SCHEME' => 'https',
+            'SEED' => '14ny7ouqmikwl',
+            'SERIALIZER' => 'php',
+            'TEMP' => '/home/www/httpdocs/1plus07122020/salongutschein/tmp/',
+            'TIME' => 1728893432.392427,
+            'TZ' => 'Europe/Berlin',
+            'UI' => '/home/www/httpdocs/1plus07122020/salongutschein/app/views/',
+            'UNLOAD' => NULL,
+            'UPLOADS' => './',
+            'URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+            'VERB' => 'GET',
+            'VERSION' => '3.7.2-Release',
+            'XFRAME' => 'SAMEORIGIN',
+            'GET' => 
+            array (
+              'paymentId' => 'PAYID-M4GNCLY2RW25500DU7909154',
+              'token' => 'EC-5D452973NB2373803',
+              'PayerID' => 'ANLM8HGXUGHK6',
+            ),
+            'POST' => 
+            array (
+            ),
+            'COOKIE' => 
+            array (
+              'PHPSESSID' => '69ca890fb7a94fe78e3917c9e5f8d7fd',
+              'Cookie' => 'false',
+              '_gid' => 'GA1.2.2062951713.1728891219',
+              '_ga' => 'GA1.1.1372572195.1718198096',
+              'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-5D452973NB2373803","thirdPartyMethods":{},"paymentMethod":"pp-966e7d9b4e421bff73fb89dd61d248ad"}',
+              '_ga_THCT26PLCD' => 'GS1.1.1728893109.246.1.1728893235.0.0.0',
+            ),
+            'REQUEST' => 
+            array (
+              'paymentId' => 'PAYID-M4GNCLY2RW25500DU7909154',
+              'token' => 'EC-5D452973NB2373803',
+              'PayerID' => 'ANLM8HGXUGHK6',
+              'PHPSESSID' => '69ca890fb7a94fe78e3917c9e5f8d7fd',
+              'Cookie' => 'false',
+              '_gid' => 'GA1.2.2062951713.1728891219',
+              '_ga' => 'GA1.1.1372572195.1718198096',
+              'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-5D452973NB2373803","thirdPartyMethods":{},"paymentMethod":"pp-966e7d9b4e421bff73fb89dd61d248ad"}',
+              '_ga_THCT26PLCD' => 'GS1.1.1728893109.246.1.1728893235.0.0.0',
+            ),
+            'SESSION' => 
+            array (
+              'coupondata' => 
+              array (
+                'amount' => '36.00',
+                'salutation' => 'Herr',
+                'vorname' => 'Rene',
+                'nachname' => 'Schulze',
+                'email' => 'rene1.0@gmx.de',
+                'emailConfirm' => 'rene1.0@gmx.de',
+                'download' => NULL,
+              ),
+              'error' => 'PayPal {"name":"INSTRUMENT_DECLINED","message":"The instrument presented was either declined by the processor or bank, or it can\'t be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INSTRUMENT_DECLINED","debug_id":"2857a215af0d5"}',
+            ),
+            'FILES' => 
+            array (
+            ),
+            'SERVER' => 
+            array (
+              'PHP_FCGI_MAX_REQUESTS' => '5000',
+              'PHPRC' => '/etc/fcgi/2287/',
+              'PWD' => '/etc/fcgi',
+              'SHLVL' => '0',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'PHP_FCGI_CHILDREN' => '4',
+              'CONTENT_LENGTH' => '0',
+              'HTTP_CONNECTION' => 'close',
+              'SCRIPT_NAME' => '/salongutschein/index.php',
+              'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REQUEST_METHOD' => 'GET',
+              'SERVER_PROTOCOL' => 'HTTP/1.1',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+              'REMOTE_PORT' => '33868',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'CONTEXT_PREFIX' => '',
+              'REQUEST_SCHEME' => 'https',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REMOTE_ADDR' => '178.5.210.160',
+              'SERVER_PORT' => '443',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_SIGNATURE' => '',
+              'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+              'HTTP_PRIORITY' => 'u=0, i',
+              'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+              'HTTP_REFERER' => 'https://www.paypal.com/',
+              'HTTP_SEC_FETCH_DEST' => 'document',
+              'HTTP_SEC_FETCH_USER' => '?1',
+              'HTTP_SEC_FETCH_MODE' => 'navigate',
+              'HTTP_SEC_FETCH_SITE' => 'none',
+              'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+              'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+              'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+              'HTTP_X_REAL_IP' => '178.5.210.160',
+              'HTTP_HOST' => 'bloom-s.de',
+              'SSL_SESSION_RESUMED' => 'Resumed',
+              'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+              'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+              'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+              'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+              'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+              'SSL_SERVER_M_VERSION' => '3',
+              'SSL_CLIENT_VERIFY' => 'NONE',
+              'SSL_CIPHER_ALGKEYSIZE' => '256',
+              'SSL_CIPHER_USEKEYSIZE' => '256',
+              'SSL_CIPHER_EXPORT' => 'false',
+              'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'SSL_COMPRESS_METHOD' => 'NULL',
+              'SSL_SECURE_RENEG' => 'true',
+              'SSL_PROTOCOL' => 'TLSv1.2',
+              'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+              'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+              'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'SSL_SERVER_I_DN_CN' => 'R11',
+              'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'SSL_SERVER_I_DN_C' => 'US',
+              'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'HTTPS' => 'on',
+              'HTTP_AUTHORIZATION' => '',
+              'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_STATUS' => '200',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_SERVER_PORT' => '443',
+              'FCGI_ROLE' => 'RESPONDER',
+              'PHP_SELF' => '/salongutschein/index.php',
+              'REQUEST_TIME_FLOAT' => 1728893432.392427,
+              'REQUEST_TIME' => 1728893432,
+              'argv' => 
+              array (
+                0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              ),
+              'argc' => 1,
+            ),
+            'ENV' => 
+            array (
+              'PHP_FCGI_MAX_REQUESTS' => '5000',
+              'PHPRC' => '/etc/fcgi/2287/',
+              'PWD' => '/etc/fcgi',
+              'SHLVL' => '0',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'PHP_FCGI_CHILDREN' => '4',
+              'CONTENT_LENGTH' => '0',
+              'HTTP_CONNECTION' => 'close',
+              'SCRIPT_NAME' => '/salongutschein/index.php',
+              'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REQUEST_METHOD' => 'GET',
+              'SERVER_PROTOCOL' => 'HTTP/1.1',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+              'REMOTE_PORT' => '33868',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'CONTEXT_PREFIX' => '',
+              'REQUEST_SCHEME' => 'https',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REMOTE_ADDR' => '178.5.210.160',
+              'SERVER_PORT' => '443',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_SIGNATURE' => '',
+              'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+              'HTTP_PRIORITY' => 'u=0, i',
+              'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+              'HTTP_REFERER' => 'https://www.paypal.com/',
+              'HTTP_SEC_FETCH_DEST' => 'document',
+              'HTTP_SEC_FETCH_USER' => '?1',
+              'HTTP_SEC_FETCH_MODE' => 'navigate',
+              'HTTP_SEC_FETCH_SITE' => 'none',
+              'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+              'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+              'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+              'HTTP_X_REAL_IP' => '178.5.210.160',
+              'HTTP_HOST' => 'bloom-s.de',
+              'SSL_SESSION_RESUMED' => 'Resumed',
+              'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+              'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+              'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+              'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+              'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+              'SSL_SERVER_M_VERSION' => '3',
+              'SSL_CLIENT_VERIFY' => 'NONE',
+              'SSL_CIPHER_ALGKEYSIZE' => '256',
+              'SSL_CIPHER_USEKEYSIZE' => '256',
+              'SSL_CIPHER_EXPORT' => 'false',
+              'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'SSL_COMPRESS_METHOD' => 'NULL',
+              'SSL_SECURE_RENEG' => 'true',
+              'SSL_PROTOCOL' => 'TLSv1.2',
+              'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+              'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+              'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'SSL_SERVER_I_DN_CN' => 'R11',
+              'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'SSL_SERVER_I_DN_C' => 'US',
+              'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'HTTPS' => 'on',
+              'HTTP_AUTHORIZATION' => '',
+              'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_STATUS' => '200',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_SERVER_PORT' => '443',
+              'FCGI_ROLE' => 'RESPONDER',
+              'PHP_SELF' => '/salongutschein/index.php',
+              'REQUEST_TIME_FLOAT' => 1728893432.392427,
+              'REQUEST_TIME' => 1728893432,
+              'argv' => 
+              array (
+                0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              ),
+              'argc' => 1,
+            ),
+            'BLOOMS_VERSION' => 140191744,
+            'ASSETS' => '/salongutschein/assets/',
+            'TITLEBLOOM' => 'bloom\'s',
+            'classfoot' => 'home',
+            'POMILKA' => NULL,
+            'site' => 'Gutscheinverkauf',
+            'carousel_interval' => 2000,
+            'site_debug' => '3',
+            'site_cache' => '1',
+            'security' => 
+            array (
+              'adminPassword' => 'Bloom-s2020-12!',
+            ),
+            'email' => 
+            array (
+              'mail_from_name' => 'bloom´s Kontakt',
+              'mail_from_email' => 'kontakt@bloom-s.de',
+              'noreply_emal' => 'noreply@bloom-s.de',
+            ),
+            'paypal' => 
+            array (
+              'paypal_user' => 'marketing2_api1.bloom-s.de',
+              'paypal_pass' => 'R96HHLG69B6H5W5S',
+              'paypal_signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+              'paypal_endpoint' => 'production',
+              'paypal_apiver' => '204.0',
+              'paypal_return' => 'gutscheine/complete',
+              'paypal_cancel' => 'gutscheine.html',
+              'paypal_log' => '1',
+              'paypal_emal' => 'paypal4@bloom-s.de',
+              'paypal_account_id' => 'DLMBGGVGPC4PS',
+              'paypal_client_id' => 'paypal4@bloom-s.de',
+            ),
+            'paypal_plus' => 
+            array (
+              'paypal_plus_brand_name' => 'bloom´s Friseure',
+              'paypal_plus_checkout_logo' => NULL,
+              'paypal_plus_endpoint' => 'production',
+              'paypal_plus_return' => 'gutscheine/completeplus',
+              'paypal_plus_cancel' => 'gutscheine.html',
+              'paypal_plus_log' => '1',
+              'paypal_plus_emal' => 'buchhaltung@bloom-s.de',
+              'paypal_plus_client_id' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+              'paypal_plus_account_id' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+            ),
+            'CacheBlooms' => 
+            cacheblooms::__set_state(array(
+               '_cachepath' => '/home/www/httpdocs/1plus07122020/salongutschein/tmp/cache/',
+               '_cachename' => 'blooms',
+               '_extension' => '.cache',
+            )),
+            'PAGE_HOST' => 'https://bloom-s.de',
+            'PAGE_CONTROLLER' => 'gutscheine',
+            'ACTIVE' => '/salongutschein/gutscheine',
+            'LINKS' => 
+            array (
+              '/salongutschein' => 'Home',
+              '/salongutschein/salons.html' => 'Salons',
+              '/salongutschein/termine.html' => 'Termine',
+              '/salongutschein/preise.html' => 'Preise',
+              '/salongutschein/stylebook.html' => 'Stylebook',
+              '/salongutschein/gutscheine.html' => 'Gutscheine',
+              '/salongutschein/bewerbung.html' => 'Bewerbung',
+              '/salongutschein/blooms.html' => 'bloom´s',
+              '/salongutschein/kontakt.html' => 'Verwaltung',
+              '/salongutschein/akademie.html' => '<span class="left-polos">Akademie</span>',
+            ),
+            'FOOTER_LINKS' => 
+            array (
+              'javascript:void(0)' => 'Verwaltung',
+              '/salongutschein/impressum.html' => 'Impressum',
+              '/salongutschein/datenschutz.html' => 'Datenschutz',
+            ),
+            'current_path' => '/gutscheine/completeplus',
+          ),
+           'init' => 
+          array (
+            'HEADERS' => 
+            array (
+              'Content-Length' => '0',
+              'Connection' => 'close',
+              'Cookie' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+              'Priority' => 'u=0, i',
+              'Accept-Language' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+              'Accept-Encoding' => 'gzip, deflate, br, zstd',
+              'Referer' => 'https://www.paypal.com/',
+              'Sec-Fetch-Dest' => 'document',
+              'Sec-Fetch-User' => '?1',
+              'Sec-Fetch-Mode' => 'navigate',
+              'Sec-Fetch-Site' => 'none',
+              'X-Requested-With' => 'de.ozerov.fully',
+              'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+              'User-Agent' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'Upgrade-Insecure-Requests' => '1',
+              'Sec-Ch-Ua-Platform' => '"Android"',
+              'Sec-Ch-Ua-Mobile' => '?0',
+              'Sec-Ch-Ua' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+              'X-Forwarded-For' => '178.5.210.160',
+              'X-Real-Ip' => '178.5.210.160',
+              'Host' => 'bloom-s.de',
+              'Authorization' => '',
+            ),
+            'LANGUAGE' => 'de-DE,de,en-US,en',
+            'AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+            'AJAX' => false,
+            'ALIAS' => NULL,
+            'ALIASES' => 
+            array (
+            ),
+            'AUTOLOAD' => './',
+            'BASE' => '/salongutschein',
+            'BITMASK' => 2,
+            'BODY' => NULL,
+            'CACHE' => false,
+            'CASELESS' => true,
+            'CLI' => false,
+            'CORS' => 
+            array (
+              'headers' => '',
+              'origin' => false,
+              'credentials' => false,
+              'expose' => false,
+              'ttl' => 0,
+            ),
+            'DEBUG' => 0,
+            'DIACRITICS' => 
+            array (
+            ),
+            'DNSBL' => '',
+            'EMOJI' => 
+            array (
+            ),
+            'ENCODING' => 'UTF-8',
+            'ERROR' => NULL,
+            'ESCAPE' => true,
+            'EXCEPTION' => NULL,
+            'EXEMPT' => NULL,
+            'FALLBACK' => 'en',
+            'FORMATS' => 
+            array (
+            ),
+            'FRAGMENT' => '',
+            'HALT' => true,
+            'HIGHLIGHT' => false,
+            'HOST' => 'bloom-s.de',
+            'IP' => '178.5.210.160',
+            'JAR' => 
+            array (
+              'expire' => 0,
+              'lifetime' => 0,
+              'path' => '/salongutschein',
+              'domain' => 'bloom-s.de',
+              'secure' => true,
+              'httponly' => true,
+              'samesite' => 'Lax',
+            ),
+            'LOCALES' => './',
+            'LOCK' => 2,
+            'LOGGABLE' => '*',
+            'LOGS' => './',
+            'MB' => true,
+            'ONERROR' => NULL,
+            'ONREROUTE' => NULL,
+            'PACKAGE' => 'Fat-Free Framework',
+            'PARAMS' => 
+            array (
+            ),
+            'PATH' => '/gutscheine/completeplus',
+            'PATTERN' => NULL,
+            'PLUGINS' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/',
+            'PORT' => '443',
+            'PREFIX' => NULL,
+            'PREMAP' => '',
+            'QUERY' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+            'QUIET' => false,
+            'RAW' => false,
+            'REALM' => 'https://bloom-s.de/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+            'RESPONSE' => '',
+            'ROOT' => '/home/www/httpdocs/1plus07122020',
+            'ROUTES' => 
+            array (
+            ),
+            'SCHEME' => 'https',
+            'SEED' => '14ny7ouqmikwl',
+            'SERIALIZER' => 'php',
+            'TEMP' => 'tmp/',
+            'TIME' => 1728893432.392427,
+            'TZ' => 'Europe/Berlin',
+            'UI' => './',
+            'UNLOAD' => NULL,
+            'UPLOADS' => './',
+            'URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+            'VERB' => 'GET',
+            'VERSION' => '3.7.2-Release',
+            'XFRAME' => 'SAMEORIGIN',
+            'GET' => 
+            array (
+            ),
+            'POST' => 
+            array (
+            ),
+            'COOKIE' => 
+            array (
+            ),
+            'REQUEST' => 
+            array (
+            ),
+            'SESSION' => 
+            array (
+            ),
+            'FILES' => 
+            array (
+            ),
+            'SERVER' => 
+            array (
+              'PHP_FCGI_MAX_REQUESTS' => '5000',
+              'PHPRC' => '/etc/fcgi/2287/',
+              'PWD' => '/etc/fcgi',
+              'SHLVL' => '0',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'PHP_FCGI_CHILDREN' => '4',
+              'CONTENT_LENGTH' => '0',
+              'HTTP_CONNECTION' => 'close',
+              'SCRIPT_NAME' => '/salongutschein/index.php',
+              'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REQUEST_METHOD' => 'GET',
+              'SERVER_PROTOCOL' => 'HTTP/1.1',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+              'REMOTE_PORT' => '33868',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'CONTEXT_PREFIX' => '',
+              'REQUEST_SCHEME' => 'https',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REMOTE_ADDR' => '178.5.210.160',
+              'SERVER_PORT' => '443',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_SIGNATURE' => '',
+              'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+              'HTTP_PRIORITY' => 'u=0, i',
+              'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+              'HTTP_REFERER' => 'https://www.paypal.com/',
+              'HTTP_SEC_FETCH_DEST' => 'document',
+              'HTTP_SEC_FETCH_USER' => '?1',
+              'HTTP_SEC_FETCH_MODE' => 'navigate',
+              'HTTP_SEC_FETCH_SITE' => 'none',
+              'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+              'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+              'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+              'HTTP_X_REAL_IP' => '178.5.210.160',
+              'HTTP_HOST' => 'bloom-s.de',
+              'SSL_SESSION_RESUMED' => 'Resumed',
+              'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+              'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+              'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+              'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+              'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+              'SSL_SERVER_M_VERSION' => '3',
+              'SSL_CLIENT_VERIFY' => 'NONE',
+              'SSL_CIPHER_ALGKEYSIZE' => '256',
+              'SSL_CIPHER_USEKEYSIZE' => '256',
+              'SSL_CIPHER_EXPORT' => 'false',
+              'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'SSL_COMPRESS_METHOD' => 'NULL',
+              'SSL_SECURE_RENEG' => 'true',
+              'SSL_PROTOCOL' => 'TLSv1.2',
+              'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+              'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+              'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'SSL_SERVER_I_DN_CN' => 'R11',
+              'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'SSL_SERVER_I_DN_C' => 'US',
+              'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'HTTPS' => 'on',
+              'HTTP_AUTHORIZATION' => '',
+              'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_STATUS' => '200',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_SERVER_PORT' => '443',
+              'FCGI_ROLE' => 'RESPONDER',
+              'PHP_SELF' => '/salongutschein/index.php',
+              'REQUEST_TIME_FLOAT' => 1728893432.392427,
+              'REQUEST_TIME' => 1728893432,
+              'argv' => 
+              array (
+                0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              ),
+              'argc' => 1,
+            ),
+            'ENV' => 
+            array (
+              'PHP_FCGI_MAX_REQUESTS' => '5000',
+              'PHPRC' => '/etc/fcgi/2287/',
+              'PWD' => '/etc/fcgi',
+              'SHLVL' => '0',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'PHP_FCGI_CHILDREN' => '4',
+              'CONTENT_LENGTH' => '0',
+              'HTTP_CONNECTION' => 'close',
+              'SCRIPT_NAME' => '/salongutschein/index.php',
+              'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REQUEST_METHOD' => 'GET',
+              'SERVER_PROTOCOL' => 'HTTP/1.1',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+              'REMOTE_PORT' => '33868',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'CONTEXT_PREFIX' => '',
+              'REQUEST_SCHEME' => 'https',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REMOTE_ADDR' => '178.5.210.160',
+              'SERVER_PORT' => '443',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_SIGNATURE' => '',
+              'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+              'HTTP_PRIORITY' => 'u=0, i',
+              'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+              'HTTP_REFERER' => 'https://www.paypal.com/',
+              'HTTP_SEC_FETCH_DEST' => 'document',
+              'HTTP_SEC_FETCH_USER' => '?1',
+              'HTTP_SEC_FETCH_MODE' => 'navigate',
+              'HTTP_SEC_FETCH_SITE' => 'none',
+              'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+              'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+              'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+              'HTTP_X_REAL_IP' => '178.5.210.160',
+              'HTTP_HOST' => 'bloom-s.de',
+              'SSL_SESSION_RESUMED' => 'Resumed',
+              'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+              'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+              'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+              'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+              'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+              'SSL_SERVER_M_VERSION' => '3',
+              'SSL_CLIENT_VERIFY' => 'NONE',
+              'SSL_CIPHER_ALGKEYSIZE' => '256',
+              'SSL_CIPHER_USEKEYSIZE' => '256',
+              'SSL_CIPHER_EXPORT' => 'false',
+              'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'SSL_COMPRESS_METHOD' => 'NULL',
+              'SSL_SECURE_RENEG' => 'true',
+              'SSL_PROTOCOL' => 'TLSv1.2',
+              'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+              'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+              'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'SSL_SERVER_I_DN_CN' => 'R11',
+              'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'SSL_SERVER_I_DN_C' => 'US',
+              'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'HTTPS' => 'on',
+              'HTTP_AUTHORIZATION' => '',
+              'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_STATUS' => '200',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+              'REDIRECT_SERVER_PORT' => '443',
+              'FCGI_ROLE' => 'RESPONDER',
+              'PHP_SELF' => '/salongutschein/index.php',
+              'REQUEST_TIME_FLOAT' => 1728893432.392427,
+              'REQUEST_TIME' => 1728893432,
+              'argv' => 
+              array (
+                0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              ),
+              'argc' => 1,
+            ),
+          ),
+           'languages' => 
+          array (
+            0 => 'de-DE',
+            1 => 'de',
+            3 => 'en-US',
+            4 => 'en',
+          ),
+           'locks' => 
+          array (
+          ),
+           'fallback' => 'en',
+        )),
+        1 => 
+        array (
+          0 => '/gutscheine/completeplus',
+          'action' => 'completeplus',
+          'controller' => 'gutscheine',
+        ),
+        2 => '\\gutscheine->completeplus',
+      ),
+    ),
+    6 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/base.php',
+      'line' => 1754,
+      'function' => 'call',
+      'class' => 'Base',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          gutscheine::__set_state(array(
+             'aprovalUrl' => '',
+             'config' => NULL,
+             'apiContext' => 
+            PayPal\Rest\ApiContext::__set_state(array(
+               'requestId' => NULL,
+               'credential' => 
+              PayPal\Auth\OAuthTokenCredential::__set_state(array(
+                 'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+                 'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+                 'targetSubject' => NULL,
+                 'accessToken' => 'A21AAMzyQ2xtjHNAowTsIAN7Q9UQn7FPiBDRyvHwzhWHCu3hD8qUZvS28dmvY7E2QzqHlvw2Uwah_o_geKkNMZLYAG17u8GJg',
+                 'tokenExpiresIn' => 32198,
+                 'tokenCreateTime' => 1728893432,
+                 'cipher' => 
+                PayPal\Security\Cipher::__set_state(array(
+                   'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+                )),
+                 '_propMap' => 
+                array (
+                ),
+              )),
+            )),
+             'paypal' => NULL,
+             'f3' => 
+            Base::__set_state(array(
+               'hive' => 
+              array (
+                'HEADERS' => 
+                array (
+                  'Content-Length' => '0',
+                  'Connection' => 'close',
+                  'Cookie' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                  'Priority' => 'u=0, i',
+                  'Accept-Language' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'Accept-Encoding' => 'gzip, deflate, br, zstd',
+                  'Referer' => 'https://www.paypal.com/',
+                  'Sec-Fetch-Dest' => 'document',
+                  'Sec-Fetch-User' => '?1',
+                  'Sec-Fetch-Mode' => 'navigate',
+                  'Sec-Fetch-Site' => 'none',
+                  'X-Requested-With' => 'de.ozerov.fully',
+                  'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                  'User-Agent' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                  'Upgrade-Insecure-Requests' => '1',
+                  'Sec-Ch-Ua-Platform' => '"Android"',
+                  'Sec-Ch-Ua-Mobile' => '?0',
+                  'Sec-Ch-Ua' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                  'X-Forwarded-For' => '178.5.210.160',
+                  'X-Real-Ip' => '178.5.210.160',
+                  'Host' => 'bloom-s.de',
+                  'Authorization' => '',
+                ),
+                'LANGUAGE' => 'de-DE,de,en-US,en',
+                'AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'AJAX' => false,
+                'ALIAS' => NULL,
+                'ALIASES' => 
+                array (
+                ),
+                'AUTOLOAD' => 
+                array (
+                  0 => 'app/controllers/;app/models/;app/helper/',
+                  1 => 
+                  Closure::__set_state(array(
+                  )),
+                ),
+                'BASE' => '/salongutschein',
+                'BITMASK' => 10,
+                'BODY' => '',
+                'CACHE' => 'apcu',
+                'CASELESS' => true,
+                'CLI' => false,
+                'CORS' => 
+                array (
+                  'headers' => '',
+                  'origin' => false,
+                  'credentials' => false,
+                  'expose' => false,
+                  'ttl' => 0,
+                ),
+                'DEBUG' => 3,
+                'DIACRITICS' => 
+                array (
+                ),
+                'DNSBL' => '',
+                'EMOJI' => 
+                array (
+                ),
+                'ENCODING' => 'UTF-8',
+                'ERROR' => NULL,
+                'ESCAPE' => true,
+                'EXCEPTION' => NULL,
+                'EXEMPT' => NULL,
+                'FALLBACK' => 'en',
+                'FORMATS' => 
+                array (
+                ),
+                'FRAGMENT' => '',
+                'HALT' => true,
+                'HIGHLIGHT' => false,
+                'HOST' => 'bloom-s.de',
+                'IP' => '178.5.210.160',
+                'JAR' => 
+                array (
+                  'expire' => 0,
+                  'lifetime' => 0,
+                  'path' => '/salongutschein',
+                  'domain' => 'bloom-s.de',
+                  'secure' => true,
+                  'httponly' => true,
+                  'samesite' => 'Lax',
+                ),
+                'LOCALES' => './',
+                'LOCK' => 2,
+                'LOGGABLE' => '*',
+                'LOGS' => './',
+                'MB' => true,
+                'ONERROR' => 
+                Closure::__set_state(array(
+                )),
+                'ONREROUTE' => NULL,
+                'PACKAGE' => 'Fat-Free Framework',
+                'PARAMS' => 
+                array (
+                  0 => '/gutscheine/completeplus',
+                  'action' => 'completeplus',
+                  'controller' => 'gutscheine',
+                ),
+                'PATH' => '/gutscheine/completeplus',
+                'PATTERN' => '/@controller/@action',
+                'PLUGINS' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/',
+                'PORT' => '443',
+                'PREFIX' => NULL,
+                'PREMAP' => '',
+                'QUERY' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'QUIET' => false,
+                'RAW' => false,
+                'REALM' => 'https://bloom-s.de/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'RESPONSE' => '',
+                'ROOT' => '/home/www/httpdocs/1plus07122020',
+                'ROUTES' => 
+                array (
+                  '/clearcache' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => 
+                        Closure::__set_state(array(
+                        )),
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin/@action/@id/edit' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->@id',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->@id',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin/@action/@id' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin/@action' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\home->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\home->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id/@mitarbeiter/@empid' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id/@palazka-@cid' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id.html' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller.html' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                ),
+                'SCHEME' => 'https',
+                'SEED' => '14ny7ouqmikwl',
+                'SERIALIZER' => 'php',
+                'TEMP' => '/home/www/httpdocs/1plus07122020/salongutschein/tmp/',
+                'TIME' => 1728893432.392427,
+                'TZ' => 'Europe/Berlin',
+                'UI' => '/home/www/httpdocs/1plus07122020/salongutschein/app/views/',
+                'UNLOAD' => NULL,
+                'UPLOADS' => './',
+                'URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'VERB' => 'GET',
+                'VERSION' => '3.7.2-Release',
+                'XFRAME' => 'SAMEORIGIN',
+                'GET' => 
+                array (
+                  'paymentId' => 'PAYID-M4GNCLY2RW25500DU7909154',
+                  'token' => 'EC-5D452973NB2373803',
+                  'PayerID' => 'ANLM8HGXUGHK6',
+                ),
+                'POST' => 
+                array (
+                ),
+                'COOKIE' => 
+                array (
+                  'PHPSESSID' => '69ca890fb7a94fe78e3917c9e5f8d7fd',
+                  'Cookie' => 'false',
+                  '_gid' => 'GA1.2.2062951713.1728891219',
+                  '_ga' => 'GA1.1.1372572195.1718198096',
+                  'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-5D452973NB2373803","thirdPartyMethods":{},"paymentMethod":"pp-966e7d9b4e421bff73fb89dd61d248ad"}',
+                  '_ga_THCT26PLCD' => 'GS1.1.1728893109.246.1.1728893235.0.0.0',
+                ),
+                'REQUEST' => 
+                array (
+                  'paymentId' => 'PAYID-M4GNCLY2RW25500DU7909154',
+                  'token' => 'EC-5D452973NB2373803',
+                  'PayerID' => 'ANLM8HGXUGHK6',
+                  'PHPSESSID' => '69ca890fb7a94fe78e3917c9e5f8d7fd',
+                  'Cookie' => 'false',
+                  '_gid' => 'GA1.2.2062951713.1728891219',
+                  '_ga' => 'GA1.1.1372572195.1718198096',
+                  'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-5D452973NB2373803","thirdPartyMethods":{},"paymentMethod":"pp-966e7d9b4e421bff73fb89dd61d248ad"}',
+                  '_ga_THCT26PLCD' => 'GS1.1.1728893109.246.1.1728893235.0.0.0',
+                ),
+                'SESSION' => 
+                array (
+                  'coupondata' => 
+                  array (
+                    'amount' => '36.00',
+                    'salutation' => 'Herr',
+                    'vorname' => 'Rene',
+                    'nachname' => 'Schulze',
+                    'email' => 'rene1.0@gmx.de',
+                    'emailConfirm' => 'rene1.0@gmx.de',
+                    'download' => NULL,
+                  ),
+                  'error' => 'PayPal {"name":"INSTRUMENT_DECLINED","message":"The instrument presented was either declined by the processor or bank, or it can\'t be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INSTRUMENT_DECLINED","debug_id":"2857a215af0d5"}',
+                ),
+                'FILES' => 
+                array (
+                ),
+                'SERVER' => 
+                array (
+                  'PHP_FCGI_MAX_REQUESTS' => '5000',
+                  'PHPRC' => '/etc/fcgi/2287/',
+                  'PWD' => '/etc/fcgi',
+                  'SHLVL' => '0',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'PHP_FCGI_CHILDREN' => '4',
+                  'CONTENT_LENGTH' => '0',
+                  'HTTP_CONNECTION' => 'close',
+                  'SCRIPT_NAME' => '/salongutschein/index.php',
+                  'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REQUEST_METHOD' => 'GET',
+                  'SERVER_PROTOCOL' => 'HTTP/1.1',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                  'REMOTE_PORT' => '33868',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'CONTEXT_PREFIX' => '',
+                  'REQUEST_SCHEME' => 'https',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REMOTE_ADDR' => '178.5.210.160',
+                  'SERVER_PORT' => '443',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_SIGNATURE' => '',
+                  'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                  'HTTP_PRIORITY' => 'u=0, i',
+                  'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                  'HTTP_REFERER' => 'https://www.paypal.com/',
+                  'HTTP_SEC_FETCH_DEST' => 'document',
+                  'HTTP_SEC_FETCH_USER' => '?1',
+                  'HTTP_SEC_FETCH_MODE' => 'navigate',
+                  'HTTP_SEC_FETCH_SITE' => 'none',
+                  'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                  'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                  'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                  'HTTP_X_REAL_IP' => '178.5.210.160',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'SSL_SESSION_RESUMED' => 'Resumed',
+                  'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                  'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                  'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                  'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                  'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                  'SSL_SERVER_M_VERSION' => '3',
+                  'SSL_CLIENT_VERIFY' => 'NONE',
+                  'SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'SSL_CIPHER_USEKEYSIZE' => '256',
+                  'SSL_CIPHER_EXPORT' => 'false',
+                  'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'SSL_COMPRESS_METHOD' => 'NULL',
+                  'SSL_SECURE_RENEG' => 'true',
+                  'SSL_PROTOCOL' => 'TLSv1.2',
+                  'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                  'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                  'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'SSL_SERVER_I_DN_CN' => 'R11',
+                  'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'SSL_SERVER_I_DN_C' => 'US',
+                  'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'HTTPS' => 'on',
+                  'HTTP_AUTHORIZATION' => '',
+                  'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_STATUS' => '200',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_SERVER_PORT' => '443',
+                  'FCGI_ROLE' => 'RESPONDER',
+                  'PHP_SELF' => '/salongutschein/index.php',
+                  'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                  'REQUEST_TIME' => 1728893432,
+                  'argv' => 
+                  array (
+                    0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  ),
+                  'argc' => 1,
+                ),
+                'ENV' => 
+                array (
+                  'PHP_FCGI_MAX_REQUESTS' => '5000',
+                  'PHPRC' => '/etc/fcgi/2287/',
+                  'PWD' => '/etc/fcgi',
+                  'SHLVL' => '0',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'PHP_FCGI_CHILDREN' => '4',
+                  'CONTENT_LENGTH' => '0',
+                  'HTTP_CONNECTION' => 'close',
+                  'SCRIPT_NAME' => '/salongutschein/index.php',
+                  'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REQUEST_METHOD' => 'GET',
+                  'SERVER_PROTOCOL' => 'HTTP/1.1',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                  'REMOTE_PORT' => '33868',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'CONTEXT_PREFIX' => '',
+                  'REQUEST_SCHEME' => 'https',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REMOTE_ADDR' => '178.5.210.160',
+                  'SERVER_PORT' => '443',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_SIGNATURE' => '',
+                  'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                  'HTTP_PRIORITY' => 'u=0, i',
+                  'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                  'HTTP_REFERER' => 'https://www.paypal.com/',
+                  'HTTP_SEC_FETCH_DEST' => 'document',
+                  'HTTP_SEC_FETCH_USER' => '?1',
+                  'HTTP_SEC_FETCH_MODE' => 'navigate',
+                  'HTTP_SEC_FETCH_SITE' => 'none',
+                  'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                  'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                  'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                  'HTTP_X_REAL_IP' => '178.5.210.160',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'SSL_SESSION_RESUMED' => 'Resumed',
+                  'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                  'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                  'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                  'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                  'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                  'SSL_SERVER_M_VERSION' => '3',
+                  'SSL_CLIENT_VERIFY' => 'NONE',
+                  'SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'SSL_CIPHER_USEKEYSIZE' => '256',
+                  'SSL_CIPHER_EXPORT' => 'false',
+                  'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'SSL_COMPRESS_METHOD' => 'NULL',
+                  'SSL_SECURE_RENEG' => 'true',
+                  'SSL_PROTOCOL' => 'TLSv1.2',
+                  'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                  'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                  'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'SSL_SERVER_I_DN_CN' => 'R11',
+                  'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'SSL_SERVER_I_DN_C' => 'US',
+                  'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'HTTPS' => 'on',
+                  'HTTP_AUTHORIZATION' => '',
+                  'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_STATUS' => '200',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_SERVER_PORT' => '443',
+                  'FCGI_ROLE' => 'RESPONDER',
+                  'PHP_SELF' => '/salongutschein/index.php',
+                  'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                  'REQUEST_TIME' => 1728893432,
+                  'argv' => 
+                  array (
+                    0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  ),
+                  'argc' => 1,
+                ),
+                'BLOOMS_VERSION' => 140191744,
+                'ASSETS' => '/salongutschein/assets/',
+                'TITLEBLOOM' => 'bloom\'s',
+                'classfoot' => 'home',
+                'POMILKA' => NULL,
+                'site' => 'Gutscheinverkauf',
+                'carousel_interval' => 2000,
+                'site_debug' => '3',
+                'site_cache' => '1',
+                'security' => 
+                array (
+                  'adminPassword' => 'Bloom-s2020-12!',
+                ),
+                'email' => 
+                array (
+                  'mail_from_name' => 'bloom´s Kontakt',
+                  'mail_from_email' => 'kontakt@bloom-s.de',
+                  'noreply_emal' => 'noreply@bloom-s.de',
+                ),
+                'paypal' => 
+                array (
+                  'paypal_user' => 'marketing2_api1.bloom-s.de',
+                  'paypal_pass' => 'R96HHLG69B6H5W5S',
+                  'paypal_signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+                  'paypal_endpoint' => 'production',
+                  'paypal_apiver' => '204.0',
+                  'paypal_return' => 'gutscheine/complete',
+                  'paypal_cancel' => 'gutscheine.html',
+                  'paypal_log' => '1',
+                  'paypal_emal' => 'paypal4@bloom-s.de',
+                  'paypal_account_id' => 'DLMBGGVGPC4PS',
+                  'paypal_client_id' => 'paypal4@bloom-s.de',
+                ),
+                'paypal_plus' => 
+                array (
+                  'paypal_plus_brand_name' => 'bloom´s Friseure',
+                  'paypal_plus_checkout_logo' => NULL,
+                  'paypal_plus_endpoint' => 'production',
+                  'paypal_plus_return' => 'gutscheine/completeplus',
+                  'paypal_plus_cancel' => 'gutscheine.html',
+                  'paypal_plus_log' => '1',
+                  'paypal_plus_emal' => 'buchhaltung@bloom-s.de',
+                  'paypal_plus_client_id' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+                  'paypal_plus_account_id' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+                ),
+                'CacheBlooms' => 
+                cacheblooms::__set_state(array(
+                   '_cachepath' => '/home/www/httpdocs/1plus07122020/salongutschein/tmp/cache/',
+                   '_cachename' => 'blooms',
+                   '_extension' => '.cache',
+                )),
+                'PAGE_HOST' => 'https://bloom-s.de',
+                'PAGE_CONTROLLER' => 'gutscheine',
+                'ACTIVE' => '/salongutschein/gutscheine',
+                'LINKS' => 
+                array (
+                  '/salongutschein' => 'Home',
+                  '/salongutschein/salons.html' => 'Salons',
+                  '/salongutschein/termine.html' => 'Termine',
+                  '/salongutschein/preise.html' => 'Preise',
+                  '/salongutschein/stylebook.html' => 'Stylebook',
+                  '/salongutschein/gutscheine.html' => 'Gutscheine',
+                  '/salongutschein/bewerbung.html' => 'Bewerbung',
+                  '/salongutschein/blooms.html' => 'bloom´s',
+                  '/salongutschein/kontakt.html' => 'Verwaltung',
+                  '/salongutschein/akademie.html' => '<span class="left-polos">Akademie</span>',
+                ),
+                'FOOTER_LINKS' => 
+                array (
+                  'javascript:void(0)' => 'Verwaltung',
+                  '/salongutschein/impressum.html' => 'Impressum',
+                  '/salongutschein/datenschutz.html' => 'Datenschutz',
+                ),
+                'current_path' => '/gutscheine/completeplus',
+              ),
+               'init' => 
+              array (
+                'HEADERS' => 
+                array (
+                  'Content-Length' => '0',
+                  'Connection' => 'close',
+                  'Cookie' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                  'Priority' => 'u=0, i',
+                  'Accept-Language' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'Accept-Encoding' => 'gzip, deflate, br, zstd',
+                  'Referer' => 'https://www.paypal.com/',
+                  'Sec-Fetch-Dest' => 'document',
+                  'Sec-Fetch-User' => '?1',
+                  'Sec-Fetch-Mode' => 'navigate',
+                  'Sec-Fetch-Site' => 'none',
+                  'X-Requested-With' => 'de.ozerov.fully',
+                  'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                  'User-Agent' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                  'Upgrade-Insecure-Requests' => '1',
+                  'Sec-Ch-Ua-Platform' => '"Android"',
+                  'Sec-Ch-Ua-Mobile' => '?0',
+                  'Sec-Ch-Ua' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                  'X-Forwarded-For' => '178.5.210.160',
+                  'X-Real-Ip' => '178.5.210.160',
+                  'Host' => 'bloom-s.de',
+                  'Authorization' => '',
+                ),
+                'LANGUAGE' => 'de-DE,de,en-US,en',
+                'AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'AJAX' => false,
+                'ALIAS' => NULL,
+                'ALIASES' => 
+                array (
+                ),
+                'AUTOLOAD' => './',
+                'BASE' => '/salongutschein',
+                'BITMASK' => 2,
+                'BODY' => NULL,
+                'CACHE' => false,
+                'CASELESS' => true,
+                'CLI' => false,
+                'CORS' => 
+                array (
+                  'headers' => '',
+                  'origin' => false,
+                  'credentials' => false,
+                  'expose' => false,
+                  'ttl' => 0,
+                ),
+                'DEBUG' => 0,
+                'DIACRITICS' => 
+                array (
+                ),
+                'DNSBL' => '',
+                'EMOJI' => 
+                array (
+                ),
+                'ENCODING' => 'UTF-8',
+                'ERROR' => NULL,
+                'ESCAPE' => true,
+                'EXCEPTION' => NULL,
+                'EXEMPT' => NULL,
+                'FALLBACK' => 'en',
+                'FORMATS' => 
+                array (
+                ),
+                'FRAGMENT' => '',
+                'HALT' => true,
+                'HIGHLIGHT' => false,
+                'HOST' => 'bloom-s.de',
+                'IP' => '178.5.210.160',
+                'JAR' => 
+                array (
+                  'expire' => 0,
+                  'lifetime' => 0,
+                  'path' => '/salongutschein',
+                  'domain' => 'bloom-s.de',
+                  'secure' => true,
+                  'httponly' => true,
+                  'samesite' => 'Lax',
+                ),
+                'LOCALES' => './',
+                'LOCK' => 2,
+                'LOGGABLE' => '*',
+                'LOGS' => './',
+                'MB' => true,
+                'ONERROR' => NULL,
+                'ONREROUTE' => NULL,
+                'PACKAGE' => 'Fat-Free Framework',
+                'PARAMS' => 
+                array (
+                ),
+                'PATH' => '/gutscheine/completeplus',
+                'PATTERN' => NULL,
+                'PLUGINS' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/',
+                'PORT' => '443',
+                'PREFIX' => NULL,
+                'PREMAP' => '',
+                'QUERY' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'QUIET' => false,
+                'RAW' => false,
+                'REALM' => 'https://bloom-s.de/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'RESPONSE' => '',
+                'ROOT' => '/home/www/httpdocs/1plus07122020',
+                'ROUTES' => 
+                array (
+                ),
+                'SCHEME' => 'https',
+                'SEED' => '14ny7ouqmikwl',
+                'SERIALIZER' => 'php',
+                'TEMP' => 'tmp/',
+                'TIME' => 1728893432.392427,
+                'TZ' => 'Europe/Berlin',
+                'UI' => './',
+                'UNLOAD' => NULL,
+                'UPLOADS' => './',
+                'URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'VERB' => 'GET',
+                'VERSION' => '3.7.2-Release',
+                'XFRAME' => 'SAMEORIGIN',
+                'GET' => 
+                array (
+                ),
+                'POST' => 
+                array (
+                ),
+                'COOKIE' => 
+                array (
+                ),
+                'REQUEST' => 
+                array (
+                ),
+                'SESSION' => 
+                array (
+                ),
+                'FILES' => 
+                array (
+                ),
+                'SERVER' => 
+                array (
+                  'PHP_FCGI_MAX_REQUESTS' => '5000',
+                  'PHPRC' => '/etc/fcgi/2287/',
+                  'PWD' => '/etc/fcgi',
+                  'SHLVL' => '0',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'PHP_FCGI_CHILDREN' => '4',
+                  'CONTENT_LENGTH' => '0',
+                  'HTTP_CONNECTION' => 'close',
+                  'SCRIPT_NAME' => '/salongutschein/index.php',
+                  'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REQUEST_METHOD' => 'GET',
+                  'SERVER_PROTOCOL' => 'HTTP/1.1',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                  'REMOTE_PORT' => '33868',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'CONTEXT_PREFIX' => '',
+                  'REQUEST_SCHEME' => 'https',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REMOTE_ADDR' => '178.5.210.160',
+                  'SERVER_PORT' => '443',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_SIGNATURE' => '',
+                  'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                  'HTTP_PRIORITY' => 'u=0, i',
+                  'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                  'HTTP_REFERER' => 'https://www.paypal.com/',
+                  'HTTP_SEC_FETCH_DEST' => 'document',
+                  'HTTP_SEC_FETCH_USER' => '?1',
+                  'HTTP_SEC_FETCH_MODE' => 'navigate',
+                  'HTTP_SEC_FETCH_SITE' => 'none',
+                  'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                  'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                  'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                  'HTTP_X_REAL_IP' => '178.5.210.160',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'SSL_SESSION_RESUMED' => 'Resumed',
+                  'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                  'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                  'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                  'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                  'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                  'SSL_SERVER_M_VERSION' => '3',
+                  'SSL_CLIENT_VERIFY' => 'NONE',
+                  'SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'SSL_CIPHER_USEKEYSIZE' => '256',
+                  'SSL_CIPHER_EXPORT' => 'false',
+                  'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'SSL_COMPRESS_METHOD' => 'NULL',
+                  'SSL_SECURE_RENEG' => 'true',
+                  'SSL_PROTOCOL' => 'TLSv1.2',
+                  'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                  'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                  'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'SSL_SERVER_I_DN_CN' => 'R11',
+                  'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'SSL_SERVER_I_DN_C' => 'US',
+                  'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'HTTPS' => 'on',
+                  'HTTP_AUTHORIZATION' => '',
+                  'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_STATUS' => '200',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_SERVER_PORT' => '443',
+                  'FCGI_ROLE' => 'RESPONDER',
+                  'PHP_SELF' => '/salongutschein/index.php',
+                  'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                  'REQUEST_TIME' => 1728893432,
+                  'argv' => 
+                  array (
+                    0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  ),
+                  'argc' => 1,
+                ),
+                'ENV' => 
+                array (
+                  'PHP_FCGI_MAX_REQUESTS' => '5000',
+                  'PHPRC' => '/etc/fcgi/2287/',
+                  'PWD' => '/etc/fcgi',
+                  'SHLVL' => '0',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'PHP_FCGI_CHILDREN' => '4',
+                  'CONTENT_LENGTH' => '0',
+                  'HTTP_CONNECTION' => 'close',
+                  'SCRIPT_NAME' => '/salongutschein/index.php',
+                  'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REQUEST_METHOD' => 'GET',
+                  'SERVER_PROTOCOL' => 'HTTP/1.1',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                  'REMOTE_PORT' => '33868',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'CONTEXT_PREFIX' => '',
+                  'REQUEST_SCHEME' => 'https',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REMOTE_ADDR' => '178.5.210.160',
+                  'SERVER_PORT' => '443',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_SIGNATURE' => '',
+                  'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                  'HTTP_PRIORITY' => 'u=0, i',
+                  'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                  'HTTP_REFERER' => 'https://www.paypal.com/',
+                  'HTTP_SEC_FETCH_DEST' => 'document',
+                  'HTTP_SEC_FETCH_USER' => '?1',
+                  'HTTP_SEC_FETCH_MODE' => 'navigate',
+                  'HTTP_SEC_FETCH_SITE' => 'none',
+                  'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                  'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                  'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                  'HTTP_X_REAL_IP' => '178.5.210.160',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'SSL_SESSION_RESUMED' => 'Resumed',
+                  'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                  'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                  'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                  'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                  'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                  'SSL_SERVER_M_VERSION' => '3',
+                  'SSL_CLIENT_VERIFY' => 'NONE',
+                  'SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'SSL_CIPHER_USEKEYSIZE' => '256',
+                  'SSL_CIPHER_EXPORT' => 'false',
+                  'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'SSL_COMPRESS_METHOD' => 'NULL',
+                  'SSL_SECURE_RENEG' => 'true',
+                  'SSL_PROTOCOL' => 'TLSv1.2',
+                  'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                  'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                  'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'SSL_SERVER_I_DN_CN' => 'R11',
+                  'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'SSL_SERVER_I_DN_C' => 'US',
+                  'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'HTTPS' => 'on',
+                  'HTTP_AUTHORIZATION' => '',
+                  'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_STATUS' => '200',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                  'REDIRECT_SERVER_PORT' => '443',
+                  'FCGI_ROLE' => 'RESPONDER',
+                  'PHP_SELF' => '/salongutschein/index.php',
+                  'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                  'REQUEST_TIME' => 1728893432,
+                  'argv' => 
+                  array (
+                    0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                  ),
+                  'argc' => 1,
+                ),
+              ),
+               'languages' => 
+              array (
+                0 => 'de-DE',
+                1 => 'de',
+                3 => 'en-US',
+                4 => 'en',
+              ),
+               'locks' => 
+              array (
+              ),
+               'fallback' => 'en',
+            )),
+             'db' => NULL,
+             'response' => NULL,
+             'page_host' => 'https://bloom-s.de',
+             'base' => '/salongutschein',
+             'controller' => 'gutscheine',
+             'home_url' => 'https://bloom-s.de/salongutschein',
+             'routes' => NULL,
+             'aliases' => NULL,
+          )),
+          1 => 'completeplus',
+        ),
+        1 => 
+        array (
+          0 => 
+          Base::__set_state(array(
+             'hive' => 
+            array (
+              'HEADERS' => 
+              array (
+                'Content-Length' => '0',
+                'Connection' => 'close',
+                'Cookie' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                'Priority' => 'u=0, i',
+                'Accept-Language' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding' => 'gzip, deflate, br, zstd',
+                'Referer' => 'https://www.paypal.com/',
+                'Sec-Fetch-Dest' => 'document',
+                'Sec-Fetch-User' => '?1',
+                'Sec-Fetch-Mode' => 'navigate',
+                'Sec-Fetch-Site' => 'none',
+                'X-Requested-With' => 'de.ozerov.fully',
+                'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'User-Agent' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'Upgrade-Insecure-Requests' => '1',
+                'Sec-Ch-Ua-Platform' => '"Android"',
+                'Sec-Ch-Ua-Mobile' => '?0',
+                'Sec-Ch-Ua' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'X-Forwarded-For' => '178.5.210.160',
+                'X-Real-Ip' => '178.5.210.160',
+                'Host' => 'bloom-s.de',
+                'Authorization' => '',
+              ),
+              'LANGUAGE' => 'de-DE,de,en-US,en',
+              'AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'AJAX' => false,
+              'ALIAS' => NULL,
+              'ALIASES' => 
+              array (
+              ),
+              'AUTOLOAD' => 
+              array (
+                0 => 'app/controllers/;app/models/;app/helper/',
+                1 => 
+                Closure::__set_state(array(
+                )),
+              ),
+              'BASE' => '/salongutschein',
+              'BITMASK' => 10,
+              'BODY' => '',
+              'CACHE' => 'apcu',
+              'CASELESS' => true,
+              'CLI' => false,
+              'CORS' => 
+              array (
+                'headers' => '',
+                'origin' => false,
+                'credentials' => false,
+                'expose' => false,
+                'ttl' => 0,
+              ),
+              'DEBUG' => 3,
+              'DIACRITICS' => 
+              array (
+              ),
+              'DNSBL' => '',
+              'EMOJI' => 
+              array (
+              ),
+              'ENCODING' => 'UTF-8',
+              'ERROR' => NULL,
+              'ESCAPE' => true,
+              'EXCEPTION' => NULL,
+              'EXEMPT' => NULL,
+              'FALLBACK' => 'en',
+              'FORMATS' => 
+              array (
+              ),
+              'FRAGMENT' => '',
+              'HALT' => true,
+              'HIGHLIGHT' => false,
+              'HOST' => 'bloom-s.de',
+              'IP' => '178.5.210.160',
+              'JAR' => 
+              array (
+                'expire' => 0,
+                'lifetime' => 0,
+                'path' => '/salongutschein',
+                'domain' => 'bloom-s.de',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Lax',
+              ),
+              'LOCALES' => './',
+              'LOCK' => 2,
+              'LOGGABLE' => '*',
+              'LOGS' => './',
+              'MB' => true,
+              'ONERROR' => 
+              Closure::__set_state(array(
+              )),
+              'ONREROUTE' => NULL,
+              'PACKAGE' => 'Fat-Free Framework',
+              'PARAMS' => 
+              array (
+                0 => '/gutscheine/completeplus',
+                'action' => 'completeplus',
+                'controller' => 'gutscheine',
+              ),
+              'PATH' => '/gutscheine/completeplus',
+              'PATTERN' => '/@controller/@action',
+              'PLUGINS' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/',
+              'PORT' => '443',
+              'PREFIX' => NULL,
+              'PREMAP' => '',
+              'QUERY' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'QUIET' => false,
+              'RAW' => false,
+              'REALM' => 'https://bloom-s.de/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'RESPONSE' => '',
+              'ROOT' => '/home/www/httpdocs/1plus07122020',
+              'ROUTES' => 
+              array (
+                '/clearcache' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => 
+                      Closure::__set_state(array(
+                      )),
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin/@action/@id/edit' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->@id',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->@id',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin/@action/@id' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin/@action' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\home->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\home->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id/@mitarbeiter/@empid' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id/@palazka-@cid' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id.html' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller.html' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+              ),
+              'SCHEME' => 'https',
+              'SEED' => '14ny7ouqmikwl',
+              'SERIALIZER' => 'php',
+              'TEMP' => '/home/www/httpdocs/1plus07122020/salongutschein/tmp/',
+              'TIME' => 1728893432.392427,
+              'TZ' => 'Europe/Berlin',
+              'UI' => '/home/www/httpdocs/1plus07122020/salongutschein/app/views/',
+              'UNLOAD' => NULL,
+              'UPLOADS' => './',
+              'URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'VERB' => 'GET',
+              'VERSION' => '3.7.2-Release',
+              'XFRAME' => 'SAMEORIGIN',
+              'GET' => 
+              array (
+                'paymentId' => 'PAYID-M4GNCLY2RW25500DU7909154',
+                'token' => 'EC-5D452973NB2373803',
+                'PayerID' => 'ANLM8HGXUGHK6',
+              ),
+              'POST' => 
+              array (
+              ),
+              'COOKIE' => 
+              array (
+                'PHPSESSID' => '69ca890fb7a94fe78e3917c9e5f8d7fd',
+                'Cookie' => 'false',
+                '_gid' => 'GA1.2.2062951713.1728891219',
+                '_ga' => 'GA1.1.1372572195.1718198096',
+                'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-5D452973NB2373803","thirdPartyMethods":{},"paymentMethod":"pp-966e7d9b4e421bff73fb89dd61d248ad"}',
+                '_ga_THCT26PLCD' => 'GS1.1.1728893109.246.1.1728893235.0.0.0',
+              ),
+              'REQUEST' => 
+              array (
+                'paymentId' => 'PAYID-M4GNCLY2RW25500DU7909154',
+                'token' => 'EC-5D452973NB2373803',
+                'PayerID' => 'ANLM8HGXUGHK6',
+                'PHPSESSID' => '69ca890fb7a94fe78e3917c9e5f8d7fd',
+                'Cookie' => 'false',
+                '_gid' => 'GA1.2.2062951713.1728891219',
+                '_ga' => 'GA1.1.1372572195.1718198096',
+                'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-5D452973NB2373803","thirdPartyMethods":{},"paymentMethod":"pp-966e7d9b4e421bff73fb89dd61d248ad"}',
+                '_ga_THCT26PLCD' => 'GS1.1.1728893109.246.1.1728893235.0.0.0',
+              ),
+              'SESSION' => 
+              array (
+                'coupondata' => 
+                array (
+                  'amount' => '36.00',
+                  'salutation' => 'Herr',
+                  'vorname' => 'Rene',
+                  'nachname' => 'Schulze',
+                  'email' => 'rene1.0@gmx.de',
+                  'emailConfirm' => 'rene1.0@gmx.de',
+                  'download' => NULL,
+                ),
+                'error' => 'PayPal {"name":"INSTRUMENT_DECLINED","message":"The instrument presented was either declined by the processor or bank, or it can\'t be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INSTRUMENT_DECLINED","debug_id":"2857a215af0d5"}',
+              ),
+              'FILES' => 
+              array (
+              ),
+              'SERVER' => 
+              array (
+                'PHP_FCGI_MAX_REQUESTS' => '5000',
+                'PHPRC' => '/etc/fcgi/2287/',
+                'PWD' => '/etc/fcgi',
+                'SHLVL' => '0',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'PHP_FCGI_CHILDREN' => '4',
+                'CONTENT_LENGTH' => '0',
+                'HTTP_CONNECTION' => 'close',
+                'SCRIPT_NAME' => '/salongutschein/index.php',
+                'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REQUEST_METHOD' => 'GET',
+                'SERVER_PROTOCOL' => 'HTTP/1.1',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                'REMOTE_PORT' => '33868',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'CONTEXT_PREFIX' => '',
+                'REQUEST_SCHEME' => 'https',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REMOTE_ADDR' => '178.5.210.160',
+                'SERVER_PORT' => '443',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_SIGNATURE' => '',
+                'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                'HTTP_PRIORITY' => 'u=0, i',
+                'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                'HTTP_REFERER' => 'https://www.paypal.com/',
+                'HTTP_SEC_FETCH_DEST' => 'document',
+                'HTTP_SEC_FETCH_USER' => '?1',
+                'HTTP_SEC_FETCH_MODE' => 'navigate',
+                'HTTP_SEC_FETCH_SITE' => 'none',
+                'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                'HTTP_X_REAL_IP' => '178.5.210.160',
+                'HTTP_HOST' => 'bloom-s.de',
+                'SSL_SESSION_RESUMED' => 'Resumed',
+                'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                'SSL_SERVER_M_VERSION' => '3',
+                'SSL_CLIENT_VERIFY' => 'NONE',
+                'SSL_CIPHER_ALGKEYSIZE' => '256',
+                'SSL_CIPHER_USEKEYSIZE' => '256',
+                'SSL_CIPHER_EXPORT' => 'false',
+                'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'SSL_COMPRESS_METHOD' => 'NULL',
+                'SSL_SECURE_RENEG' => 'true',
+                'SSL_PROTOCOL' => 'TLSv1.2',
+                'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'SSL_SERVER_I_DN_CN' => 'R11',
+                'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'SSL_SERVER_I_DN_C' => 'US',
+                'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'HTTPS' => 'on',
+                'HTTP_AUTHORIZATION' => '',
+                'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_STATUS' => '200',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_SERVER_PORT' => '443',
+                'FCGI_ROLE' => 'RESPONDER',
+                'PHP_SELF' => '/salongutschein/index.php',
+                'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                'REQUEST_TIME' => 1728893432,
+                'argv' => 
+                array (
+                  0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                ),
+                'argc' => 1,
+              ),
+              'ENV' => 
+              array (
+                'PHP_FCGI_MAX_REQUESTS' => '5000',
+                'PHPRC' => '/etc/fcgi/2287/',
+                'PWD' => '/etc/fcgi',
+                'SHLVL' => '0',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'PHP_FCGI_CHILDREN' => '4',
+                'CONTENT_LENGTH' => '0',
+                'HTTP_CONNECTION' => 'close',
+                'SCRIPT_NAME' => '/salongutschein/index.php',
+                'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REQUEST_METHOD' => 'GET',
+                'SERVER_PROTOCOL' => 'HTTP/1.1',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                'REMOTE_PORT' => '33868',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'CONTEXT_PREFIX' => '',
+                'REQUEST_SCHEME' => 'https',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REMOTE_ADDR' => '178.5.210.160',
+                'SERVER_PORT' => '443',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_SIGNATURE' => '',
+                'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                'HTTP_PRIORITY' => 'u=0, i',
+                'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                'HTTP_REFERER' => 'https://www.paypal.com/',
+                'HTTP_SEC_FETCH_DEST' => 'document',
+                'HTTP_SEC_FETCH_USER' => '?1',
+                'HTTP_SEC_FETCH_MODE' => 'navigate',
+                'HTTP_SEC_FETCH_SITE' => 'none',
+                'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                'HTTP_X_REAL_IP' => '178.5.210.160',
+                'HTTP_HOST' => 'bloom-s.de',
+                'SSL_SESSION_RESUMED' => 'Resumed',
+                'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                'SSL_SERVER_M_VERSION' => '3',
+                'SSL_CLIENT_VERIFY' => 'NONE',
+                'SSL_CIPHER_ALGKEYSIZE' => '256',
+                'SSL_CIPHER_USEKEYSIZE' => '256',
+                'SSL_CIPHER_EXPORT' => 'false',
+                'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'SSL_COMPRESS_METHOD' => 'NULL',
+                'SSL_SECURE_RENEG' => 'true',
+                'SSL_PROTOCOL' => 'TLSv1.2',
+                'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'SSL_SERVER_I_DN_CN' => 'R11',
+                'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'SSL_SERVER_I_DN_C' => 'US',
+                'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'HTTPS' => 'on',
+                'HTTP_AUTHORIZATION' => '',
+                'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_STATUS' => '200',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_SERVER_PORT' => '443',
+                'FCGI_ROLE' => 'RESPONDER',
+                'PHP_SELF' => '/salongutschein/index.php',
+                'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                'REQUEST_TIME' => 1728893432,
+                'argv' => 
+                array (
+                  0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                ),
+                'argc' => 1,
+              ),
+              'BLOOMS_VERSION' => 140191744,
+              'ASSETS' => '/salongutschein/assets/',
+              'TITLEBLOOM' => 'bloom\'s',
+              'classfoot' => 'home',
+              'POMILKA' => NULL,
+              'site' => 'Gutscheinverkauf',
+              'carousel_interval' => 2000,
+              'site_debug' => '3',
+              'site_cache' => '1',
+              'security' => 
+              array (
+                'adminPassword' => 'Bloom-s2020-12!',
+              ),
+              'email' => 
+              array (
+                'mail_from_name' => 'bloom´s Kontakt',
+                'mail_from_email' => 'kontakt@bloom-s.de',
+                'noreply_emal' => 'noreply@bloom-s.de',
+              ),
+              'paypal' => 
+              array (
+                'paypal_user' => 'marketing2_api1.bloom-s.de',
+                'paypal_pass' => 'R96HHLG69B6H5W5S',
+                'paypal_signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+                'paypal_endpoint' => 'production',
+                'paypal_apiver' => '204.0',
+                'paypal_return' => 'gutscheine/complete',
+                'paypal_cancel' => 'gutscheine.html',
+                'paypal_log' => '1',
+                'paypal_emal' => 'paypal4@bloom-s.de',
+                'paypal_account_id' => 'DLMBGGVGPC4PS',
+                'paypal_client_id' => 'paypal4@bloom-s.de',
+              ),
+              'paypal_plus' => 
+              array (
+                'paypal_plus_brand_name' => 'bloom´s Friseure',
+                'paypal_plus_checkout_logo' => NULL,
+                'paypal_plus_endpoint' => 'production',
+                'paypal_plus_return' => 'gutscheine/completeplus',
+                'paypal_plus_cancel' => 'gutscheine.html',
+                'paypal_plus_log' => '1',
+                'paypal_plus_emal' => 'buchhaltung@bloom-s.de',
+                'paypal_plus_client_id' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+                'paypal_plus_account_id' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+              ),
+              'CacheBlooms' => 
+              cacheblooms::__set_state(array(
+                 '_cachepath' => '/home/www/httpdocs/1plus07122020/salongutschein/tmp/cache/',
+                 '_cachename' => 'blooms',
+                 '_extension' => '.cache',
+              )),
+              'PAGE_HOST' => 'https://bloom-s.de',
+              'PAGE_CONTROLLER' => 'gutscheine',
+              'ACTIVE' => '/salongutschein/gutscheine',
+              'LINKS' => 
+              array (
+                '/salongutschein' => 'Home',
+                '/salongutschein/salons.html' => 'Salons',
+                '/salongutschein/termine.html' => 'Termine',
+                '/salongutschein/preise.html' => 'Preise',
+                '/salongutschein/stylebook.html' => 'Stylebook',
+                '/salongutschein/gutscheine.html' => 'Gutscheine',
+                '/salongutschein/bewerbung.html' => 'Bewerbung',
+                '/salongutschein/blooms.html' => 'bloom´s',
+                '/salongutschein/kontakt.html' => 'Verwaltung',
+                '/salongutschein/akademie.html' => '<span class="left-polos">Akademie</span>',
+              ),
+              'FOOTER_LINKS' => 
+              array (
+                'javascript:void(0)' => 'Verwaltung',
+                '/salongutschein/impressum.html' => 'Impressum',
+                '/salongutschein/datenschutz.html' => 'Datenschutz',
+              ),
+              'current_path' => '/gutscheine/completeplus',
+            ),
+             'init' => 
+            array (
+              'HEADERS' => 
+              array (
+                'Content-Length' => '0',
+                'Connection' => 'close',
+                'Cookie' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                'Priority' => 'u=0, i',
+                'Accept-Language' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding' => 'gzip, deflate, br, zstd',
+                'Referer' => 'https://www.paypal.com/',
+                'Sec-Fetch-Dest' => 'document',
+                'Sec-Fetch-User' => '?1',
+                'Sec-Fetch-Mode' => 'navigate',
+                'Sec-Fetch-Site' => 'none',
+                'X-Requested-With' => 'de.ozerov.fully',
+                'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'User-Agent' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'Upgrade-Insecure-Requests' => '1',
+                'Sec-Ch-Ua-Platform' => '"Android"',
+                'Sec-Ch-Ua-Mobile' => '?0',
+                'Sec-Ch-Ua' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'X-Forwarded-For' => '178.5.210.160',
+                'X-Real-Ip' => '178.5.210.160',
+                'Host' => 'bloom-s.de',
+                'Authorization' => '',
+              ),
+              'LANGUAGE' => 'de-DE,de,en-US,en',
+              'AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+              'AJAX' => false,
+              'ALIAS' => NULL,
+              'ALIASES' => 
+              array (
+              ),
+              'AUTOLOAD' => './',
+              'BASE' => '/salongutschein',
+              'BITMASK' => 2,
+              'BODY' => NULL,
+              'CACHE' => false,
+              'CASELESS' => true,
+              'CLI' => false,
+              'CORS' => 
+              array (
+                'headers' => '',
+                'origin' => false,
+                'credentials' => false,
+                'expose' => false,
+                'ttl' => 0,
+              ),
+              'DEBUG' => 0,
+              'DIACRITICS' => 
+              array (
+              ),
+              'DNSBL' => '',
+              'EMOJI' => 
+              array (
+              ),
+              'ENCODING' => 'UTF-8',
+              'ERROR' => NULL,
+              'ESCAPE' => true,
+              'EXCEPTION' => NULL,
+              'EXEMPT' => NULL,
+              'FALLBACK' => 'en',
+              'FORMATS' => 
+              array (
+              ),
+              'FRAGMENT' => '',
+              'HALT' => true,
+              'HIGHLIGHT' => false,
+              'HOST' => 'bloom-s.de',
+              'IP' => '178.5.210.160',
+              'JAR' => 
+              array (
+                'expire' => 0,
+                'lifetime' => 0,
+                'path' => '/salongutschein',
+                'domain' => 'bloom-s.de',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Lax',
+              ),
+              'LOCALES' => './',
+              'LOCK' => 2,
+              'LOGGABLE' => '*',
+              'LOGS' => './',
+              'MB' => true,
+              'ONERROR' => NULL,
+              'ONREROUTE' => NULL,
+              'PACKAGE' => 'Fat-Free Framework',
+              'PARAMS' => 
+              array (
+              ),
+              'PATH' => '/gutscheine/completeplus',
+              'PATTERN' => NULL,
+              'PLUGINS' => '/home/www/httpdocs/1plus07122020/salongutschein/lib/',
+              'PORT' => '443',
+              'PREFIX' => NULL,
+              'PREMAP' => '',
+              'QUERY' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'QUIET' => false,
+              'RAW' => false,
+              'REALM' => 'https://bloom-s.de/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'RESPONSE' => '',
+              'ROOT' => '/home/www/httpdocs/1plus07122020',
+              'ROUTES' => 
+              array (
+              ),
+              'SCHEME' => 'https',
+              'SEED' => '14ny7ouqmikwl',
+              'SERIALIZER' => 'php',
+              'TEMP' => 'tmp/',
+              'TIME' => 1728893432.392427,
+              'TZ' => 'Europe/Berlin',
+              'UI' => './',
+              'UNLOAD' => NULL,
+              'UPLOADS' => './',
+              'URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+              'VERB' => 'GET',
+              'VERSION' => '3.7.2-Release',
+              'XFRAME' => 'SAMEORIGIN',
+              'GET' => 
+              array (
+              ),
+              'POST' => 
+              array (
+              ),
+              'COOKIE' => 
+              array (
+              ),
+              'REQUEST' => 
+              array (
+              ),
+              'SESSION' => 
+              array (
+              ),
+              'FILES' => 
+              array (
+              ),
+              'SERVER' => 
+              array (
+                'PHP_FCGI_MAX_REQUESTS' => '5000',
+                'PHPRC' => '/etc/fcgi/2287/',
+                'PWD' => '/etc/fcgi',
+                'SHLVL' => '0',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'PHP_FCGI_CHILDREN' => '4',
+                'CONTENT_LENGTH' => '0',
+                'HTTP_CONNECTION' => 'close',
+                'SCRIPT_NAME' => '/salongutschein/index.php',
+                'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REQUEST_METHOD' => 'GET',
+                'SERVER_PROTOCOL' => 'HTTP/1.1',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                'REMOTE_PORT' => '33868',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'CONTEXT_PREFIX' => '',
+                'REQUEST_SCHEME' => 'https',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REMOTE_ADDR' => '178.5.210.160',
+                'SERVER_PORT' => '443',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_SIGNATURE' => '',
+                'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                'HTTP_PRIORITY' => 'u=0, i',
+                'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                'HTTP_REFERER' => 'https://www.paypal.com/',
+                'HTTP_SEC_FETCH_DEST' => 'document',
+                'HTTP_SEC_FETCH_USER' => '?1',
+                'HTTP_SEC_FETCH_MODE' => 'navigate',
+                'HTTP_SEC_FETCH_SITE' => 'none',
+                'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                'HTTP_X_REAL_IP' => '178.5.210.160',
+                'HTTP_HOST' => 'bloom-s.de',
+                'SSL_SESSION_RESUMED' => 'Resumed',
+                'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                'SSL_SERVER_M_VERSION' => '3',
+                'SSL_CLIENT_VERIFY' => 'NONE',
+                'SSL_CIPHER_ALGKEYSIZE' => '256',
+                'SSL_CIPHER_USEKEYSIZE' => '256',
+                'SSL_CIPHER_EXPORT' => 'false',
+                'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'SSL_COMPRESS_METHOD' => 'NULL',
+                'SSL_SECURE_RENEG' => 'true',
+                'SSL_PROTOCOL' => 'TLSv1.2',
+                'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'SSL_SERVER_I_DN_CN' => 'R11',
+                'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'SSL_SERVER_I_DN_C' => 'US',
+                'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'HTTPS' => 'on',
+                'HTTP_AUTHORIZATION' => '',
+                'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_STATUS' => '200',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_SERVER_PORT' => '443',
+                'FCGI_ROLE' => 'RESPONDER',
+                'PHP_SELF' => '/salongutschein/index.php',
+                'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                'REQUEST_TIME' => 1728893432,
+                'argv' => 
+                array (
+                  0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                ),
+                'argc' => 1,
+              ),
+              'ENV' => 
+              array (
+                'PHP_FCGI_MAX_REQUESTS' => '5000',
+                'PHPRC' => '/etc/fcgi/2287/',
+                'PWD' => '/etc/fcgi',
+                'SHLVL' => '0',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'PHP_FCGI_CHILDREN' => '4',
+                'CONTENT_LENGTH' => '0',
+                'HTTP_CONNECTION' => 'close',
+                'SCRIPT_NAME' => '/salongutschein/index.php',
+                'REQUEST_URI' => '/salongutschein/gutscheine/completeplus?paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REQUEST_METHOD' => 'GET',
+                'SERVER_PROTOCOL' => 'HTTP/1.1',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'REDIRECT_QUERY_STRING' => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                'REDIRECT_URL' => '/salongutschein/gutscheine/completeplus',
+                'REMOTE_PORT' => '33868',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'CONTEXT_DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'CONTEXT_PREFIX' => '',
+                'REQUEST_SCHEME' => 'https',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REMOTE_ADDR' => '178.5.210.160',
+                'SERVER_PORT' => '443',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_SIGNATURE' => '',
+                'HTTP_COOKIE' => 'PHPSESSID=69ca890fb7a94fe78e3917c9e5f8d7fd; Cookie=false; _gid=GA1.2.2062951713.1728891219; _ga=GA1.1.1372572195.1718198096; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-5D452973NB2373803%22%2C%22thirdPartyMethods%22%3A%7B%7D%2C%22paymentMethod%22%3A%22pp-966e7d9b4e421bff73fb89dd61d248ad%22%7D; _ga_THCT26PLCD=GS1.1.1728893109.246.1.1728893235.0.0.0',
+                'HTTP_PRIORITY' => 'u=0, i',
+                'HTTP_ACCEPT_LANGUAGE' => 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+                'HTTP_REFERER' => 'https://www.paypal.com/',
+                'HTTP_SEC_FETCH_DEST' => 'document',
+                'HTTP_SEC_FETCH_USER' => '?1',
+                'HTTP_SEC_FETCH_MODE' => 'navigate',
+                'HTTP_SEC_FETCH_SITE' => 'none',
+                'HTTP_X_REQUESTED_WITH' => 'de.ozerov.fully',
+                'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 14; SM-X210 Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/129.0.6668.82 Safari/537.36',
+                'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"Android"',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_SEC_CH_UA' => '"Android WebView";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'HTTP_X_FORWARDED_FOR' => '178.5.210.160',
+                'HTTP_X_REAL_IP' => '178.5.210.160',
+                'HTTP_HOST' => 'bloom-s.de',
+                'SSL_SESSION_RESUMED' => 'Resumed',
+                'SSL_SESSION_ID' => '280cf6475eaed9c54950b9556b0fad6093aa1dfeb66ea63e690f2f841dc7d464',
+                'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'SSL_SERVER_I_DN' => 'CN=R11,O=Let\'s Encrypt,C=US',
+                'SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'SSL_SERVER_V_END' => 'Nov 17 22:04:20 2024 GMT',
+                'SSL_SERVER_V_START' => 'Aug 19 22:04:21 2024 GMT',
+                'SSL_SERVER_M_SERIAL' => '030B0D3A0C80F5DAAEB0B3D66CF80D668DF0',
+                'SSL_SERVER_M_VERSION' => '3',
+                'SSL_CLIENT_VERIFY' => 'NONE',
+                'SSL_CIPHER_ALGKEYSIZE' => '256',
+                'SSL_CIPHER_USEKEYSIZE' => '256',
+                'SSL_CIPHER_EXPORT' => 'false',
+                'SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'SSL_COMPRESS_METHOD' => 'NULL',
+                'SSL_SECURE_RENEG' => 'true',
+                'SSL_PROTOCOL' => 'TLSv1.2',
+                'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1w',
+                'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.62',
+                'SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'SSL_SERVER_I_DN_CN' => 'R11',
+                'SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'SSL_SERVER_I_DN_C' => 'US',
+                'SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'HTTPS' => 'on',
+                'HTTP_AUTHORIZATION' => '',
+                'UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_STATUS' => '200',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_UNIQUE_ID' => 'ZwzR-CphgwQnFaPK7NKLugAAAAI',
+                'REDIRECT_SERVER_PORT' => '443',
+                'FCGI_ROLE' => 'RESPONDER',
+                'PHP_SELF' => '/salongutschein/index.php',
+                'REQUEST_TIME_FLOAT' => 1728893432.392427,
+                'REQUEST_TIME' => 1728893432,
+                'argv' => 
+                array (
+                  0 => 'paymentId=PAYID-M4GNCLY2RW25500DU7909154&token=EC-5D452973NB2373803&PayerID=ANLM8HGXUGHK6',
+                ),
+                'argc' => 1,
+              ),
+            ),
+             'languages' => 
+            array (
+              0 => 'de-DE',
+              1 => 'de',
+              3 => 'en-US',
+              4 => 'en',
+            ),
+             'locks' => 
+            array (
+            ),
+             'fallback' => 'en',
+          )),
+          1 => 
+          array (
+            0 => '/gutscheine/completeplus',
+            'action' => 'completeplus',
+            'controller' => 'gutscheine',
+          ),
+          2 => '\\gutscheine->completeplus',
+        ),
+        2 => 
+        array (
+          0 => 'beforeroute',
+          1 => 'afterroute',
+        ),
+      ),
+    ),
+    7 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/salongutschein/index.php',
+      'line' => 400,
+      'function' => 'run',
+      'class' => 'Base',
+      'type' => '->',
+      'args' => 
+      array (
+      ),
+    ),
+  ),
+   'previous' => NULL,
+))

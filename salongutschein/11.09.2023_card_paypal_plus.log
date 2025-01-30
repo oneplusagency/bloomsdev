@@ -1,0 +1,31 @@
+[11-09-2023 13:03:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[11-09-2023 13:03:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 13:03:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[11-09-2023 13:03:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[11-09-2023 13:03:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[11-09-2023 13:03:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[11-09-2023 13:04:44] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[11-09-2023 13:04:44] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 13:04:44] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[11-09-2023 13:04:44] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[11-09-2023 13:04:44] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[11-09-2023 13:04:45] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[11-09-2023 13:06:15] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[11-09-2023 13:06:15] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 13:06:15] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MT7PITI5SD77397RJ834372A
+[11-09-2023 13:06:15] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 13:06:15] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-MT7PITI5SD77397RJ834372A/execute
+[11-09-2023 13:06:17] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 18:46:05] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[11-09-2023 18:46:06] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 18:46:06] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[11-09-2023 18:46:06] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[11-09-2023 18:46:06] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[11-09-2023 18:46:06] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[11-09-2023 18:57:17] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[11-09-2023 18:57:19] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 18:57:19] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MT7UITQ77H65256H20099007
+[11-09-2023 18:57:19] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[11-09-2023 18:57:19] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-MT7UITQ77H65256H20099007/execute
+[11-09-2023 18:57:21] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[11-09-2023 18:57:21] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment/PAYID-MT7UITQ77H65256H20099007/execute. {"name":"INSTRUMENT_DECLINED","message":"The instrument presented  was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INSTRUMENT_DECLINED","debug_id":"d4025749c986f"}

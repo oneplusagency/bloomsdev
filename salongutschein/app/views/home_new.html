@@ -1,0 +1,130 @@
+<div class="row">
+    <div class="col-md-12 home-blooms" id="home-blooms">
+
+        <a class="skip-link d-none" href="#page-nav-index">Skip to main</a>
+
+        <include href="layout/blooms-logo.html" />
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav"
+                    aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <button type="button" class="btn-close-mobile-nav d-md-none" data-toggle="collapse"
+                            data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                            X
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </nav>
+        <article id="page-slide-index">
+            <section class="layout-slider-index container mt-5 p-0">
+                <!-- BEGIN slider-images -->
+                <div id="slider-images" class="carousel slide carousel-fade" data-ride="carousel">
+                    <check if="{{@BANNERS}}">
+                        <true>
+                            <div class="carousel-inner">
+                                <repeat group="{{@BANNERS}}" key="{{@KEY}}" value="{{@BANNER}}">
+
+
+                                    <check if="{{@BANNER['type'] == 'img'}}">
+
+                                        <check if="{{@KEY == 0}}">
+                                            <true>
+                                                <div data-interval="{{@BANNER['interval']}}"
+                                                    class="carousel-item-img carousel-item active"><img
+                                                        src="{{@BANNER['src']}}" class="d-block w-100" alt="Banner" />
+                                                </div>
+                                            </true>
+                                            <false>
+                                                <div data-interval="{{@BANNER['interval']}}"
+                                                    class="carousel-item-img carousel-item"><img
+                                                        src="{{@BANNER['src']}}" class="d-block w-100" alt="Banner" />
+                                                </div>
+                                            </false>
+                                        </check>
+                                    </check>
+
+
+                                    <check if="{{@BANNER['type'] == 'youtube'}}">
+
+                                        <check if="{{@KEY == 0}}">
+                                            <true>
+                                                <div data-interval="{{@BANNER['interval']}}"
+                                                    class="carousel-item--youtube carousel-item active">
+
+                                                    <div
+                                                        class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay"
+                                                            class="provider-youtube embed-responsive-item"
+                                                            src="{{@BANNER['src']}}" height="550" frameborder="0"
+                                                            allowfullscreen="true" scrolling="no">
+                                                        </iframe>
+                                                    </div>
+
+                                                </div>
+                                            </true>
+                                            <false>
+                                                <div data-interval="{{@BANNER['interval']}}"
+                                                    class="carousel-item--youtube carousel-item">
+                                                    <div
+                                                        class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay"
+                                                            class="provider-youtube embed-responsive-item"
+                                                            src="{{@BANNER['src']}}" height="550" frameborder="0"
+                                                            allowfullscreen="true" scrolling="no">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </false>
+                                        </check>
+                                    </check>
+
+
+                                </repeat>
+                            </div>
+                            <ol class="carousel-indicators">
+
+                                <repeat group="{{@BANNERS}}" key="{{@KEY}}" value="{{@BANNER}}">
+                                    <check if="{{@KEY == 0}}">
+                                        <true>
+                                            <li data-target="#slider-images" data-slide-to="{{@KEY}}" class="active">
+                                            </li>
+                                        </true>
+                                        <false>
+                                            <li data-target="#slider-images" data-slide-to="{{@KEY}}"></li>
+                                        </false>
+                                    </check>
+                                </repeat>
+
+                            </ol>
+                        </true>
+                    </check>
+                </div>
+                <!-- END slider-images -->
+
+            </section>
+        </article>
+        <div class="row mt-3 gutscheine-skache">
+            <div class="col-12">
+                <div class="d-flex justify-content-end text-center mt-0">
+                    <!-- button-first -->
+                    <button id="start-button" onclick="location.href = 'gutscheine.html';"
+                        class="btn btn-hotel btn-next mt-3 position-relative">Start</button>
+                </div>
+            </div>
+            <div class="clr clearfix"></div>
+        </div>
+        <section class="layout-impressum-datenschutz  mt-5 text-left p-sm-0 pl-sm-3 {{ @classfoot }}-UA">
+            <!-- menu_all -->
+            <repeat group="@FOOTER_LINKS" key="@URL_LINK" value="@URL_LABEL">
+                <a class="nav-item-btn menu-blm-footer {{ @ACTIVE && strpos(@URL_LINK, @ACTIVE )!==false ? 'active' : '' }}"
+                    target="_blank" href="{{ @URL_LINK }}">{{ @URL_LABEL|raw }}</a>
+            </repeat>
+        </section>
+
+    </div>
+</div>

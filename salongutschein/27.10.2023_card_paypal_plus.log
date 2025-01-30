@@ -1,0 +1,5 @@
+[27-10-2023 18:58:23] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[27-10-2023 18:58:23] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[27-10-2023 18:58:23] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MU5JK4Q6EE29220AE094171X
+[27-10-2023 18:58:23] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 404
+[27-10-2023 18:58:23] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 404 when accessing https://api.paypal.com/v1/payments/payment/PAYID-MU5JK4Q6EE29220AE094171X. {"name":"INVALID_RESOURCE_ID","message":"The requested resource ID was not found","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INVALID_RESOURCE_ID","debug_id":"98e5c168b40b4"}

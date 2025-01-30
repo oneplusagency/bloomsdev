@@ -1,0 +1,94 @@
+<nav id="toolbar" class="navbar navbar-default navbar-fixed-bottom no-bg no-border" role="navigation">
+    <div class="container-fluid">
+
+        <a href="{{@BASE}}/admin" type="button" class="btn btn-default tool-btn">
+            <span class="fa fa-arrow-left"></span> &nbsp; Zurück
+        </a>
+        <!-- <button type="button" class="btn btn-default tool-btn" data-toggle="modal" data-target="#youtubeModal">
+            <span class="fa fa-video-camera"></span> &nbsp; Video
+        </button>
+        -->
+        <a href="{{@BASE}}" type="button" class="btn btn-default tool-btn pull-right">
+            <span class="fa fa-arrow-right"></span> &nbsp; Titelseite
+        </a>
+    </div>
+</nav>
+
+<section class="layout-admin-index container pt-1 m-auto vh-100">
+    <div class="row">
+        <div class="col-md-12 m-auto text-center">
+            <h3 title="Front page banners Manager" class="text-center">Banner Manager auf der Titelseite</h3>
+            <br />
+            <div class="col-md-12 m-auto text-right">
+                <!-- <span class="fa fa-arrow-right"></span>  -->
+                <button type="button" name="add_banner" id="add_banner" class="btn btn-success"><i class="fa fa-picture-o" aria-hidden="true"></i> Hinzufügen eines Bildes</button>
+                <!-- Bootstrap 3 Modals YouTube Demo
+                https://codepen.io/blackjacques/pen/pwPmzR?editors=1010
+            https://millionclues.com/wordpress-tips/embed-youtube-videos-on-bootstrap-4-popup-modals-with-autoplay/
+            https://justcode.ikeepstudying.com/2016/02/jquery-bootstrap-3-and-youtube-in-modal/
+            -->
+                <button data-toggle="modal" data-target="#youtubeModal" type="button" name="add_youtube" id="add_youtube" class="ml-4 btn btn-danger btn-primary btn btn-danger btn-primary"><i class="fa fa-youtube-play" aria-hidden="true"></i> Youtube hinzufügen</button>
+            </div>
+            <br />
+            <div id="image_data"></div>
+        </div>
+    </div>
+</section>
+
+<!-- YouTube Modal Window -->
+<div class="modal fade youtube-banner modal-banner" id="youtubeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="youtube_form" method="post">
+                    <p>
+                        <label for="youtube_text">Youtube URL:</label>
+                        <input type="url" name="youtube_url" id="youtube_url" value="" class="w-75" /> <br />
+                        <small><em>(use only the url, not the full embed code)</em></small><br /><br />
+                        <!-- <label for="youtube_text">Text für Video</label> -->
+                        <p><label>Sliding-Dauer</label> <input type="number" min="200" max="30000" step="200" value="2000" name="carousel_interval" class="form-control has-success w-50" required="required" aria-required="true" aria-invalid="false" /></p>
+                        <input type="hidden" name="text" id="youtube_text" value="Vollständiges Video Anschauen" class="w-75" />
+                    </p>
+
+                    <input type="hidden" name="action" id="youtube_action" value="youtube" />
+                    <input type="hidden" name="type" value="banner" />
+                    <input type="submit" name="insert_youtube" id="insert_youtube" value="Einfügen" class="btn btn-info" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div id="imageModalbanner" class="modal fade img-banner modal-banner" role="dialog">
+    <div class="modal-dialog">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Bild einfügen</h4>
+            </div>
+            <div class="modal-body">
+                <form id="image_form" method="post" enctype="multipart/form-data">
+                    <p><label>Bild auswählen</label> <input type="file" name="image" id="image" /></p>
+                    <p><label>Sliding-Dauer</label> <input type="number" min="200" max="30000" step="200" value="2000" name="carousel_interval" class="w-50 form-control has-success" required="required" aria-required="true" aria-invalid="false" /></p>
+                    <br />
+                    <input type="hidden" name="action" id="action" value="insert" />
+                    <input type="hidden" name="image_id" id="image_id" />
+                    <input type="hidden" name="type" value="banner" />
+                    <input type="submit" name="insert" id="insert" value="Einfügen" class="btn btn-info" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>

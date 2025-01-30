@@ -1,0 +1,23 @@
+(function($) {
+    // $('#seminare-data').hide();
+    $('#seminare-data').hide();
+    //$('#clip-data').hide();
+    $('#bilder-data').hide();
+
+
+})(jQuery);
+
+function showData(selection, div) {
+    let buttons = jQuery('#selection-tabs').find('button');
+
+    for (let i = 0; i < buttons.length; i++) {
+        jQuery(buttons[i]).removeClass('btn-active');
+    }
+
+    //jQuery('#clip-data').fadeOut("slow");
+    jQuery('#bilder-data').fadeOut("slow");
+    jQuery('#seminare-data').fadeOut("slow");
+
+    jQuery(selection).addClass('btn-active');
+    jQuery(div).fadeIn("slow");
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+
+<head>
+    <?php if (isset($title)): ?>
+        
+            <title><?= ($title . ' | ' . $site) ?></title>
+        
+        <?php else: ?>
+            <title><?= ($site) ?></title>
+        
+    <?php endif; ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Bloom Frisure" />
+    <meta name="keywords" content="bloom, germany,deutschland, frisure, blooms, stylebook, termine, akademie, seminare" />
+    <meta name="author" content="Taktika Studio" />
+    <meta name="copyright" content="Bloom 2020" />
+    <meta name="info" content="" />
+    <meta name="robots" content="All" />
+
+    <link rel="icon" href="<?= ($ASSETS) ?>icon/favicon.ico" type="image/x-icon" />
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="152x152" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="60x60" href="<?= ($ASSETS) ?>icon/favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="Bloom's">
+    <base href="<?= ($BASE) ?>/">
+
+    <link rel="stylesheet" href="<?= ($ASSETS) ?>css/bootstrap.css" />
+    <link rel="stylesheet" href="<?= ($ASSETS) ?>css/style.css" />
+    <link rel="stylesheet" href="<?= ($ASSETS) ?>css/font-awesome.min.css">
+
+    <?php if (isset($addstyles) && is_array($addstyles)): ?>
+        
+            <?php foreach (($addstyles?:[]) as $style): ?>
+                <link rel="stylesheet" href="<?= ($ASSETS . $style) ?>" type="text/css" />
+            <?php endforeach; ?>
+        
+    <?php endif; ?>
+
+</head>
+
+<body class="err_kaz wpsn-snappable">
+    <div class="wrapper">
+        <!--[if lt IE 8]>
+                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+        <div class="container main_container">

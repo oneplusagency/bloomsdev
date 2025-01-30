@@ -1,0 +1,32 @@
+{
+    "5f3a49220df838.75163943": {
+        "where": "bewerbung-banner",
+        "sort": 0,
+        "title": "5f3a491e_img-7315.JPG",
+        "desc": "",
+        "text": "",
+        "src": "5f3a491e_img-7315.JPG",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1597655330,
+        "carousel_interval": "2000"
+    },
+    "5f3a4974612818.44116118": {
+        "where": "bewerbung-banner",
+        "sort": 0,
+        "title": "5f3a496c_img-1998.JPG",
+        "desc": "",
+        "text": "",
+        "src": "5f3a496c_img-1998.JPG",
+        "url": "",
+        "video_url": "",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1597655412,
+        "carousel_interval": "2000"
+    }
+}

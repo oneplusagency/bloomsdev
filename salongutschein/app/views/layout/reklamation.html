@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-12">
+        <include href="layout/blooms-logo.html" />
+
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-md-5 mt-0 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <button type="button" class="btn-close-mobile-nav d-md-none" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                            X
+                        </button>
+                        <include href="layout/menu_all.html" />
+                    </div>
+                </section>
+            </div>
+        </nav>
+
+
+        <article id="page-salons" class="container p-md-0 mt-md-5 mt-0">
+
+            <div class="mt-md-5 mt-2 w-100">
+
+                <section class="layout-salons d-flex flex-wrap justify-content-center">
+                    <check if="{{isset(@SALONS)}}">
+                        <true>
+                            {{ @SALONS }}
+                        </true>
+                    </check>
+                </section>
+            </div>
+
+        </article>
+
+        <div style="clear:both;color: #fff;text-align: center;background: #000;">
+                            
+						
+            <form id="kontaktcarouselAdmin" enctype="multipart/form-data" style="padding: 0px 15px 15px;display:none;">
+            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="Name*" name="name" id="name" type="text">
+            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="E-Mail*" name="emailstaff" id="emailstaff" type="text">
+            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="Telefon*" name="telefon" id="telefon" type="text">
+            <textarea maxlenght="500" id="bloom_kontakt_message" name="message" class="form-control rounded-0 md-textarea" placeholder="Nachricht*" required="" style="margin: 10px 0px;" rows="4"></textarea>
+            
+            <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12 upload-btn">
+                             <!------new file type------>
+                             <input id="file" name="file" type="file" class="inputfile" data-multiple-caption="{count} files selected" multiple accept=".jpg,.pdf"/>
+                            <label for="file"><span class="mwpl-upload-btn">Uplaod</span></label> 
+                        <!----end new file type---->
+                            <span class="pdf-jpgtxt"><p>PDF JPG</p></span>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mdl-div-sec">
+                        <div id="kontact_kontakt_status"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 upload-btn">
+                            <input type="hidden"  name="email" id="adminEmail" value="{{@data.Email}}">
+                            <button id="kontact_sendbtn" type="submit" style="background: #000;right: 0;border: 1px solid #fff;color: #fff;float: right;" class="form-control rounded-0 col-md-5">Senden</button>
+                    </div>
+                </div>
+            </form>
+            
+</div>
+
+    </div>
+</div>

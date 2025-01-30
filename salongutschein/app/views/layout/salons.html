@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+        <include href="layout/blooms-logo.html" />
+
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-md-5 mt-0 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <button type="button" class="btn-close-mobile-nav d-md-none" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                            X
+                        </button>
+                        <include href="layout/menu_all.html" />
+                    </div>
+                </section>
+            </div>
+        </nav>
+
+
+        <article id="page-salons" class="container p-md-0 mt-md-5 mt-0">
+
+            <div class="mt-md-5 mt-2 w-100">
+
+                <section class="layout-salons d-flex flex-wrap justify-content-center">
+                    <check if="{{isset(@SALONS)}}">
+                        <true>
+                            {{ @SALONS }}
+                        </true>
+                    </check>
+                </section>
+            </div>
+
+        </article>
+
+    </div>
+</div>

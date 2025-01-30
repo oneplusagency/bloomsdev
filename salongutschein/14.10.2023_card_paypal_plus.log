@@ -1,0 +1,6 @@
+[14-10-2023 17:25:40] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[14-10-2023 17:25:40] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[14-10-2023 17:25:40] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[14-10-2023 17:25:41] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[14-10-2023 17:25:41] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[14-10-2023 17:25:41] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201

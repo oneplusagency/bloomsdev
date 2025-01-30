@@ -1,0 +1,3417 @@
+PayPal\Exception\PayPalConnectionException::__set_state(array(
+   'url' => 'https://api.paypal.com/v1/payments/payment',
+   'data' => '{"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"cb1c6f550a403"}',
+   'message' => 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment.',
+   'string' => '',
+   'code' => 400,
+   'file' => '/home/www/httpdocs/1plus07122020/development/vendor/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php',
+   'line' => 207,
+   'trace' => 
+  array (
+    0 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/vendor/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php',
+      'line' => 78,
+      'function' => 'execute',
+      'class' => 'PayPal\\Core\\PayPalHttpConnection',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => '{"intent":"sale","payer":{"payment_method":"paypal"},"redirect_urls":{"return_url":"https://bloom-s.de/development/gutscheine/completeplus","cancel_url":"https://bloom-s.de/development/gutscheine.html"},"transactions":[{"amount":{"currency":"EUR","total":"1.00"},"item_list":{"items":[{"name":"Sale","currency":"EUR","quantity":1,"price":"1.00","sku":"email_layout_"}],"shipping_address":{"recipient_name":"aa aa","line1":"","city":"","country_code":"DE","postal_code":"","state":""}},"invoice_number":"6450f98358c4d"}]}',
+      ),
+    ),
+    1 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/vendor/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php',
+      'line' => 104,
+      'function' => 'execute',
+      'class' => 'PayPal\\Transport\\PayPalRestCall',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        array (
+          0 => 'PayPal\\Handler\\RestHandler',
+        ),
+        1 => '/v1/payments/payment',
+        2 => 'POST',
+        3 => '{"intent":"sale","payer":{"payment_method":"paypal"},"redirect_urls":{"return_url":"https://bloom-s.de/development/gutscheine/completeplus","cancel_url":"https://bloom-s.de/development/gutscheine.html"},"transactions":[{"amount":{"currency":"EUR","total":"1.00"},"item_list":{"items":[{"name":"Sale","currency":"EUR","quantity":1,"price":"1.00","sku":"email_layout_"}],"shipping_address":{"recipient_name":"aa aa","line1":"","city":"","country_code":"DE","postal_code":"","state":""}},"invoice_number":"6450f98358c4d"}]}',
+        4 => 
+        array (
+        ),
+      ),
+    ),
+    2 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php',
+      'line' => 576,
+      'function' => 'executeCall',
+      'class' => 'PayPal\\Common\\PayPalResourceModel',
+      'type' => '::',
+      'args' => 
+      array (
+        0 => '/v1/payments/payment',
+        1 => 'POST',
+        2 => '{"intent":"sale","payer":{"payment_method":"paypal"},"redirect_urls":{"return_url":"https://bloom-s.de/development/gutscheine/completeplus","cancel_url":"https://bloom-s.de/development/gutscheine.html"},"transactions":[{"amount":{"currency":"EUR","total":"1.00"},"item_list":{"items":[{"name":"Sale","currency":"EUR","quantity":1,"price":"1.00","sku":"email_layout_"}],"shipping_address":{"recipient_name":"aa aa","line1":"","city":"","country_code":"DE","postal_code":"","state":""}},"invoice_number":"6450f98358c4d"}]}',
+        3 => NULL,
+        4 => 
+        PayPal\Rest\ApiContext::__set_state(array(
+           'requestId' => NULL,
+           'credential' => 
+          PayPal\Auth\OAuthTokenCredential::__set_state(array(
+             'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+             'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+             'targetSubject' => NULL,
+             'accessToken' => 'A21AAMfL8ECq6FbipBVYpH6qUcAQ3aKdpU3u2ff8eS9s52joXL50RGBY6VrWPtzLUwSZmzc4w7OtGJ_dsqGHHejyviCyaMHYA',
+             'tokenExpiresIn' => 29537,
+             'tokenCreateTime' => 1683028355,
+             'cipher' => 
+            PayPal\Security\Cipher::__set_state(array(
+               'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+            )),
+             '_propMap' => 
+            array (
+            ),
+          )),
+        )),
+        5 => 
+        PayPal\Transport\PayPalRestCall::__set_state(array(
+           'logger' => 
+          PayPal\Core\PayPalLoggingManager::__set_state(array(
+             'logger' => 
+            PayPal\Log\PayPalLogger::__set_state(array(
+               'loggingLevels' => 
+              array (
+                0 => 'emergency',
+                1 => 'alert',
+                2 => 'critical',
+                3 => 'error',
+                4 => 'warning',
+                5 => 'notice',
+                6 => 'info',
+                7 => 'debug',
+              ),
+               'loggingLevel' => 'info',
+               'loggerFile' => '/home/www/httpdocs/1plus07122020/development/02.05.2023_card_paypal_plus.log',
+               'isLoggingEnabled' => true,
+               'loggerName' => 'PayPal\\Transport\\PayPalRestCall',
+            )),
+             'loggerName' => 'PayPal\\Transport\\PayPalRestCall',
+          )),
+           'apiContext' => 
+          PayPal\Rest\ApiContext::__set_state(array(
+             'requestId' => NULL,
+             'credential' => 
+            PayPal\Auth\OAuthTokenCredential::__set_state(array(
+               'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+               'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+               'targetSubject' => NULL,
+               'accessToken' => 'A21AAMfL8ECq6FbipBVYpH6qUcAQ3aKdpU3u2ff8eS9s52joXL50RGBY6VrWPtzLUwSZmzc4w7OtGJ_dsqGHHejyviCyaMHYA',
+               'tokenExpiresIn' => 29537,
+               'tokenCreateTime' => 1683028355,
+               'cipher' => 
+              PayPal\Security\Cipher::__set_state(array(
+                 'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+              )),
+               '_propMap' => 
+              array (
+              ),
+            )),
+          )),
+        )),
+      ),
+    ),
+    3 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/app/controllers/gutscheine.php',
+      'line' => 944,
+      'function' => 'create',
+      'class' => 'PayPal\\Api\\Payment',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        PayPal\Rest\ApiContext::__set_state(array(
+           'requestId' => NULL,
+           'credential' => 
+          PayPal\Auth\OAuthTokenCredential::__set_state(array(
+             'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+             'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+             'targetSubject' => NULL,
+             'accessToken' => 'A21AAMfL8ECq6FbipBVYpH6qUcAQ3aKdpU3u2ff8eS9s52joXL50RGBY6VrWPtzLUwSZmzc4w7OtGJ_dsqGHHejyviCyaMHYA',
+             'tokenExpiresIn' => 29537,
+             'tokenCreateTime' => 1683028355,
+             'cipher' => 
+            PayPal\Security\Cipher::__set_state(array(
+               'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+            )),
+             '_propMap' => 
+            array (
+            ),
+          )),
+        )),
+      ),
+    ),
+    4 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/app/controllers/gutscheine.php',
+      'line' => 173,
+      'function' => 'getPayPalPlus',
+      'class' => 'gutscheine',
+      'type' => '->',
+      'args' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/lib/base.php',
+      'line' => 1955,
+      'function' => 'session',
+      'class' => 'gutscheine',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        Base::__set_state(array(
+           'hive' => 
+          array (
+            'HEADERS' => 
+            array (
+              'Host' => 'bloom-s.de',
+              'X-Real-Ip' => '103.247.6.77',
+              'X-Forwarded-For' => '103.247.6.77',
+              'Connection' => 'close',
+              'Pragma' => 'no-cache',
+              'Cache-Control' => 'no-cache',
+              'Sec-Ch-Ua' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+              'Accept' => 'application/json, text/javascript, */*; q=0.01',
+              'X-Requested-With' => 'XMLHttpRequest',
+              'Sec-Ch-Ua-Mobile' => '?0',
+              'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'Sec-Ch-Ua-Platform' => '"macOS"',
+              'Sec-Fetch-Site' => 'same-origin',
+              'Sec-Fetch-Mode' => 'cors',
+              'Sec-Fetch-Dest' => 'empty',
+              'Referer' => 'https://bloom-s.de/development/gutscheine.html',
+              'Accept-Encoding' => 'gzip, deflate, br',
+              'Accept-Language' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+              'Cookie' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+            ),
+            'LANGUAGE' => 'en-US,en,gu-IN,gu,mr-IN,mr',
+            'AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+            'AJAX' => true,
+            'ALIAS' => NULL,
+            'ALIASES' => 
+            array (
+            ),
+            'AUTOLOAD' => 
+            array (
+              0 => 'app/controllers/;app/models/;app/helper/',
+              1 => 
+              Closure::__set_state(array(
+              )),
+            ),
+            'BASE' => '/development',
+            'BITMASK' => 10,
+            'BODY' => '',
+            'CACHE' => 'folder=tmp/cache/',
+            'CASELESS' => true,
+            'CLI' => false,
+            'CORS' => 
+            array (
+              'headers' => '',
+              'origin' => false,
+              'credentials' => false,
+              'expose' => false,
+              'ttl' => 0,
+            ),
+            'DEBUG' => 3,
+            'DIACRITICS' => 
+            array (
+            ),
+            'DNSBL' => '',
+            'EMOJI' => 
+            array (
+            ),
+            'ENCODING' => 'UTF-8',
+            'ERROR' => NULL,
+            'ESCAPE' => true,
+            'EXCEPTION' => NULL,
+            'EXEMPT' => NULL,
+            'FALLBACK' => 'en',
+            'FORMATS' => 
+            array (
+            ),
+            'FRAGMENT' => '',
+            'HALT' => true,
+            'HIGHLIGHT' => false,
+            'HOST' => 'bloom-s.de',
+            'IP' => '103.247.6.77',
+            'JAR' => 
+            array (
+              'expire' => 0,
+              'lifetime' => 0,
+              'path' => '/development',
+              'domain' => 'bloom-s.de',
+              'secure' => true,
+              'httponly' => true,
+              'samesite' => 'Lax',
+            ),
+            'LOCALES' => './',
+            'LOCK' => 2,
+            'LOGGABLE' => '*',
+            'LOGS' => './',
+            'MB' => true,
+            'ONERROR' => 
+            Closure::__set_state(array(
+            )),
+            'ONREROUTE' => NULL,
+            'PACKAGE' => 'Fat-Free Framework',
+            'PARAMS' => 
+            array (
+              0 => '/gutscheine/session',
+              'action' => 'session',
+              'controller' => 'gutscheine',
+            ),
+            'PATH' => '/gutscheine/session',
+            'PATTERN' => '/@controller/@action',
+            'PLUGINS' => '/home/www/httpdocs/1plus07122020/development/lib/',
+            'PORT' => '443',
+            'PREFIX' => NULL,
+            'PREMAP' => '',
+            'QUERY' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+            'QUIET' => false,
+            'RAW' => false,
+            'REALM' => 'https://bloom-s.de/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+            'RESPONSE' => '',
+            'ROOT' => '/home/www/httpdocs/1plus07122020',
+            'ROUTES' => 
+            array (
+              '/clearcache' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => 
+                    Closure::__set_state(array(
+                    )),
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin/@action/@id/edit' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->@id',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->@id',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin/@action/@id' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin/@action' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/admin' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\AdminGet->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\AdminGet->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\home->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\home->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id/@mitarbeiter/@empid' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id/@palazka-@cid' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id.html' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action/@id' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller/@action' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'PUT' => 
+                  array (
+                    0 => '\\@controller->@action',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller.html' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+              '/@controller' => 
+              array (
+                0 => 
+                array (
+                  'GET' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                  'POST' => 
+                  array (
+                    0 => '\\@controller->index',
+                    1 => 0,
+                    2 => 0,
+                    3 => NULL,
+                  ),
+                ),
+              ),
+            ),
+            'SCHEME' => 'https',
+            'SEED' => 'l5yhotblwuju',
+            'SERIALIZER' => 'php',
+            'TEMP' => '/home/www/httpdocs/1plus07122020/development/tmp/',
+            'TIME' => 1683028354.871799,
+            'TZ' => 'Europe/Berlin',
+            'UI' => '/home/www/httpdocs/1plus07122020/development/app/views/',
+            'UNLOAD' => NULL,
+            'UPLOADS' => './',
+            'URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+            'VERB' => 'GET',
+            'VERSION' => '3.7.2-Release',
+            'XFRAME' => 'SAMEORIGIN',
+            'GET' => 
+            array (
+              'format' => 'JSON',
+              'data' => 
+              array (
+                'amount' => '123',
+                'salutation' => 'Herr',
+                'vorname' => 'aa',
+                'nachname' => 'aa',
+                'email' => 'aa@aa.aa',
+                'emailConfirm' => 'aa@aa.aa',
+              ),
+              'amount' => '123',
+            ),
+            'POST' => 
+            array (
+            ),
+            'COOKIE' => 
+            array (
+              'PHPSESSID' => '2128642d13fa7ee26b001608b1ca3f0c',
+              'Cookie' => 'false',
+              'pagecon_appointment_reconnect_id' => '1:da2c550d-4d77-4bae-824f-95f159625694:C70dnb9T0q9ppePjVG8p3g==',
+              '_gid' => 'GA1.2.406160533.1682940047',
+              'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-1HV76013NN5426524","thirdPartyMethods":{}}',
+              '_ga_THCT26PLCD' => 'GS1.1.1683011132.7.1.1683028114.0.0.0',
+              '_ga' => 'GA1.1.1005581983.1680079206',
+            ),
+            'REQUEST' => 
+            array (
+              'format' => 'JSON',
+              'data' => 
+              array (
+                'amount' => '123',
+                'salutation' => 'Herr',
+                'vorname' => 'aa',
+                'nachname' => 'aa',
+                'email' => 'aa@aa.aa',
+                'emailConfirm' => 'aa@aa.aa',
+              ),
+              'amount' => '123',
+              'PHPSESSID' => '2128642d13fa7ee26b001608b1ca3f0c',
+              'Cookie' => 'false',
+              'pagecon_appointment_reconnect_id' => '1:da2c550d-4d77-4bae-824f-95f159625694:C70dnb9T0q9ppePjVG8p3g==',
+              '_gid' => 'GA1.2.406160533.1682940047',
+              'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-1HV76013NN5426524","thirdPartyMethods":{}}',
+              '_ga_THCT26PLCD' => 'GS1.1.1683011132.7.1.1683028114.0.0.0',
+              '_ga' => 'GA1.1.1005581983.1680079206',
+            ),
+            'SESSION' => 
+            array (
+              'coupondata' => 
+              array (
+                'amount' => '1.00',
+                'salutation' => 'Herr',
+                'vorname' => 'aa',
+                'nachname' => 'aa',
+                'email' => 'aa@aa.aa',
+                'emailConfirm' => 'aa@aa.aa',
+                'download' => NULL,
+              ),
+              'error' => 'PayPal {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"cb1c6f550a403"}',
+            ),
+            'FILES' => 
+            array (
+            ),
+            'SERVER' => 
+            array (
+              'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+              'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_REDIRECT_HTTPS' => 'on',
+              'REDIRECT_REDIRECT_STATUS' => '200',
+              'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+              'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+              'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+              'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+              'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+              'REDIRECT_SSL_SECURE_RENEG' => 'true',
+              'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+              'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+              'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+              'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+              'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+              'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+              'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+              'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+              'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+              'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+              'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+              'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+              'REDIRECT_HANDLER' => 'php72-script',
+              'REDIRECT_STATUS' => '200',
+              'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'HTTPS' => 'on',
+              'HTTP_HOST' => 'bloom-s.de',
+              'HTTP_X_REAL_IP' => '103.247.6.77',
+              'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+              'HTTP_CONNECTION' => 'close',
+              'HTTP_PRAGMA' => 'no-cache',
+              'HTTP_CACHE_CONTROL' => 'no-cache',
+              'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+              'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+              'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+              'HTTP_SEC_FETCH_SITE' => 'same-origin',
+              'HTTP_SEC_FETCH_MODE' => 'cors',
+              'HTTP_SEC_FETCH_DEST' => 'empty',
+              'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+              'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+              'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'SERVER_SIGNATURE' => '',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_PORT' => '443',
+              'REMOTE_ADDR' => '103.247.6.77',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REQUEST_SCHEME' => 'https',
+              'CONTEXT_PREFIX' => '/usr/bin',
+              'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'REMOTE_PORT' => '33164',
+              'REDIRECT_REMOTE_USER' => 'dev',
+              'REDIRECT_URL' => '/development/index.php',
+              'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'SERVER_PROTOCOL' => 'HTTP/1.0',
+              'REQUEST_METHOD' => 'GET',
+              'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'SCRIPT_NAME' => '/development/index.php',
+              'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+              'ORIG_PATH_INFO' => '/development/index.php',
+              'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+              'PHP_SELF' => '/development/index.php',
+              'REQUEST_TIME_FLOAT' => 1683028354.871799,
+              'REQUEST_TIME' => 1683028354,
+              'argv' => 
+              array (
+                0 => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              ),
+              'argc' => 1,
+            ),
+            'ENV' => 
+            array (
+              'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+              'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_REDIRECT_HTTPS' => 'on',
+              'REDIRECT_REDIRECT_STATUS' => '200',
+              'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+              'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+              'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+              'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+              'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+              'REDIRECT_SSL_SECURE_RENEG' => 'true',
+              'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+              'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+              'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+              'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+              'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+              'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+              'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+              'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+              'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+              'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+              'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+              'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+              'REDIRECT_HANDLER' => 'php72-script',
+              'REDIRECT_STATUS' => '200',
+              'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'HTTPS' => 'on',
+              'HTTP_HOST' => 'bloom-s.de',
+              'HTTP_X_REAL_IP' => '103.247.6.77',
+              'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+              'HTTP_CONNECTION' => 'close',
+              'HTTP_PRAGMA' => 'no-cache',
+              'HTTP_CACHE_CONTROL' => 'no-cache',
+              'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+              'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+              'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+              'HTTP_SEC_FETCH_SITE' => 'same-origin',
+              'HTTP_SEC_FETCH_MODE' => 'cors',
+              'HTTP_SEC_FETCH_DEST' => 'empty',
+              'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+              'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+              'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'SERVER_SIGNATURE' => '',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_PORT' => '443',
+              'REMOTE_ADDR' => '103.247.6.77',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REQUEST_SCHEME' => 'https',
+              'CONTEXT_PREFIX' => '/usr/bin',
+              'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'REMOTE_PORT' => '33164',
+              'REDIRECT_REMOTE_USER' => 'dev',
+              'REDIRECT_URL' => '/development/index.php',
+              'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'SERVER_PROTOCOL' => 'HTTP/1.0',
+              'REQUEST_METHOD' => 'GET',
+              'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'SCRIPT_NAME' => '/development/index.php',
+              'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+              'ORIG_PATH_INFO' => '/development/index.php',
+              'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+            ),
+            'BLOOMS_VERSION' => 140191744,
+            'ASSETS' => '/development/assets/',
+            'TITLEBLOOM' => 'bloom\'s',
+            'classfoot' => 'home',
+            'POMILKA' => NULL,
+            'site' => 'bloom´s Friseure',
+            'carousel_interval' => 2000,
+            'site_debug' => '3',
+            'site_cache' => '1',
+            'security' => 
+            array (
+              'adminPassword' => 'Bloom-s2020-12!',
+            ),
+            'email' => 
+            array (
+              'mail_from_name' => 'bloom´s Kontakt',
+              'mail_from_email' => 'kontakt@bloom-s.de',
+              'noreply_emal' => 'noreply@bloom-s.de',
+            ),
+            'paypal' => 
+            array (
+              'paypal_user' => 'marketing2_api1.bloom-s.de',
+              'paypal_pass' => 'R96HHLG69B6H5W5S',
+              'paypal_signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+              'paypal_endpoint' => 'production',
+              'paypal_apiver' => '204.0',
+              'paypal_return' => 'gutscheine/complete',
+              'paypal_cancel' => 'gutscheine.html',
+              'paypal_log' => '1',
+              'paypal_emal' => 'paypal4@bloom-s.de',
+              'paypal_account_id' => 'DLMBGGVGPC4PS',
+              'paypal_client_id' => 'paypal4@bloom-s.de',
+            ),
+            'paypal_plus' => 
+            array (
+              'paypal_plus_brand_name' => 'bloom´s Friseure',
+              'paypal_plus_checkout_logo' => NULL,
+              'paypal_plus_endpoint' => 'production',
+              'paypal_plus_return' => 'gutscheine/completeplus',
+              'paypal_plus_cancel' => 'gutscheine.html',
+              'paypal_plus_log' => '1',
+              'paypal_plus_emal' => 'buchhaltung@bloom-s.de',
+              'paypal_plus_client_id' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+              'paypal_plus_account_id' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+            ),
+            'CacheBlooms' => 
+            cacheblooms::__set_state(array(
+               '_cachepath' => '/home/www/httpdocs/1plus07122020/development/tmp/cache/',
+               '_cachename' => 'blooms',
+               '_extension' => '.cache',
+            )),
+            'PAGE_HOST' => 'https://bloom-s.de',
+            'PAGE_CONTROLLER' => 'gutscheine',
+            'ACTIVE' => '/development/gutscheine',
+            'LINKS' => 
+            array (
+              '/development' => 'Home',
+              '/development/salons.html' => 'Salons',
+              '/development/termine.html' => 'Termine',
+              '/development/preise.html' => 'Preise',
+              '/development/stylebook.html' => 'Stylebook',
+              '/development/gutscheine.html' => 'Gutscheine',
+              '/development/bewerbung.html' => 'Bewerbung',
+              '/development/blooms.html' => 'bloom´s',
+              '/development/kontakt.html' => 'Verwaltung',
+              '/development/akademie.html' => '<span class="left-polos">Akademie</span>',
+            ),
+            'FOOTER_LINKS' => 
+            array (
+              'javascript:void(0)' => 'Verwaltung',
+              '/development/impressum.html' => 'Impressum',
+              '/development/datenschutz.html' => 'Datenschutz',
+            ),
+            'current_path' => '/gutscheine/session',
+          ),
+           'init' => 
+          array (
+            'HEADERS' => 
+            array (
+              'Host' => 'bloom-s.de',
+              'X-Real-Ip' => '103.247.6.77',
+              'X-Forwarded-For' => '103.247.6.77',
+              'Connection' => 'close',
+              'Pragma' => 'no-cache',
+              'Cache-Control' => 'no-cache',
+              'Sec-Ch-Ua' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+              'Accept' => 'application/json, text/javascript, */*; q=0.01',
+              'X-Requested-With' => 'XMLHttpRequest',
+              'Sec-Ch-Ua-Mobile' => '?0',
+              'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'Sec-Ch-Ua-Platform' => '"macOS"',
+              'Sec-Fetch-Site' => 'same-origin',
+              'Sec-Fetch-Mode' => 'cors',
+              'Sec-Fetch-Dest' => 'empty',
+              'Referer' => 'https://bloom-s.de/development/gutscheine.html',
+              'Accept-Encoding' => 'gzip, deflate, br',
+              'Accept-Language' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+              'Cookie' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+            ),
+            'LANGUAGE' => 'en-US,en,gu-IN,gu,mr-IN,mr',
+            'AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+            'AJAX' => true,
+            'ALIAS' => NULL,
+            'ALIASES' => 
+            array (
+            ),
+            'AUTOLOAD' => './',
+            'BASE' => '/development',
+            'BITMASK' => 2,
+            'BODY' => NULL,
+            'CACHE' => false,
+            'CASELESS' => true,
+            'CLI' => false,
+            'CORS' => 
+            array (
+              'headers' => '',
+              'origin' => false,
+              'credentials' => false,
+              'expose' => false,
+              'ttl' => 0,
+            ),
+            'DEBUG' => 0,
+            'DIACRITICS' => 
+            array (
+            ),
+            'DNSBL' => '',
+            'EMOJI' => 
+            array (
+            ),
+            'ENCODING' => 'UTF-8',
+            'ERROR' => NULL,
+            'ESCAPE' => true,
+            'EXCEPTION' => NULL,
+            'EXEMPT' => NULL,
+            'FALLBACK' => 'en',
+            'FORMATS' => 
+            array (
+            ),
+            'FRAGMENT' => '',
+            'HALT' => true,
+            'HIGHLIGHT' => false,
+            'HOST' => 'bloom-s.de',
+            'IP' => '103.247.6.77',
+            'JAR' => 
+            array (
+              'expire' => 0,
+              'lifetime' => 0,
+              'path' => '/development',
+              'domain' => 'bloom-s.de',
+              'secure' => true,
+              'httponly' => true,
+              'samesite' => 'Lax',
+            ),
+            'LOCALES' => './',
+            'LOCK' => 2,
+            'LOGGABLE' => '*',
+            'LOGS' => './',
+            'MB' => true,
+            'ONERROR' => NULL,
+            'ONREROUTE' => NULL,
+            'PACKAGE' => 'Fat-Free Framework',
+            'PARAMS' => 
+            array (
+            ),
+            'PATH' => '/gutscheine/session',
+            'PATTERN' => NULL,
+            'PLUGINS' => '/home/www/httpdocs/1plus07122020/development/lib/',
+            'PORT' => '443',
+            'PREFIX' => NULL,
+            'PREMAP' => '',
+            'QUERY' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+            'QUIET' => false,
+            'RAW' => false,
+            'REALM' => 'https://bloom-s.de/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+            'RESPONSE' => '',
+            'ROOT' => '/home/www/httpdocs/1plus07122020',
+            'ROUTES' => 
+            array (
+            ),
+            'SCHEME' => 'https',
+            'SEED' => 'l5yhotblwuju',
+            'SERIALIZER' => 'php',
+            'TEMP' => 'tmp/',
+            'TIME' => 1683028354.871799,
+            'TZ' => 'Europe/Berlin',
+            'UI' => './',
+            'UNLOAD' => NULL,
+            'UPLOADS' => './',
+            'URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+            'VERB' => 'GET',
+            'VERSION' => '3.7.2-Release',
+            'XFRAME' => 'SAMEORIGIN',
+            'GET' => 
+            array (
+            ),
+            'POST' => 
+            array (
+            ),
+            'COOKIE' => 
+            array (
+            ),
+            'REQUEST' => 
+            array (
+            ),
+            'SESSION' => 
+            array (
+            ),
+            'FILES' => 
+            array (
+            ),
+            'SERVER' => 
+            array (
+              'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+              'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_REDIRECT_HTTPS' => 'on',
+              'REDIRECT_REDIRECT_STATUS' => '200',
+              'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+              'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+              'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+              'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+              'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+              'REDIRECT_SSL_SECURE_RENEG' => 'true',
+              'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+              'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+              'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+              'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+              'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+              'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+              'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+              'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+              'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+              'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+              'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+              'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+              'REDIRECT_HANDLER' => 'php72-script',
+              'REDIRECT_STATUS' => '200',
+              'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'HTTPS' => 'on',
+              'HTTP_HOST' => 'bloom-s.de',
+              'HTTP_X_REAL_IP' => '103.247.6.77',
+              'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+              'HTTP_CONNECTION' => 'close',
+              'HTTP_PRAGMA' => 'no-cache',
+              'HTTP_CACHE_CONTROL' => 'no-cache',
+              'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+              'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+              'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+              'HTTP_SEC_FETCH_SITE' => 'same-origin',
+              'HTTP_SEC_FETCH_MODE' => 'cors',
+              'HTTP_SEC_FETCH_DEST' => 'empty',
+              'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+              'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+              'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'SERVER_SIGNATURE' => '',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_PORT' => '443',
+              'REMOTE_ADDR' => '103.247.6.77',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REQUEST_SCHEME' => 'https',
+              'CONTEXT_PREFIX' => '/usr/bin',
+              'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'REMOTE_PORT' => '33164',
+              'REDIRECT_REMOTE_USER' => 'dev',
+              'REDIRECT_URL' => '/development/index.php',
+              'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'SERVER_PROTOCOL' => 'HTTP/1.0',
+              'REQUEST_METHOD' => 'GET',
+              'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'SCRIPT_NAME' => '/development/index.php',
+              'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+              'ORIG_PATH_INFO' => '/development/index.php',
+              'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+              'PHP_SELF' => '/development/index.php',
+              'REQUEST_TIME_FLOAT' => 1683028354.871799,
+              'REQUEST_TIME' => 1683028354,
+              'argv' => 
+              array (
+                0 => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              ),
+              'argc' => 1,
+            ),
+            'ENV' => 
+            array (
+              'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+              'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_REDIRECT_HTTPS' => 'on',
+              'REDIRECT_REDIRECT_STATUS' => '200',
+              'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+              'REDIRECT_HTTPS' => 'on',
+              'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+              'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+              'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+              'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+              'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+              'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+              'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+              'REDIRECT_SSL_SECURE_RENEG' => 'true',
+              'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+              'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+              'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+              'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+              'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+              'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+              'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+              'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+              'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+              'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+              'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+              'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+              'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+              'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+              'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+              'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+              'REDIRECT_HANDLER' => 'php72-script',
+              'REDIRECT_STATUS' => '200',
+              'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+              'HTTPS' => 'on',
+              'HTTP_HOST' => 'bloom-s.de',
+              'HTTP_X_REAL_IP' => '103.247.6.77',
+              'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+              'HTTP_CONNECTION' => 'close',
+              'HTTP_PRAGMA' => 'no-cache',
+              'HTTP_CACHE_CONTROL' => 'no-cache',
+              'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+              'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+              'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+              'HTTP_SEC_CH_UA_MOBILE' => '?0',
+              'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+              'HTTP_SEC_FETCH_SITE' => 'same-origin',
+              'HTTP_SEC_FETCH_MODE' => 'cors',
+              'HTTP_SEC_FETCH_DEST' => 'empty',
+              'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+              'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+              'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+              'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+              'PATH' => '/usr/local/bin:/usr/bin:/bin',
+              'SERVER_SIGNATURE' => '',
+              'SERVER_SOFTWARE' => 'Apache',
+              'SERVER_NAME' => 'bloom-s.de',
+              'SERVER_ADDR' => '46.4.195.1',
+              'SERVER_PORT' => '443',
+              'REMOTE_ADDR' => '103.247.6.77',
+              'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+              'REQUEST_SCHEME' => 'https',
+              'CONTEXT_PREFIX' => '/usr/bin',
+              'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+              'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+              'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'REMOTE_PORT' => '33164',
+              'REDIRECT_REMOTE_USER' => 'dev',
+              'REDIRECT_URL' => '/development/index.php',
+              'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'GATEWAY_INTERFACE' => 'CGI/1.1',
+              'SERVER_PROTOCOL' => 'HTTP/1.0',
+              'REQUEST_METHOD' => 'GET',
+              'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'SCRIPT_NAME' => '/development/index.php',
+              'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+              'ORIG_PATH_INFO' => '/development/index.php',
+              'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+              'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+            ),
+          ),
+           'languages' => 
+          array (
+            0 => 'en-US',
+            1 => 'en',
+            3 => 'gu-IN',
+            4 => 'gu',
+            6 => 'mr-IN',
+            7 => 'mr',
+          ),
+           'locks' => 
+          array (
+          ),
+           'fallback' => 'en',
+        )),
+        1 => 
+        array (
+          0 => '/gutscheine/session',
+          'action' => 'session',
+          'controller' => 'gutscheine',
+        ),
+        2 => '\\gutscheine->session',
+      ),
+    ),
+    6 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/lib/base.php',
+      'line' => 1754,
+      'function' => 'call',
+      'class' => 'Base',
+      'type' => '->',
+      'args' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          gutscheine::__set_state(array(
+             'aprovalUrl' => '',
+             'config' => NULL,
+             'apiContext' => 
+            PayPal\Rest\ApiContext::__set_state(array(
+               'requestId' => NULL,
+               'credential' => 
+              PayPal\Auth\OAuthTokenCredential::__set_state(array(
+                 'clientId' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+                 'clientSecret' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+                 'targetSubject' => NULL,
+                 'accessToken' => 'A21AAMfL8ECq6FbipBVYpH6qUcAQ3aKdpU3u2ff8eS9s52joXL50RGBY6VrWPtzLUwSZmzc4w7OtGJ_dsqGHHejyviCyaMHYA',
+                 'tokenExpiresIn' => 29537,
+                 'tokenCreateTime' => 1683028355,
+                 'cipher' => 
+                PayPal\Security\Cipher::__set_state(array(
+                   'secretKey' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+                )),
+                 '_propMap' => 
+                array (
+                ),
+              )),
+            )),
+             'paypal' => NULL,
+             'f3' => 
+            Base::__set_state(array(
+               'hive' => 
+              array (
+                'HEADERS' => 
+                array (
+                  'Host' => 'bloom-s.de',
+                  'X-Real-Ip' => '103.247.6.77',
+                  'X-Forwarded-For' => '103.247.6.77',
+                  'Connection' => 'close',
+                  'Pragma' => 'no-cache',
+                  'Cache-Control' => 'no-cache',
+                  'Sec-Ch-Ua' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                  'Accept' => 'application/json, text/javascript, */*; q=0.01',
+                  'X-Requested-With' => 'XMLHttpRequest',
+                  'Sec-Ch-Ua-Mobile' => '?0',
+                  'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                  'Sec-Ch-Ua-Platform' => '"macOS"',
+                  'Sec-Fetch-Site' => 'same-origin',
+                  'Sec-Fetch-Mode' => 'cors',
+                  'Sec-Fetch-Dest' => 'empty',
+                  'Referer' => 'https://bloom-s.de/development/gutscheine.html',
+                  'Accept-Encoding' => 'gzip, deflate, br',
+                  'Accept-Language' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                  'Cookie' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                ),
+                'LANGUAGE' => 'en-US,en,gu-IN,gu,mr-IN,mr',
+                'AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'AJAX' => true,
+                'ALIAS' => NULL,
+                'ALIASES' => 
+                array (
+                ),
+                'AUTOLOAD' => 
+                array (
+                  0 => 'app/controllers/;app/models/;app/helper/',
+                  1 => 
+                  Closure::__set_state(array(
+                  )),
+                ),
+                'BASE' => '/development',
+                'BITMASK' => 10,
+                'BODY' => '',
+                'CACHE' => 'folder=tmp/cache/',
+                'CASELESS' => true,
+                'CLI' => false,
+                'CORS' => 
+                array (
+                  'headers' => '',
+                  'origin' => false,
+                  'credentials' => false,
+                  'expose' => false,
+                  'ttl' => 0,
+                ),
+                'DEBUG' => 3,
+                'DIACRITICS' => 
+                array (
+                ),
+                'DNSBL' => '',
+                'EMOJI' => 
+                array (
+                ),
+                'ENCODING' => 'UTF-8',
+                'ERROR' => NULL,
+                'ESCAPE' => true,
+                'EXCEPTION' => NULL,
+                'EXEMPT' => NULL,
+                'FALLBACK' => 'en',
+                'FORMATS' => 
+                array (
+                ),
+                'FRAGMENT' => '',
+                'HALT' => true,
+                'HIGHLIGHT' => false,
+                'HOST' => 'bloom-s.de',
+                'IP' => '103.247.6.77',
+                'JAR' => 
+                array (
+                  'expire' => 0,
+                  'lifetime' => 0,
+                  'path' => '/development',
+                  'domain' => 'bloom-s.de',
+                  'secure' => true,
+                  'httponly' => true,
+                  'samesite' => 'Lax',
+                ),
+                'LOCALES' => './',
+                'LOCK' => 2,
+                'LOGGABLE' => '*',
+                'LOGS' => './',
+                'MB' => true,
+                'ONERROR' => 
+                Closure::__set_state(array(
+                )),
+                'ONREROUTE' => NULL,
+                'PACKAGE' => 'Fat-Free Framework',
+                'PARAMS' => 
+                array (
+                  0 => '/gutscheine/session',
+                  'action' => 'session',
+                  'controller' => 'gutscheine',
+                ),
+                'PATH' => '/gutscheine/session',
+                'PATTERN' => '/@controller/@action',
+                'PLUGINS' => '/home/www/httpdocs/1plus07122020/development/lib/',
+                'PORT' => '443',
+                'PREFIX' => NULL,
+                'PREMAP' => '',
+                'QUERY' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'QUIET' => false,
+                'RAW' => false,
+                'REALM' => 'https://bloom-s.de/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'RESPONSE' => '',
+                'ROOT' => '/home/www/httpdocs/1plus07122020',
+                'ROUTES' => 
+                array (
+                  '/clearcache' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => 
+                        Closure::__set_state(array(
+                        )),
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin/@action/@id/edit' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->@id',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->@id',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin/@action/@id' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin/@action' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/admin' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\AdminGet->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\AdminGet->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\home->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\home->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id/@mitarbeiter/@empid' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id/@palazka-@cid' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id.html' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action/@id' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller/@action' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'PUT' => 
+                      array (
+                        0 => '\\@controller->@action',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller.html' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                  '/@controller' => 
+                  array (
+                    0 => 
+                    array (
+                      'GET' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                      'POST' => 
+                      array (
+                        0 => '\\@controller->index',
+                        1 => 0,
+                        2 => 0,
+                        3 => NULL,
+                      ),
+                    ),
+                  ),
+                ),
+                'SCHEME' => 'https',
+                'SEED' => 'l5yhotblwuju',
+                'SERIALIZER' => 'php',
+                'TEMP' => '/home/www/httpdocs/1plus07122020/development/tmp/',
+                'TIME' => 1683028354.871799,
+                'TZ' => 'Europe/Berlin',
+                'UI' => '/home/www/httpdocs/1plus07122020/development/app/views/',
+                'UNLOAD' => NULL,
+                'UPLOADS' => './',
+                'URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'VERB' => 'GET',
+                'VERSION' => '3.7.2-Release',
+                'XFRAME' => 'SAMEORIGIN',
+                'GET' => 
+                array (
+                  'format' => 'JSON',
+                  'data' => 
+                  array (
+                    'amount' => '123',
+                    'salutation' => 'Herr',
+                    'vorname' => 'aa',
+                    'nachname' => 'aa',
+                    'email' => 'aa@aa.aa',
+                    'emailConfirm' => 'aa@aa.aa',
+                  ),
+                  'amount' => '123',
+                ),
+                'POST' => 
+                array (
+                ),
+                'COOKIE' => 
+                array (
+                  'PHPSESSID' => '2128642d13fa7ee26b001608b1ca3f0c',
+                  'Cookie' => 'false',
+                  'pagecon_appointment_reconnect_id' => '1:da2c550d-4d77-4bae-824f-95f159625694:C70dnb9T0q9ppePjVG8p3g==',
+                  '_gid' => 'GA1.2.406160533.1682940047',
+                  'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-1HV76013NN5426524","thirdPartyMethods":{}}',
+                  '_ga_THCT26PLCD' => 'GS1.1.1683011132.7.1.1683028114.0.0.0',
+                  '_ga' => 'GA1.1.1005581983.1680079206',
+                ),
+                'REQUEST' => 
+                array (
+                  'format' => 'JSON',
+                  'data' => 
+                  array (
+                    'amount' => '123',
+                    'salutation' => 'Herr',
+                    'vorname' => 'aa',
+                    'nachname' => 'aa',
+                    'email' => 'aa@aa.aa',
+                    'emailConfirm' => 'aa@aa.aa',
+                  ),
+                  'amount' => '123',
+                  'PHPSESSID' => '2128642d13fa7ee26b001608b1ca3f0c',
+                  'Cookie' => 'false',
+                  'pagecon_appointment_reconnect_id' => '1:da2c550d-4d77-4bae-824f-95f159625694:C70dnb9T0q9ppePjVG8p3g==',
+                  '_gid' => 'GA1.2.406160533.1682940047',
+                  'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-1HV76013NN5426524","thirdPartyMethods":{}}',
+                  '_ga_THCT26PLCD' => 'GS1.1.1683011132.7.1.1683028114.0.0.0',
+                  '_ga' => 'GA1.1.1005581983.1680079206',
+                ),
+                'SESSION' => 
+                array (
+                  'coupondata' => 
+                  array (
+                    'amount' => '1.00',
+                    'salutation' => 'Herr',
+                    'vorname' => 'aa',
+                    'nachname' => 'aa',
+                    'email' => 'aa@aa.aa',
+                    'emailConfirm' => 'aa@aa.aa',
+                    'download' => NULL,
+                  ),
+                  'error' => 'PayPal {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"cb1c6f550a403"}',
+                ),
+                'FILES' => 
+                array (
+                ),
+                'SERVER' => 
+                array (
+                  'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                  'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_REDIRECT_STATUS' => '200',
+                  'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                  'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                  'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                  'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                  'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                  'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                  'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                  'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                  'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                  'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                  'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                  'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                  'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                  'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                  'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                  'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                  'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                  'REDIRECT_HANDLER' => 'php72-script',
+                  'REDIRECT_STATUS' => '200',
+                  'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'HTTPS' => 'on',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'HTTP_X_REAL_IP' => '103.247.6.77',
+                  'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                  'HTTP_CONNECTION' => 'close',
+                  'HTTP_PRAGMA' => 'no-cache',
+                  'HTTP_CACHE_CONTROL' => 'no-cache',
+                  'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                  'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                  'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                  'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                  'HTTP_SEC_FETCH_MODE' => 'cors',
+                  'HTTP_SEC_FETCH_DEST' => 'empty',
+                  'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                  'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                  'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'SERVER_SIGNATURE' => '',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_PORT' => '443',
+                  'REMOTE_ADDR' => '103.247.6.77',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REQUEST_SCHEME' => 'https',
+                  'CONTEXT_PREFIX' => '/usr/bin',
+                  'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'REMOTE_PORT' => '33164',
+                  'REDIRECT_REMOTE_USER' => 'dev',
+                  'REDIRECT_URL' => '/development/index.php',
+                  'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'SERVER_PROTOCOL' => 'HTTP/1.0',
+                  'REQUEST_METHOD' => 'GET',
+                  'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'SCRIPT_NAME' => '/development/index.php',
+                  'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                  'ORIG_PATH_INFO' => '/development/index.php',
+                  'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+                  'PHP_SELF' => '/development/index.php',
+                  'REQUEST_TIME_FLOAT' => 1683028354.871799,
+                  'REQUEST_TIME' => 1683028354,
+                  'argv' => 
+                  array (
+                    0 => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  ),
+                  'argc' => 1,
+                ),
+                'ENV' => 
+                array (
+                  'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                  'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_REDIRECT_STATUS' => '200',
+                  'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                  'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                  'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                  'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                  'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                  'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                  'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                  'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                  'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                  'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                  'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                  'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                  'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                  'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                  'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                  'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                  'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                  'REDIRECT_HANDLER' => 'php72-script',
+                  'REDIRECT_STATUS' => '200',
+                  'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'HTTPS' => 'on',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'HTTP_X_REAL_IP' => '103.247.6.77',
+                  'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                  'HTTP_CONNECTION' => 'close',
+                  'HTTP_PRAGMA' => 'no-cache',
+                  'HTTP_CACHE_CONTROL' => 'no-cache',
+                  'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                  'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                  'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                  'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                  'HTTP_SEC_FETCH_MODE' => 'cors',
+                  'HTTP_SEC_FETCH_DEST' => 'empty',
+                  'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                  'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                  'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'SERVER_SIGNATURE' => '',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_PORT' => '443',
+                  'REMOTE_ADDR' => '103.247.6.77',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REQUEST_SCHEME' => 'https',
+                  'CONTEXT_PREFIX' => '/usr/bin',
+                  'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'REMOTE_PORT' => '33164',
+                  'REDIRECT_REMOTE_USER' => 'dev',
+                  'REDIRECT_URL' => '/development/index.php',
+                  'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'SERVER_PROTOCOL' => 'HTTP/1.0',
+                  'REQUEST_METHOD' => 'GET',
+                  'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'SCRIPT_NAME' => '/development/index.php',
+                  'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                  'ORIG_PATH_INFO' => '/development/index.php',
+                  'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+                ),
+                'BLOOMS_VERSION' => 140191744,
+                'ASSETS' => '/development/assets/',
+                'TITLEBLOOM' => 'bloom\'s',
+                'classfoot' => 'home',
+                'POMILKA' => NULL,
+                'site' => 'bloom´s Friseure',
+                'carousel_interval' => 2000,
+                'site_debug' => '3',
+                'site_cache' => '1',
+                'security' => 
+                array (
+                  'adminPassword' => 'Bloom-s2020-12!',
+                ),
+                'email' => 
+                array (
+                  'mail_from_name' => 'bloom´s Kontakt',
+                  'mail_from_email' => 'kontakt@bloom-s.de',
+                  'noreply_emal' => 'noreply@bloom-s.de',
+                ),
+                'paypal' => 
+                array (
+                  'paypal_user' => 'marketing2_api1.bloom-s.de',
+                  'paypal_pass' => 'R96HHLG69B6H5W5S',
+                  'paypal_signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+                  'paypal_endpoint' => 'production',
+                  'paypal_apiver' => '204.0',
+                  'paypal_return' => 'gutscheine/complete',
+                  'paypal_cancel' => 'gutscheine.html',
+                  'paypal_log' => '1',
+                  'paypal_emal' => 'paypal4@bloom-s.de',
+                  'paypal_account_id' => 'DLMBGGVGPC4PS',
+                  'paypal_client_id' => 'paypal4@bloom-s.de',
+                ),
+                'paypal_plus' => 
+                array (
+                  'paypal_plus_brand_name' => 'bloom´s Friseure',
+                  'paypal_plus_checkout_logo' => NULL,
+                  'paypal_plus_endpoint' => 'production',
+                  'paypal_plus_return' => 'gutscheine/completeplus',
+                  'paypal_plus_cancel' => 'gutscheine.html',
+                  'paypal_plus_log' => '1',
+                  'paypal_plus_emal' => 'buchhaltung@bloom-s.de',
+                  'paypal_plus_client_id' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+                  'paypal_plus_account_id' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+                ),
+                'CacheBlooms' => 
+                cacheblooms::__set_state(array(
+                   '_cachepath' => '/home/www/httpdocs/1plus07122020/development/tmp/cache/',
+                   '_cachename' => 'blooms',
+                   '_extension' => '.cache',
+                )),
+                'PAGE_HOST' => 'https://bloom-s.de',
+                'PAGE_CONTROLLER' => 'gutscheine',
+                'ACTIVE' => '/development/gutscheine',
+                'LINKS' => 
+                array (
+                  '/development' => 'Home',
+                  '/development/salons.html' => 'Salons',
+                  '/development/termine.html' => 'Termine',
+                  '/development/preise.html' => 'Preise',
+                  '/development/stylebook.html' => 'Stylebook',
+                  '/development/gutscheine.html' => 'Gutscheine',
+                  '/development/bewerbung.html' => 'Bewerbung',
+                  '/development/blooms.html' => 'bloom´s',
+                  '/development/kontakt.html' => 'Verwaltung',
+                  '/development/akademie.html' => '<span class="left-polos">Akademie</span>',
+                ),
+                'FOOTER_LINKS' => 
+                array (
+                  'javascript:void(0)' => 'Verwaltung',
+                  '/development/impressum.html' => 'Impressum',
+                  '/development/datenschutz.html' => 'Datenschutz',
+                ),
+                'current_path' => '/gutscheine/session',
+              ),
+               'init' => 
+              array (
+                'HEADERS' => 
+                array (
+                  'Host' => 'bloom-s.de',
+                  'X-Real-Ip' => '103.247.6.77',
+                  'X-Forwarded-For' => '103.247.6.77',
+                  'Connection' => 'close',
+                  'Pragma' => 'no-cache',
+                  'Cache-Control' => 'no-cache',
+                  'Sec-Ch-Ua' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                  'Accept' => 'application/json, text/javascript, */*; q=0.01',
+                  'X-Requested-With' => 'XMLHttpRequest',
+                  'Sec-Ch-Ua-Mobile' => '?0',
+                  'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                  'Sec-Ch-Ua-Platform' => '"macOS"',
+                  'Sec-Fetch-Site' => 'same-origin',
+                  'Sec-Fetch-Mode' => 'cors',
+                  'Sec-Fetch-Dest' => 'empty',
+                  'Referer' => 'https://bloom-s.de/development/gutscheine.html',
+                  'Accept-Encoding' => 'gzip, deflate, br',
+                  'Accept-Language' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                  'Cookie' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                ),
+                'LANGUAGE' => 'en-US,en,gu-IN,gu,mr-IN,mr',
+                'AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'AJAX' => true,
+                'ALIAS' => NULL,
+                'ALIASES' => 
+                array (
+                ),
+                'AUTOLOAD' => './',
+                'BASE' => '/development',
+                'BITMASK' => 2,
+                'BODY' => NULL,
+                'CACHE' => false,
+                'CASELESS' => true,
+                'CLI' => false,
+                'CORS' => 
+                array (
+                  'headers' => '',
+                  'origin' => false,
+                  'credentials' => false,
+                  'expose' => false,
+                  'ttl' => 0,
+                ),
+                'DEBUG' => 0,
+                'DIACRITICS' => 
+                array (
+                ),
+                'DNSBL' => '',
+                'EMOJI' => 
+                array (
+                ),
+                'ENCODING' => 'UTF-8',
+                'ERROR' => NULL,
+                'ESCAPE' => true,
+                'EXCEPTION' => NULL,
+                'EXEMPT' => NULL,
+                'FALLBACK' => 'en',
+                'FORMATS' => 
+                array (
+                ),
+                'FRAGMENT' => '',
+                'HALT' => true,
+                'HIGHLIGHT' => false,
+                'HOST' => 'bloom-s.de',
+                'IP' => '103.247.6.77',
+                'JAR' => 
+                array (
+                  'expire' => 0,
+                  'lifetime' => 0,
+                  'path' => '/development',
+                  'domain' => 'bloom-s.de',
+                  'secure' => true,
+                  'httponly' => true,
+                  'samesite' => 'Lax',
+                ),
+                'LOCALES' => './',
+                'LOCK' => 2,
+                'LOGGABLE' => '*',
+                'LOGS' => './',
+                'MB' => true,
+                'ONERROR' => NULL,
+                'ONREROUTE' => NULL,
+                'PACKAGE' => 'Fat-Free Framework',
+                'PARAMS' => 
+                array (
+                ),
+                'PATH' => '/gutscheine/session',
+                'PATTERN' => NULL,
+                'PLUGINS' => '/home/www/httpdocs/1plus07122020/development/lib/',
+                'PORT' => '443',
+                'PREFIX' => NULL,
+                'PREMAP' => '',
+                'QUERY' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'QUIET' => false,
+                'RAW' => false,
+                'REALM' => 'https://bloom-s.de/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'RESPONSE' => '',
+                'ROOT' => '/home/www/httpdocs/1plus07122020',
+                'ROUTES' => 
+                array (
+                ),
+                'SCHEME' => 'https',
+                'SEED' => 'l5yhotblwuju',
+                'SERIALIZER' => 'php',
+                'TEMP' => 'tmp/',
+                'TIME' => 1683028354.871799,
+                'TZ' => 'Europe/Berlin',
+                'UI' => './',
+                'UNLOAD' => NULL,
+                'UPLOADS' => './',
+                'URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'VERB' => 'GET',
+                'VERSION' => '3.7.2-Release',
+                'XFRAME' => 'SAMEORIGIN',
+                'GET' => 
+                array (
+                ),
+                'POST' => 
+                array (
+                ),
+                'COOKIE' => 
+                array (
+                ),
+                'REQUEST' => 
+                array (
+                ),
+                'SESSION' => 
+                array (
+                ),
+                'FILES' => 
+                array (
+                ),
+                'SERVER' => 
+                array (
+                  'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                  'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_REDIRECT_STATUS' => '200',
+                  'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                  'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                  'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                  'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                  'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                  'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                  'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                  'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                  'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                  'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                  'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                  'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                  'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                  'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                  'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                  'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                  'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                  'REDIRECT_HANDLER' => 'php72-script',
+                  'REDIRECT_STATUS' => '200',
+                  'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'HTTPS' => 'on',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'HTTP_X_REAL_IP' => '103.247.6.77',
+                  'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                  'HTTP_CONNECTION' => 'close',
+                  'HTTP_PRAGMA' => 'no-cache',
+                  'HTTP_CACHE_CONTROL' => 'no-cache',
+                  'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                  'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                  'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                  'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                  'HTTP_SEC_FETCH_MODE' => 'cors',
+                  'HTTP_SEC_FETCH_DEST' => 'empty',
+                  'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                  'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                  'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'SERVER_SIGNATURE' => '',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_PORT' => '443',
+                  'REMOTE_ADDR' => '103.247.6.77',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REQUEST_SCHEME' => 'https',
+                  'CONTEXT_PREFIX' => '/usr/bin',
+                  'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'REMOTE_PORT' => '33164',
+                  'REDIRECT_REMOTE_USER' => 'dev',
+                  'REDIRECT_URL' => '/development/index.php',
+                  'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'SERVER_PROTOCOL' => 'HTTP/1.0',
+                  'REQUEST_METHOD' => 'GET',
+                  'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'SCRIPT_NAME' => '/development/index.php',
+                  'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                  'ORIG_PATH_INFO' => '/development/index.php',
+                  'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+                  'PHP_SELF' => '/development/index.php',
+                  'REQUEST_TIME_FLOAT' => 1683028354.871799,
+                  'REQUEST_TIME' => 1683028354,
+                  'argv' => 
+                  array (
+                    0 => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  ),
+                  'argc' => 1,
+                ),
+                'ENV' => 
+                array (
+                  'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                  'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_REDIRECT_STATUS' => '200',
+                  'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                  'REDIRECT_HTTPS' => 'on',
+                  'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                  'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                  'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                  'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                  'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                  'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                  'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                  'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                  'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                  'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                  'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                  'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                  'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                  'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                  'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                  'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                  'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                  'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                  'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                  'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                  'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                  'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                  'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                  'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                  'REDIRECT_HANDLER' => 'php72-script',
+                  'REDIRECT_STATUS' => '200',
+                  'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                  'HTTPS' => 'on',
+                  'HTTP_HOST' => 'bloom-s.de',
+                  'HTTP_X_REAL_IP' => '103.247.6.77',
+                  'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                  'HTTP_CONNECTION' => 'close',
+                  'HTTP_PRAGMA' => 'no-cache',
+                  'HTTP_CACHE_CONTROL' => 'no-cache',
+                  'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                  'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                  'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                  'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                  'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                  'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                  'HTTP_SEC_FETCH_MODE' => 'cors',
+                  'HTTP_SEC_FETCH_DEST' => 'empty',
+                  'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                  'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                  'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                  'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                  'SERVER_SIGNATURE' => '',
+                  'SERVER_SOFTWARE' => 'Apache',
+                  'SERVER_NAME' => 'bloom-s.de',
+                  'SERVER_ADDR' => '46.4.195.1',
+                  'SERVER_PORT' => '443',
+                  'REMOTE_ADDR' => '103.247.6.77',
+                  'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                  'REQUEST_SCHEME' => 'https',
+                  'CONTEXT_PREFIX' => '/usr/bin',
+                  'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                  'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                  'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'REMOTE_PORT' => '33164',
+                  'REDIRECT_REMOTE_USER' => 'dev',
+                  'REDIRECT_URL' => '/development/index.php',
+                  'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'GATEWAY_INTERFACE' => 'CGI/1.1',
+                  'SERVER_PROTOCOL' => 'HTTP/1.0',
+                  'REQUEST_METHOD' => 'GET',
+                  'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                  'SCRIPT_NAME' => '/development/index.php',
+                  'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                  'ORIG_PATH_INFO' => '/development/index.php',
+                  'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                  'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+                ),
+              ),
+               'languages' => 
+              array (
+                0 => 'en-US',
+                1 => 'en',
+                3 => 'gu-IN',
+                4 => 'gu',
+                6 => 'mr-IN',
+                7 => 'mr',
+              ),
+               'locks' => 
+              array (
+              ),
+               'fallback' => 'en',
+            )),
+             'db' => NULL,
+             'response' => NULL,
+             'page_host' => 'https://bloom-s.de',
+             'base' => '/development',
+             'controller' => 'gutscheine',
+             'home_url' => 'https://bloom-s.de/development',
+             'routes' => NULL,
+             'aliases' => NULL,
+          )),
+          1 => 'session',
+        ),
+        1 => 
+        array (
+          0 => 
+          Base::__set_state(array(
+             'hive' => 
+            array (
+              'HEADERS' => 
+              array (
+                'Host' => 'bloom-s.de',
+                'X-Real-Ip' => '103.247.6.77',
+                'X-Forwarded-For' => '103.247.6.77',
+                'Connection' => 'close',
+                'Pragma' => 'no-cache',
+                'Cache-Control' => 'no-cache',
+                'Sec-Ch-Ua' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                'Accept' => 'application/json, text/javascript, */*; q=0.01',
+                'X-Requested-With' => 'XMLHttpRequest',
+                'Sec-Ch-Ua-Mobile' => '?0',
+                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'Sec-Ch-Ua-Platform' => '"macOS"',
+                'Sec-Fetch-Site' => 'same-origin',
+                'Sec-Fetch-Mode' => 'cors',
+                'Sec-Fetch-Dest' => 'empty',
+                'Referer' => 'https://bloom-s.de/development/gutscheine.html',
+                'Accept-Encoding' => 'gzip, deflate, br',
+                'Accept-Language' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                'Cookie' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+              ),
+              'LANGUAGE' => 'en-US,en,gu-IN,gu,mr-IN,mr',
+              'AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'AJAX' => true,
+              'ALIAS' => NULL,
+              'ALIASES' => 
+              array (
+              ),
+              'AUTOLOAD' => 
+              array (
+                0 => 'app/controllers/;app/models/;app/helper/',
+                1 => 
+                Closure::__set_state(array(
+                )),
+              ),
+              'BASE' => '/development',
+              'BITMASK' => 10,
+              'BODY' => '',
+              'CACHE' => 'folder=tmp/cache/',
+              'CASELESS' => true,
+              'CLI' => false,
+              'CORS' => 
+              array (
+                'headers' => '',
+                'origin' => false,
+                'credentials' => false,
+                'expose' => false,
+                'ttl' => 0,
+              ),
+              'DEBUG' => 3,
+              'DIACRITICS' => 
+              array (
+              ),
+              'DNSBL' => '',
+              'EMOJI' => 
+              array (
+              ),
+              'ENCODING' => 'UTF-8',
+              'ERROR' => NULL,
+              'ESCAPE' => true,
+              'EXCEPTION' => NULL,
+              'EXEMPT' => NULL,
+              'FALLBACK' => 'en',
+              'FORMATS' => 
+              array (
+              ),
+              'FRAGMENT' => '',
+              'HALT' => true,
+              'HIGHLIGHT' => false,
+              'HOST' => 'bloom-s.de',
+              'IP' => '103.247.6.77',
+              'JAR' => 
+              array (
+                'expire' => 0,
+                'lifetime' => 0,
+                'path' => '/development',
+                'domain' => 'bloom-s.de',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Lax',
+              ),
+              'LOCALES' => './',
+              'LOCK' => 2,
+              'LOGGABLE' => '*',
+              'LOGS' => './',
+              'MB' => true,
+              'ONERROR' => 
+              Closure::__set_state(array(
+              )),
+              'ONREROUTE' => NULL,
+              'PACKAGE' => 'Fat-Free Framework',
+              'PARAMS' => 
+              array (
+                0 => '/gutscheine/session',
+                'action' => 'session',
+                'controller' => 'gutscheine',
+              ),
+              'PATH' => '/gutscheine/session',
+              'PATTERN' => '/@controller/@action',
+              'PLUGINS' => '/home/www/httpdocs/1plus07122020/development/lib/',
+              'PORT' => '443',
+              'PREFIX' => NULL,
+              'PREMAP' => '',
+              'QUERY' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'QUIET' => false,
+              'RAW' => false,
+              'REALM' => 'https://bloom-s.de/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'RESPONSE' => '',
+              'ROOT' => '/home/www/httpdocs/1plus07122020',
+              'ROUTES' => 
+              array (
+                '/clearcache' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => 
+                      Closure::__set_state(array(
+                      )),
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin/@action/@id/edit' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->@id',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->@id',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin/@action/@id' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin/@action' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/admin' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\AdminGet->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\AdminGet->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\home->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\home->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id/@mitarbeiter/@empid' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id/@palazka-@cid' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id.html' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action/@id' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller/@action' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'PUT' => 
+                    array (
+                      0 => '\\@controller->@action',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller.html' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+                '/@controller' => 
+                array (
+                  0 => 
+                  array (
+                    'GET' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                    'POST' => 
+                    array (
+                      0 => '\\@controller->index',
+                      1 => 0,
+                      2 => 0,
+                      3 => NULL,
+                    ),
+                  ),
+                ),
+              ),
+              'SCHEME' => 'https',
+              'SEED' => 'l5yhotblwuju',
+              'SERIALIZER' => 'php',
+              'TEMP' => '/home/www/httpdocs/1plus07122020/development/tmp/',
+              'TIME' => 1683028354.871799,
+              'TZ' => 'Europe/Berlin',
+              'UI' => '/home/www/httpdocs/1plus07122020/development/app/views/',
+              'UNLOAD' => NULL,
+              'UPLOADS' => './',
+              'URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'VERB' => 'GET',
+              'VERSION' => '3.7.2-Release',
+              'XFRAME' => 'SAMEORIGIN',
+              'GET' => 
+              array (
+                'format' => 'JSON',
+                'data' => 
+                array (
+                  'amount' => '123',
+                  'salutation' => 'Herr',
+                  'vorname' => 'aa',
+                  'nachname' => 'aa',
+                  'email' => 'aa@aa.aa',
+                  'emailConfirm' => 'aa@aa.aa',
+                ),
+                'amount' => '123',
+              ),
+              'POST' => 
+              array (
+              ),
+              'COOKIE' => 
+              array (
+                'PHPSESSID' => '2128642d13fa7ee26b001608b1ca3f0c',
+                'Cookie' => 'false',
+                'pagecon_appointment_reconnect_id' => '1:da2c550d-4d77-4bae-824f-95f159625694:C70dnb9T0q9ppePjVG8p3g==',
+                '_gid' => 'GA1.2.406160533.1682940047',
+                'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-1HV76013NN5426524","thirdPartyMethods":{}}',
+                '_ga_THCT26PLCD' => 'GS1.1.1683011132.7.1.1683028114.0.0.0',
+                '_ga' => 'GA1.1.1005581983.1680079206',
+              ),
+              'REQUEST' => 
+              array (
+                'format' => 'JSON',
+                'data' => 
+                array (
+                  'amount' => '123',
+                  'salutation' => 'Herr',
+                  'vorname' => 'aa',
+                  'nachname' => 'aa',
+                  'email' => 'aa@aa.aa',
+                  'emailConfirm' => 'aa@aa.aa',
+                ),
+                'amount' => '123',
+                'PHPSESSID' => '2128642d13fa7ee26b001608b1ca3f0c',
+                'Cookie' => 'false',
+                'pagecon_appointment_reconnect_id' => '1:da2c550d-4d77-4bae-824f-95f159625694:C70dnb9T0q9ppePjVG8p3g==',
+                '_gid' => 'GA1.2.406160533.1682940047',
+                'paypalplus_session_v2' => '{"mode":"live","useraction":"commit","language":"de_DE","country":"DE","ecToken":"EC-1HV76013NN5426524","thirdPartyMethods":{}}',
+                '_ga_THCT26PLCD' => 'GS1.1.1683011132.7.1.1683028114.0.0.0',
+                '_ga' => 'GA1.1.1005581983.1680079206',
+              ),
+              'SESSION' => 
+              array (
+                'coupondata' => 
+                array (
+                  'amount' => '1.00',
+                  'salutation' => 'Herr',
+                  'vorname' => 'aa',
+                  'nachname' => 'aa',
+                  'email' => 'aa@aa.aa',
+                  'emailConfirm' => 'aa@aa.aa',
+                  'download' => NULL,
+                ),
+                'error' => 'PayPal {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"cb1c6f550a403"}',
+              ),
+              'FILES' => 
+              array (
+              ),
+              'SERVER' => 
+              array (
+                'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_REDIRECT_HTTPS' => 'on',
+                'REDIRECT_REDIRECT_STATUS' => '200',
+                'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                'REDIRECT_HANDLER' => 'php72-script',
+                'REDIRECT_STATUS' => '200',
+                'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'HTTPS' => 'on',
+                'HTTP_HOST' => 'bloom-s.de',
+                'HTTP_X_REAL_IP' => '103.247.6.77',
+                'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                'HTTP_CONNECTION' => 'close',
+                'HTTP_PRAGMA' => 'no-cache',
+                'HTTP_CACHE_CONTROL' => 'no-cache',
+                'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                'HTTP_SEC_FETCH_MODE' => 'cors',
+                'HTTP_SEC_FETCH_DEST' => 'empty',
+                'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'SERVER_SIGNATURE' => '',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_PORT' => '443',
+                'REMOTE_ADDR' => '103.247.6.77',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REQUEST_SCHEME' => 'https',
+                'CONTEXT_PREFIX' => '/usr/bin',
+                'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'REMOTE_PORT' => '33164',
+                'REDIRECT_REMOTE_USER' => 'dev',
+                'REDIRECT_URL' => '/development/index.php',
+                'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'SERVER_PROTOCOL' => 'HTTP/1.0',
+                'REQUEST_METHOD' => 'GET',
+                'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'SCRIPT_NAME' => '/development/index.php',
+                'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                'ORIG_PATH_INFO' => '/development/index.php',
+                'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+                'PHP_SELF' => '/development/index.php',
+                'REQUEST_TIME_FLOAT' => 1683028354.871799,
+                'REQUEST_TIME' => 1683028354,
+                'argv' => 
+                array (
+                  0 => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                ),
+                'argc' => 1,
+              ),
+              'ENV' => 
+              array (
+                'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_REDIRECT_HTTPS' => 'on',
+                'REDIRECT_REDIRECT_STATUS' => '200',
+                'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                'REDIRECT_HANDLER' => 'php72-script',
+                'REDIRECT_STATUS' => '200',
+                'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'HTTPS' => 'on',
+                'HTTP_HOST' => 'bloom-s.de',
+                'HTTP_X_REAL_IP' => '103.247.6.77',
+                'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                'HTTP_CONNECTION' => 'close',
+                'HTTP_PRAGMA' => 'no-cache',
+                'HTTP_CACHE_CONTROL' => 'no-cache',
+                'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                'HTTP_SEC_FETCH_MODE' => 'cors',
+                'HTTP_SEC_FETCH_DEST' => 'empty',
+                'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'SERVER_SIGNATURE' => '',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_PORT' => '443',
+                'REMOTE_ADDR' => '103.247.6.77',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REQUEST_SCHEME' => 'https',
+                'CONTEXT_PREFIX' => '/usr/bin',
+                'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'REMOTE_PORT' => '33164',
+                'REDIRECT_REMOTE_USER' => 'dev',
+                'REDIRECT_URL' => '/development/index.php',
+                'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'SERVER_PROTOCOL' => 'HTTP/1.0',
+                'REQUEST_METHOD' => 'GET',
+                'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'SCRIPT_NAME' => '/development/index.php',
+                'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                'ORIG_PATH_INFO' => '/development/index.php',
+                'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+              ),
+              'BLOOMS_VERSION' => 140191744,
+              'ASSETS' => '/development/assets/',
+              'TITLEBLOOM' => 'bloom\'s',
+              'classfoot' => 'home',
+              'POMILKA' => NULL,
+              'site' => 'bloom´s Friseure',
+              'carousel_interval' => 2000,
+              'site_debug' => '3',
+              'site_cache' => '1',
+              'security' => 
+              array (
+                'adminPassword' => 'Bloom-s2020-12!',
+              ),
+              'email' => 
+              array (
+                'mail_from_name' => 'bloom´s Kontakt',
+                'mail_from_email' => 'kontakt@bloom-s.de',
+                'noreply_emal' => 'noreply@bloom-s.de',
+              ),
+              'paypal' => 
+              array (
+                'paypal_user' => 'marketing2_api1.bloom-s.de',
+                'paypal_pass' => 'R96HHLG69B6H5W5S',
+                'paypal_signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+                'paypal_endpoint' => 'production',
+                'paypal_apiver' => '204.0',
+                'paypal_return' => 'gutscheine/complete',
+                'paypal_cancel' => 'gutscheine.html',
+                'paypal_log' => '1',
+                'paypal_emal' => 'paypal4@bloom-s.de',
+                'paypal_account_id' => 'DLMBGGVGPC4PS',
+                'paypal_client_id' => 'paypal4@bloom-s.de',
+              ),
+              'paypal_plus' => 
+              array (
+                'paypal_plus_brand_name' => 'bloom´s Friseure',
+                'paypal_plus_checkout_logo' => NULL,
+                'paypal_plus_endpoint' => 'production',
+                'paypal_plus_return' => 'gutscheine/completeplus',
+                'paypal_plus_cancel' => 'gutscheine.html',
+                'paypal_plus_log' => '1',
+                'paypal_plus_emal' => 'buchhaltung@bloom-s.de',
+                'paypal_plus_client_id' => 'Ae8L2gOKfdrLyDfz8LIdAPro-BNHI68qB-eHbh0YWKbAztN1YqDnptnwZtWtXNxsR85GfxjgMxAGqmvt',
+                'paypal_plus_account_id' => 'EICEiBJa35gEY4kY53nbOGcuFD2H30aliqOB18qdJ0RSQdiSmaIaxo5RtJgj5pjGNAgqQ-WvrOSH9OJ5',
+              ),
+              'CacheBlooms' => 
+              cacheblooms::__set_state(array(
+                 '_cachepath' => '/home/www/httpdocs/1plus07122020/development/tmp/cache/',
+                 '_cachename' => 'blooms',
+                 '_extension' => '.cache',
+              )),
+              'PAGE_HOST' => 'https://bloom-s.de',
+              'PAGE_CONTROLLER' => 'gutscheine',
+              'ACTIVE' => '/development/gutscheine',
+              'LINKS' => 
+              array (
+                '/development' => 'Home',
+                '/development/salons.html' => 'Salons',
+                '/development/termine.html' => 'Termine',
+                '/development/preise.html' => 'Preise',
+                '/development/stylebook.html' => 'Stylebook',
+                '/development/gutscheine.html' => 'Gutscheine',
+                '/development/bewerbung.html' => 'Bewerbung',
+                '/development/blooms.html' => 'bloom´s',
+                '/development/kontakt.html' => 'Verwaltung',
+                '/development/akademie.html' => '<span class="left-polos">Akademie</span>',
+              ),
+              'FOOTER_LINKS' => 
+              array (
+                'javascript:void(0)' => 'Verwaltung',
+                '/development/impressum.html' => 'Impressum',
+                '/development/datenschutz.html' => 'Datenschutz',
+              ),
+              'current_path' => '/gutscheine/session',
+            ),
+             'init' => 
+            array (
+              'HEADERS' => 
+              array (
+                'Host' => 'bloom-s.de',
+                'X-Real-Ip' => '103.247.6.77',
+                'X-Forwarded-For' => '103.247.6.77',
+                'Connection' => 'close',
+                'Pragma' => 'no-cache',
+                'Cache-Control' => 'no-cache',
+                'Sec-Ch-Ua' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                'Accept' => 'application/json, text/javascript, */*; q=0.01',
+                'X-Requested-With' => 'XMLHttpRequest',
+                'Sec-Ch-Ua-Mobile' => '?0',
+                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'Sec-Ch-Ua-Platform' => '"macOS"',
+                'Sec-Fetch-Site' => 'same-origin',
+                'Sec-Fetch-Mode' => 'cors',
+                'Sec-Fetch-Dest' => 'empty',
+                'Referer' => 'https://bloom-s.de/development/gutscheine.html',
+                'Accept-Encoding' => 'gzip, deflate, br',
+                'Accept-Language' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                'Cookie' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+              ),
+              'LANGUAGE' => 'en-US,en,gu-IN,gu,mr-IN,mr',
+              'AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+              'AJAX' => true,
+              'ALIAS' => NULL,
+              'ALIASES' => 
+              array (
+              ),
+              'AUTOLOAD' => './',
+              'BASE' => '/development',
+              'BITMASK' => 2,
+              'BODY' => NULL,
+              'CACHE' => false,
+              'CASELESS' => true,
+              'CLI' => false,
+              'CORS' => 
+              array (
+                'headers' => '',
+                'origin' => false,
+                'credentials' => false,
+                'expose' => false,
+                'ttl' => 0,
+              ),
+              'DEBUG' => 0,
+              'DIACRITICS' => 
+              array (
+              ),
+              'DNSBL' => '',
+              'EMOJI' => 
+              array (
+              ),
+              'ENCODING' => 'UTF-8',
+              'ERROR' => NULL,
+              'ESCAPE' => true,
+              'EXCEPTION' => NULL,
+              'EXEMPT' => NULL,
+              'FALLBACK' => 'en',
+              'FORMATS' => 
+              array (
+              ),
+              'FRAGMENT' => '',
+              'HALT' => true,
+              'HIGHLIGHT' => false,
+              'HOST' => 'bloom-s.de',
+              'IP' => '103.247.6.77',
+              'JAR' => 
+              array (
+                'expire' => 0,
+                'lifetime' => 0,
+                'path' => '/development',
+                'domain' => 'bloom-s.de',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Lax',
+              ),
+              'LOCALES' => './',
+              'LOCK' => 2,
+              'LOGGABLE' => '*',
+              'LOGS' => './',
+              'MB' => true,
+              'ONERROR' => NULL,
+              'ONREROUTE' => NULL,
+              'PACKAGE' => 'Fat-Free Framework',
+              'PARAMS' => 
+              array (
+              ),
+              'PATH' => '/gutscheine/session',
+              'PATTERN' => NULL,
+              'PLUGINS' => '/home/www/httpdocs/1plus07122020/development/lib/',
+              'PORT' => '443',
+              'PREFIX' => NULL,
+              'PREMAP' => '',
+              'QUERY' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'QUIET' => false,
+              'RAW' => false,
+              'REALM' => 'https://bloom-s.de/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'RESPONSE' => '',
+              'ROOT' => '/home/www/httpdocs/1plus07122020',
+              'ROUTES' => 
+              array (
+              ),
+              'SCHEME' => 'https',
+              'SEED' => 'l5yhotblwuju',
+              'SERIALIZER' => 'php',
+              'TEMP' => 'tmp/',
+              'TIME' => 1683028354.871799,
+              'TZ' => 'Europe/Berlin',
+              'UI' => './',
+              'UNLOAD' => NULL,
+              'UPLOADS' => './',
+              'URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+              'VERB' => 'GET',
+              'VERSION' => '3.7.2-Release',
+              'XFRAME' => 'SAMEORIGIN',
+              'GET' => 
+              array (
+              ),
+              'POST' => 
+              array (
+              ),
+              'COOKIE' => 
+              array (
+              ),
+              'REQUEST' => 
+              array (
+              ),
+              'SESSION' => 
+              array (
+              ),
+              'FILES' => 
+              array (
+              ),
+              'SERVER' => 
+              array (
+                'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_REDIRECT_HTTPS' => 'on',
+                'REDIRECT_REDIRECT_STATUS' => '200',
+                'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                'REDIRECT_HANDLER' => 'php72-script',
+                'REDIRECT_STATUS' => '200',
+                'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'HTTPS' => 'on',
+                'HTTP_HOST' => 'bloom-s.de',
+                'HTTP_X_REAL_IP' => '103.247.6.77',
+                'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                'HTTP_CONNECTION' => 'close',
+                'HTTP_PRAGMA' => 'no-cache',
+                'HTTP_CACHE_CONTROL' => 'no-cache',
+                'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                'HTTP_SEC_FETCH_MODE' => 'cors',
+                'HTTP_SEC_FETCH_DEST' => 'empty',
+                'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'SERVER_SIGNATURE' => '',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_PORT' => '443',
+                'REMOTE_ADDR' => '103.247.6.77',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REQUEST_SCHEME' => 'https',
+                'CONTEXT_PREFIX' => '/usr/bin',
+                'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'REMOTE_PORT' => '33164',
+                'REDIRECT_REMOTE_USER' => 'dev',
+                'REDIRECT_URL' => '/development/index.php',
+                'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'SERVER_PROTOCOL' => 'HTTP/1.0',
+                'REQUEST_METHOD' => 'GET',
+                'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'SCRIPT_NAME' => '/development/index.php',
+                'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                'ORIG_PATH_INFO' => '/development/index.php',
+                'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+                'PHP_SELF' => '/development/index.php',
+                'REQUEST_TIME_FLOAT' => 1683028354.871799,
+                'REQUEST_TIME' => 1683028354,
+                'argv' => 
+                array (
+                  0 => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                ),
+                'argc' => 1,
+              ),
+              'ENV' => 
+              array (
+                'REDIRECT_REDIRECT_SERVER_PORT' => '443',
+                'REDIRECT_REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_REDIRECT_HTTPS' => 'on',
+                'REDIRECT_REDIRECT_STATUS' => '200',
+                'REDIRECT_UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'REDIRECT_HTTP_AUTHORIZATION' => 'Basic ZGV2OmFzMzU2NzM=',
+                'REDIRECT_HTTPS' => 'on',
+                'REDIRECT_SSL_SERVER_S_DN_CN' => 'bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+                'REDIRECT_SSL_SERVER_I_DN_O' => 'Let\'s Encrypt',
+                'REDIRECT_SSL_SERVER_I_DN_CN' => 'R3',
+                'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'bloom-s.de',
+                'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.38',
+                'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1n',
+                'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+                'REDIRECT_SSL_SECURE_RENEG' => 'true',
+                'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+                'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-CHACHA20-POLY1305',
+                'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+                'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '256',
+                'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '256',
+                'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+                'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+                'REDIRECT_SSL_SERVER_M_SERIAL' => '0461FD58E8C9CB2242F9B52320932A9FA49B',
+                'REDIRECT_SSL_SERVER_V_START' => 'Apr 27 22:02:34 2023 GMT',
+                'REDIRECT_SSL_SERVER_V_END' => 'Jul 26 22:02:33 2023 GMT',
+                'REDIRECT_SSL_SERVER_S_DN' => 'CN=bloom-s.de',
+                'REDIRECT_SSL_SERVER_I_DN' => 'CN=R3,O=Let\'s Encrypt,C=US',
+                'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+                'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+                'REDIRECT_SSL_SESSION_ID' => 'dccd92e6f6d645b677bb67139bef3a4715b0a97506fa917c5af08629d110338b',
+                'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+                'REDIRECT_HANDLER' => 'php72-script',
+                'REDIRECT_STATUS' => '200',
+                'UNIQUE_ID' => 'ZFD5gmwUD8ARohXsGW4EJAAAAAM',
+                'HTTPS' => 'on',
+                'HTTP_HOST' => 'bloom-s.de',
+                'HTTP_X_REAL_IP' => '103.247.6.77',
+                'HTTP_X_FORWARDED_FOR' => '103.247.6.77',
+                'HTTP_CONNECTION' => 'close',
+                'HTTP_PRAGMA' => 'no-cache',
+                'HTTP_CACHE_CONTROL' => 'no-cache',
+                'HTTP_SEC_CH_UA' => '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+                'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+                'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+                'HTTP_SEC_CH_UA_MOBILE' => '?0',
+                'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+                'HTTP_SEC_CH_UA_PLATFORM' => '"macOS"',
+                'HTTP_SEC_FETCH_SITE' => 'same-origin',
+                'HTTP_SEC_FETCH_MODE' => 'cors',
+                'HTTP_SEC_FETCH_DEST' => 'empty',
+                'HTTP_REFERER' => 'https://bloom-s.de/development/gutscheine.html',
+                'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br',
+                'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,gu-IN;q=0.8,gu;q=0.7,mr-IN;q=0.6,mr;q=0.5',
+                'HTTP_COOKIE' => 'PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; PHPSESSID=2128642d13fa7ee26b001608b1ca3f0c; Cookie=false; pagecon_appointment_reconnect_id=1%3Ada2c550d-4d77-4bae-824f-95f159625694%3AC70dnb9T0q9ppePjVG8p3g%3D%3D; _gid=GA1.2.406160533.1682940047; paypalplus_session_v2=%7B%22mode%22%3A%22live%22%2C%22useraction%22%3A%22commit%22%2C%22language%22%3A%22de_DE%22%2C%22country%22%3A%22DE%22%2C%22ecToken%22%3A%22EC-1HV76013NN5426524%22%2C%22thirdPartyMethods%22%3A%7B%7D%7D; _ga_THCT26PLCD=GS1.1.1683011132.7.1.1683028114.0.0.0; _ga=GA1.1.1005581983.1680079206',
+                'PATH' => '/usr/local/bin:/usr/bin:/bin',
+                'SERVER_SIGNATURE' => '',
+                'SERVER_SOFTWARE' => 'Apache',
+                'SERVER_NAME' => 'bloom-s.de',
+                'SERVER_ADDR' => '46.4.195.1',
+                'SERVER_PORT' => '443',
+                'REMOTE_ADDR' => '103.247.6.77',
+                'DOCUMENT_ROOT' => '/home/www/httpdocs/1plus07122020',
+                'REQUEST_SCHEME' => 'https',
+                'CONTEXT_PREFIX' => '/usr/bin',
+                'CONTEXT_DOCUMENT_ROOT' => '/usr/bin',
+                'SERVER_ADMIN' => 'webmaster@bloom-s.de',
+                'SCRIPT_FILENAME' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'REMOTE_PORT' => '33164',
+                'REDIRECT_REMOTE_USER' => 'dev',
+                'REDIRECT_URL' => '/development/index.php',
+                'REDIRECT_QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'GATEWAY_INTERFACE' => 'CGI/1.1',
+                'SERVER_PROTOCOL' => 'HTTP/1.0',
+                'REQUEST_METHOD' => 'GET',
+                'QUERY_STRING' => 'format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'REQUEST_URI' => '/development/gutscheine/session?format=JSON&data%5Bamount%5D=123&data%5Bsalutation%5D=Herr&data%5Bvorname%5D=aa&data%5Bnachname%5D=aa&data%5Bemail%5D=aa%40aa.aa&data%5BemailConfirm%5D=aa%40aa.aa&amount=123',
+                'SCRIPT_NAME' => '/development/index.php',
+                'ORIG_SCRIPT_FILENAME' => '/usr/bin/php-cgi7.2',
+                'ORIG_PATH_INFO' => '/development/index.php',
+                'ORIG_PATH_TRANSLATED' => '/home/www/httpdocs/1plus07122020/development/index.php',
+                'ORIG_SCRIPT_NAME' => '/usr/bin/php-cgi7.2',
+              ),
+            ),
+             'languages' => 
+            array (
+              0 => 'en-US',
+              1 => 'en',
+              3 => 'gu-IN',
+              4 => 'gu',
+              6 => 'mr-IN',
+              7 => 'mr',
+            ),
+             'locks' => 
+            array (
+            ),
+             'fallback' => 'en',
+          )),
+          1 => 
+          array (
+            0 => '/gutscheine/session',
+            'action' => 'session',
+            'controller' => 'gutscheine',
+          ),
+          2 => '\\gutscheine->session',
+        ),
+        2 => 
+        array (
+          0 => 'beforeroute',
+          1 => 'afterroute',
+        ),
+      ),
+    ),
+    7 => 
+    array (
+      'file' => '/home/www/httpdocs/1plus07122020/development/index.php',
+      'line' => 400,
+      'function' => 'run',
+      'class' => 'Base',
+      'type' => '->',
+      'args' => 
+      array (
+      ),
+    ),
+  ),
+   'previous' => NULL,
+))

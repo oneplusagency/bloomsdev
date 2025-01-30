@@ -1,0 +1,17 @@
+{
+    "60103d28253550.27345716": {
+        "where": "blooms-banner",
+        "sort": 0,
+        "title": "youtube",
+        "desc": "",
+        "text": "Vollst\u00e4ndiges Video Anschauen",
+        "src": "",
+        "url": "",
+        "video_url": "https:\/\/www.youtube.com\/embed\/xIbtG96Ba_0",
+        "video_aspect": "embed-responsive-4by3",
+        "url_openblank": false,
+        "link_text": "",
+        "date": 1611676968,
+        "carousel_interval": "2000"
+    }
+}

@@ -1,0 +1,175 @@
+[02-05-2023 12:23:53] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 12:23:53] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 12:23:53] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 12:23:53] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 12:23:54] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 12:23:54] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 12:23:54] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"},{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"7d13b15bd2639"}
+[02-05-2023 12:49:47] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 12:49:47] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 12:49:47] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 12:49:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 12:49:48] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 12:49:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 12:49:48] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"},{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"ca1f4bedeb423"}
+[02-05-2023 12:51:47] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 12:51:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 12:51:48] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 12:51:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 12:51:48] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 12:51:48] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 12:51:48] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"98ebcb7a31c10"}
+[02-05-2023 13:04:52] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:04:52] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:04:52] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:04:53] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:04:53] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:04:53] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:04:53] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"},{"field":"transactions[0].amount","issue":"Amount cannot be zero"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"6eccd45b2c9d2"}
+[02-05-2023 13:13:18] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:13:18] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:13:18] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:13:18] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:13:18] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:13:19] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:13:19] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"a83f2c1640c58"}
+[02-05-2023 13:14:39] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:14:39] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:14:39] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:14:39] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:14:40] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:14:40] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:14:40] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"b921e85e67ff1"}
+[02-05-2023 13:25:46] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:25:46] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:25:46] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:25:46] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:25:46] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:25:47] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:25:47] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"},{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"7a809bd0fd877"}
+[02-05-2023 13:29:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:29:28] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:29:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:29:28] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:29:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:29:29] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:29:29] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"f60c08b4c41fd"}
+[02-05-2023 13:35:09] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:35:09] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:35:09] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:35:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:35:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:35:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:35:10] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"81d22f783c0ec"}
+[02-05-2023 13:37:13] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:37:14] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:37:14] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:37:14] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:37:14] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:37:14] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:37:14] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"b82619dbce724"}
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:39:02] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"9c73252ea7ce3"}
+[02-05-2023 13:46:14] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:46:14] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:46:14] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:46:15] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:46:15] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:46:15] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:46:15] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"de49ed367b33d"}
+[02-05-2023 13:47:36] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:47:36] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:47:36] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:47:37] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:47:37] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:47:37] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:47:37] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"aacda8c2fe1d"}
+[02-05-2023 13:52:34] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:52:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:52:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:52:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:52:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:52:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:52:35] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"cb1c6f550a403"}
+[02-05-2023 13:54:06] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:54:07] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:54:07] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:54:07] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:54:32] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:54:32] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:54:32] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:54:32] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 13:55:35] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].item_list.shipping_address","issue":"The specified country requires a postal code"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"985a8f7299fa3"}
+[02-05-2023 14:00:33] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:00:34] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:00:34] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:00:34] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:00:34] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:00:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:01:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:01:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:01:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:01:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:01:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:01:11] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:02:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:02:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:02:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:02:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:02:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:02:04] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:02:49] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:02:49] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:02:49] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:02:50] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:02:50] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:02:50] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:24:21] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:24:21] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:24:21] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:24:22] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:24:22] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:24:22] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 14:24:22] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"a56a468a691cd"}
+[02-05-2023 14:25:52] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:25:52] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:25:52] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:25:52] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:25:52] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:25:53] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[02-05-2023 14:25:53] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-VALIDATION_ERROR","debug_id":"a2d2ef76d2a5c"}
+[02-05-2023 14:29:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:29:28] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:29:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:29:28] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:29:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:29:28] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:29:58] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:29:58] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:29:58] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:29:58] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:29:58] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:29:58] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:39:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:39:04] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:39:04] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:39:04] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:39:04] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:39:04] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:39:51] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[02-05-2023 14:39:51] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[02-05-2023 14:39:51] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[02-05-2023 14:39:51] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[02-05-2023 14:39:51] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[02-05-2023 14:39:52] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201

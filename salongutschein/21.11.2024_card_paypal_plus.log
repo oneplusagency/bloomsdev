@@ -1,0 +1,27 @@
+[21-11-2024 10:11:34] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[21-11-2024 10:11:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[21-11-2024 10:11:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[21-11-2024 10:11:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[21-11-2024 10:11:35] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[21-11-2024 10:11:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[21-11-2024 10:21:24] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[21-11-2024 10:21:24] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[21-11-2024 10:21:24] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[21-11-2024 10:21:25] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[21-11-2024 10:21:25] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[21-11-2024 10:21:25] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[21-11-2024 10:23:00] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[21-11-2024 10:23:00] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[21-11-2024 10:23:00] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-M47PXFI7UG74384E66618615
+[21-11-2024 10:23:01] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[21-11-2024 10:23:01] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-M47PXFI7UG74384E66618615/execute
+[21-11-2024 10:23:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[21-11-2024 13:03:58] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[21-11-2024 13:03:59] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[21-11-2024 13:03:59] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"Invalid account for relying party"}
+[21-11-2024 13:04:28] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[21-11-2024 13:04:28] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[21-11-2024 13:04:28] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"Invalid account for relying party"}
+[21-11-2024 13:07:27] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[21-11-2024 13:07:27] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[21-11-2024 13:07:27] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"Invalid account for relying party"}

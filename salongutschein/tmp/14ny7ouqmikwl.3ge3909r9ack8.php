@@ -1,0 +1,20 @@
+<div class="row pb-5">
+  <?php if (isset($giftcouponcode) && is_array($giftcouponcode)): ?>
+    
+      <div class="col-md-8 offset-md-2 col-12 pt-3">
+        <div class="text-md-left text-left mb-2">
+          <div class="text-md-left mb-1">
+            <h3>Gutscheincode: <?= ($giftcouponcode['GiftCouponCode']) ?></h3>
+            <p class="mt-3">
+              Zum Einlösen einfach Gutschein-Code beim Bezahlen angeben.
+            </p>
+            <p>
+              Der Gutschein und die Rechnung wurde an Ihre Mailadresse gesendet.
+            </p>
+            <p class="mt-3" style="font-size: 1em">Vielen Dank!</p>
+          </div>
+        </div>
+      </div>
+    
+  <?php endif; ?>
+</div>

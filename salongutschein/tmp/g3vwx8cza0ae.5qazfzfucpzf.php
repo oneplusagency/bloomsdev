@@ -1,0 +1,99 @@
+<div class="row">
+    
+	<div class="col-md-12">
+
+        <?php echo $this->render('layout/blooms-logo.html',NULL,get_defined_vars(),0); ?>
+
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <button type="button" class="btn-close-mobile-nav d-md-none" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                            X
+                        </button>
+                        <?php echo $this->render('layout/menu_all.html',NULL,get_defined_vars(),0); ?>
+                    </div>
+                </section>
+
+            </div>
+        </nav>
+
+
+		<?php echo $this->render('kontakt-banner.html',NULL,get_defined_vars(),0); ?>
+		 <center><h2 class="h1-responsive font-weight-bold text-center my-4 pt-md-5 mt-2">Kontakt</h2></center>
+		
+        <?php echo $this->render('kontakt-leitung.html',NULL,get_defined_vars(),0); ?>
+        <!-- Section: Contact v.2 -->
+        <div class="col-md-10 offset-md-1">
+            <section id="kontakt-wraper" class="mb-4">
+
+                <!-- Section heading-->
+              
+                <!--Section description-->
+                <!-- <p class="text-center w-responsive mx-auto mb-5">Einfach Mail schreiben oder anrufen <a title="Rufen Sie +496215680444 an" class="free-addr addr" href="tel:+496215680444">0621 5680444</a></p>-->
+
+                <!-- ajax message -->
+                <div class="mt-2" id="bloom_kontakt_status"></div>
+
+                <div class="row">
+
+                    <!-- Grid left column -->
+                    <!-- <div class="col-md-5 text-center text-left">
+                        <ul class="list-unstyled mb-0 text-left">
+                            <li>
+                                <p class="z-addr"><i class="fa fas fa-map-marker fa-1.5x"></i> bloom´s Zentrale<br /> N7, 8 Kunststraße<br />68161 Mannheim</p>
+                            </li>
+
+                            <li>
+                                <p class="z-addr"><i class="addr fa fas fa-phone mt-4 fa-1.5x"></i> <a title="Rufen Sie +496215680444 an" class="free-addr addr" href="tel:+496215680444">0621 5680444</a></p>
+                            </li>
+
+                            <li>
+                                <p class="z-addr addr">
+                                    Für Friseurtermine bitte im jeweiligen <a href="<?= ($BASE) ?>/salons.html">Salon anrufen</a> oder nutzen Sie unsere <a href="<?= ($BASE) ?>/termine.html">Online-Terminvereinbarung</a>
+                                </p>
+                            </li>
+                            <!--
+                        <li>
+                            <p class="z-addr">
+                                <p>* Pflichtfeld</p>
+                                <p class="text-danger">Bitte Eingabe genau prüfen!</p>
+                            </p>
+                        </li> -->
+                       <!--
+                    </div> </ul> <!--
+                    </div>
+                    <!-- end Grid left column -->
+
+
+                    <!-- Grid right column -->
+                 
+                    <!-- end rid right column -->
+
+                </div>
+                <!-- end row -->
+
+
+                <!-- Grid column -->
+                <!--     <div class="row">
+                <div class="col-md-12 mb-md-0 mt-3 w-100">
+                    <iframe class="gray-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5184.0500799313995!2d8.472668!3d49.484034!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xac72c23fa5ede01c!2sbloom%60s%20Friseur!5e0!3m2!1sde!2sde!4v1598517912032!5m2!1sde!2sde"
+                        width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div> -->
+
+
+            </section>
+        </div>
+        <!-- Section: Contact v.2 -->
+
+    </div>
+    <!-- end col-md-12 -->
+
+
+</div>
+<!-- end row -->

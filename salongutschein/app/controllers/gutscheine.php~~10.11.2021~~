@@ -1,0 +1,844 @@
+<?php
+require_once ('./vendor/autoload.php');
+
+class gutscheine extends Controller
+{
+    public $aprovalUrl="";
+    
+    public function session()
+    {
+        // http://localhost/f3-url-shortener/termine/confirmTabtwo?test=1&option_salon=25&servicePackage=2
+
+        $kliz_sel = ['error' => true, 'html' => ''];
+
+        header('Content-Type: application/json');
+
+        $test = (int) helperblooms::inGet('test', 0);
+        // if (true) {
+        if ($test || $this->f3->get('AJAX')) {
+
+            if ($test || $this->f3->exists('GET.data')) {
+
+                $this->f3->clear('SESSION.paypal');
+                $this->f3->clear('SESSION.coupondata');
+                $this->f3->clear('SESSION.giftcouponcode');
+
+                // $data_get = $this->f3->get('GET');
+                // file_put_contents ( ONEPLUS_DIR_PATH ."/session.txt" , var_export( $data_get , true), LOCK_EX );
+
+                // array (
+                //     'format' => 'JSON',
+                //     'data' =>
+                //     array (
+                //       'vorname' => 'oppo',
+                //       'strasse' => 'berlin , strasse 23',
+                //       'plz' => '1234',
+                //       'ort' => 'berlin',
+                //       'email' => 'alexander@1plus-agency.com',
+                //       'nachname' => 'Webiprog',
+                //       'diffEmail' => 'oleg@blooms.com',
+                //       'emailConfirm' => 'dalexander@1plus-agency.com',
+                //       'mobilenumber' => '016092884554',
+                //       'h_design' => '3',
+                //       'h_greetings' => 'Grußtext Grußtext',
+                //       'h_shipment' => 'per Post',
+                //       'h_amount' => '30,-',
+                //     ),
+                //     'amount' => '30,-',
+                //   )
+
+                //exit;
+
+                $data = helperblooms::inGET('data');
+
+                $data["amount"] = substr($data["amount"], 0, -2);
+
+                $data["amount"] = helperblooms::price_format_decimal($data["amount"]);
+
+				$downloadcoupon =  null;
+				if($data["shipment"] == 'per E-Mail'){
+					$downloadcoupon =  1;	
+				}
+				$data['download'] = $downloadcoupon;
+                $this->f3->set('SESSION.coupondata', $data);
+                $this->aprovalUrl= $this->getPayPalPlus();
+                $paypalPlusJsData=' <script type="application/javascript" id="aprovalUrlScript">
+                var ppp = PAYPAL.apps.PPP({
+                "approvalUrl": "'.$this->aprovalUrl.'",
+                "placeholder": "ppplus",
+                "mode": "live",
+                "country": "DE",
+                "language": "de_DE"
+                });
+                </script>';
+
+                // $amount = helperblooms::inGET('amount');
+                $kliz_sel = ['error' => false, 'html' => true,'paypalPlusJsData'=>$paypalPlusJsData];
+			
+            }
+        }
+        print json_encode($kliz_sel, JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
+    public function index()
+    {
+    
+        $active_tab = 'pills-abgeschlossen';
+        $active_tab = 'pills-gutscheinauswhal';
+        // 'pills-gutscheinauswhal'
+      
+        
+      
+
+         $active_tab_sess = $this->f3->get('SESSION.ACTIVE_TAB');
+
+
+        if ($active_tab_sess) {
+            $this->f3->set('ACTIVE_TAB', $active_tab_sess);
+            $this->f3->clear('SESSION.ACTIVE_TAB');
+            unset($active_tab_sess);
+        } else {
+            $this->f3->set('ACTIVE_TAB', $active_tab);
+        }
+        //pills-abgeschlossen last tab demo
+        // $this->f3->set('ACTIVE_TAB', 'pills-abgeschlossen');
+
+
+        $this->f3->set('isHomePage', false);
+        $this->f3->set('title', "Gutscheine");
+        $this->f3->set('view', 'gutscheine.html');
+        $this->f3->set('classfoot', 'gutscheine');
+
+        $addscripts[] = 'js/layout/jquery.validate.min.js';
+        $addscripts[] = 'js/layout/additional-methods.min.js';
+        $addscripts[] = 'js/layout/messages_de.js';
+        $addscripts[] = 'js/layout/jquery.bootstrap.wizard.min.js';
+        $addscripts[] = 'js/layout/jquery.textareaCounter.plugin-min.js';
+        $addscripts[] = 'js/layout/gutscheine.js';
+        $this->f3->set('addscripts', $addscripts);
+
+        $paypal_account_id = $this->f3->get('paypal.paypal_account_id');
+        $endpoint          = $this->f3->get('paypal.paypal_endpoint');
+
+        $extremalscripts = '
+		<script type="text/javascript">
+		window.paypalCheckoutReady = function () {
+		  paypal.checkout.setup(\'' . $paypal_account_id . '\', {
+			  environment: \'' . $endpoint . '\',
+			  button: \'submitPostPaypal\'
+			});
+		};
+	  </script>
+	  <!-- PayPal Script -->
+    <script src="//www.paypalobjects.com/api/checkout.js" data-version-4 async></script>
+
+
+    <!-- PayPal PLUS Script -->
+    <script src="https://www.paypalobjects.com/webstatic/ppplus/ppplus.min.js" type="text/javascript"></script> 
+   ';
+
+        $this->f3->set('addextremalscripts', $extremalscripts);
+
+        $options                  = array();
+        $options['Herr']          = 'Herr';
+        $options['Frau']          = 'Frau';
+        $options['Diverse']		  = 'Diverse';
+        // $options['Familie']       = 'Familie';
+
+        $this->f3->set('OPTION_ANREDE', $options);
+
+        if ($this->f3->exists('SESSION.giftcouponcode')) {
+        $this->f3->set('giftcouponcode', $this->f3->get('SESSION.giftcouponcode'));
+        // $this->f3->set('ACTIVE_TAB', 'pills-abgeschlossen');
+        }
+    }
+
+    /**
+     * @var mixed
+     */
+    private $paypal;
+
+    public function setUpPayPal()
+    {
+
+        // ; 'receiver_email' => 'antonshel-facilitator@gmail.com',
+        // ; 'environment_mode' => 'sandbox',
+        // ; 'username' => 'antonshel-facilitator_api1.gmail.com',
+        // ; 'password' => 'LG4QW966KSZEDN22',
+        // ; 'signature' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AvjKv59PR5PzFuyoTu9JpOggLUCs'
+
+        // oleg-buyer@webiprog.com
+        // kupi@webiprog.com
+
+        // https: //www.paypal.com/businessprofile/mytools/apiaccess/firstparty/signature
+
+        //         API пользователя
+        // marketing2_api1.bloom-s.de
+
+        // API пароль
+        // R96HHLG69B6H5W5S
+
+        // подпись
+        // AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG
+
+        // дата запроса28 февраля 2020 года в 13:15:48 CET
+
+        // !!!!!!! https://developer.paypal.com/docs/archive/nvp-soap-api/
+        // !!!! https://www.templatemonster.com/help/ru/whats-difference-paypal-standard-express-pro.html
+
+        // $ppconfig = array(
+        //     'user' => 'marketing2_api1.bloom-s.de',
+        //     'pass' => 'R96HHLG69B6H5W5S',
+        //     'signature' => 'AFbtoae17G1snrl8ZQGTOr-6vaYpA-lKT3SoQFN1ys766R8QabYRm9IG',
+        //     'endpoint' => 'sandbox',
+        //     'apiver' => '70.0',
+        //     'return' => 'http://',
+        //     'cancel' => 'http://',
+        //     'log' => '1'
+        // );
+
+        // $ppconfig = array(
+        //     'user' => 'antonshel-facilitator_api1.gmail.com',
+        //     'pass' => 'LG4QW966KSZEDN22',
+        //     'signature' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AvjKv59PR5PzFuyoTu9JpOggLUCs',
+        //     'endpoint' => 'sandbox',
+        //     'apiver' => '70.0',
+        //     'return' => 'http://',
+        //     'cancel' => 'http://',
+        //     'log' => '1'
+        // );
+
+        // Username:
+        // sb-2dljz1119179_api1.business.example.com
+        // Password:
+        // 4F5Q927EH6TWQBUZ
+        // Signature:
+        // AqoHtf-9ou72KnSG8v3.87oYuH7IAQ7o5mbgFxrHF3B8BjjvL6tkFDBc
+
+        // $ppconfig = array(
+        //     'user' => 'sb-2dljz1119179_api1.business.example.com',
+        //     'pass' => '4F5Q927EH6TWQBUZ',
+        //     'signature' => 'AqoHtf-9ou72KnSG8v3.87oYuH7IAQ7o5mbgFxrHF3B8BjjvL6tkFDBc',
+        //     'endpoint' => 'sandbox',
+        //     'apiver' => '70.0',
+        //     'return' => 'http://',
+        //     'cancel' => 'http://',
+        //     'log' => '1'
+        // );
+
+        // paypal_user="marketing2_api1.bloom-s.de"
+        // paypal_pass="R96HHLG69B6H5W5S"
+        // paypal_signature="AqoHtf-9ou72KnSG8v3.87oYuH7IAQ7o5mbgFxrHF3B8BjjvL6tkFDBc"
+        // paypal_endpoint="sandbox"
+        // paypal_apiver="70.0"
+        // paypal_return=""
+        // paypal_cancel=""
+        // paypal_log="1"
+
+        // get from config.ini
+        // https://developer.paypal.com/developer/accounts
+        // sb-2dljz1119179@business.example.com
+        // First Name: John
+        // Last Name: Doe
+        // Email ID: sb-2dljz1119179@business.example.com
+        // System Generated Password: V&Ed1,:@
+
+        $user      = $this->f3->get('paypal.paypal_user');
+        $pass      = $this->f3->get('paypal.paypal_pass');
+        $signature = $this->f3->get('paypal.paypal_signature');
+        $endpoint  = $this->f3->get('paypal.paypal_endpoint');
+        $apiver    = $this->f3->get('paypal.paypal_apiver');
+
+        $return = $this->f3->get('paypal.paypal_return');
+        if (!$return) {
+            // $return = $this->home_url;
+            $return = $this->home_url . '/gutscheine/complete';
+        } else {
+            $return = $this->home_url . '/' . ltrim($return, '/');
+        }
+
+        $cancel = $this->f3->get('paypal.paypal_cancel');
+        if (!$cancel) {
+            $cancel = $this->home_url;
+        } else {
+            $cancel = $this->home_url . '/' . ltrim($cancel, '/');
+        }
+
+        $log = $this->f3->get('paypal.paypal_log');
+
+        $ppconfig = array(
+            'user'      => $user,
+            'pass'      => $pass,
+            'signature' => $signature,
+            'endpoint'  => $endpoint,
+            'apiver'    => $apiver,
+            'return'    => $return,
+            'cancel'    => $cancel,
+            'log'       => $log
+        );
+
+        $this->paypal = new \PayPal($ppconfig);
+    }
+
+    public function sale()
+    {
+
+        $this->setUpPayPal();
+        //Instantiate the PayPal Class
+        $paypal = $this->paypal;
+
+        $session_coupondata = $this->f3->get('SESSION.coupondata');
+
+        if (empty($session_coupondata)) {
+
+            $this->f3->set('SESSION.error', 'PayPal - Datenfehler');
+            $this->f3->reroute('/gutscheine.html');
+        } elseif (!is_array($session_coupondata)) {
+            $this->f3->set('SESSION.error', 'PayPal - Datenfehler');
+            $this->f3->reroute('/gutscheine.html');
+        }
+
+        // array (
+        //     'vorname' => 'oppo',
+        //     'strasse' => 'berlin , strasse 23',
+        //     'plz' => '1234',
+        //     'ort' => 'berlin',
+        //     'email' => 'alexander@1plus-agency.com',
+        //     'nachname' => 'Webiprog',
+        //     'diffEmail' => 'oleg@blooms.com',
+        //     'emailConfirm' => 'dalexander@1plus-agency.com',
+        //     'mobilenumber' => '016092884554',
+        //     'h_design' => '2',
+        //     'h_greetings' => 'Grußtext Grußtext',
+        //     'h_shipment' => 'per Post',
+        //     'h_amount' => '125.00',
+        //   )
+
+        $amount        = bloomArrayHelper::getValueJoom($session_coupondata, 'amount', null, 'STRING');
+        $paymentaction = "Sale"; // Can be Sale or Authorization
+        $currencycode  = "EUR"; // 3 Character currency code
+        // $amount = '100.00'; // Amount to charge
+
+        // $result = $paypal->dcc($paymentaction, $currencycode, $amount, $cardtype, $cardnumber, $expdate, $cvv, $ipaddress);
+        $options = array(
+            'BRANDNAME'               => 'Bloom Frisure',
+            'LOCALECODE'              => 'DE',
+            'PAYMENTREQUEST_0_CUSTOM' => $amount,
+            'REQCONFIRMSHIPPING'      => '0',
+            'NOSHIPPING'              => '1',
+            'ALLOWNOTE'               => '1',
+            'HDRIMG'                  => $this->home_url . '/assets/images/blooms-logo.png',
+            'PAYFLOWCOLOR'            => '#000'
+        );
+
+        $result = $paypal->create("Sale", "EUR", $amount, $options);
+
+        // $result will contain an associative array of the API response.  Store the useful bits like status & transaction ID.
+
+        if ($result['ACK'] != 'Success' && $result['ACK'] != 'SuccessWithWarning') {
+            // Handle API error code
+            die('Error with API call - ' . $result["L_ERRORCODE0"]);
+            // $c = 'Error with API call - '.$result["L_ERRORCODE0"];
+            // $this->f3->set( 'ERROR', array( 'text' => $c ) );
+            // $this->f3->set( 'ERROR', array( 'code' => 404, 'text' => $c, 'status' => 'PayPalNot Found' ) );
+            // $this->f3->error( 404 );
+        } else {
+            // exit(print_r($result));
+
+            $this->f3->set('SESSION.paypal', ['token' => $result['TOKEN'], 'coupondata' => $session_coupondata]);
+
+            // Redirect Buyer to PayPal
+            $this->f3->reroute($result['redirect']);
+            //['paypal']['token']
+
+            // Array ( [TOKEN] => EC-1MV4621295915373C [TIMESTAMP] => 2020-03-09T14:14:39Z [CORRELATIONID] => 6cc0b7e683d86 [ACK] => Success [VERSION] => 204.0 [BUILD] => 54296257 [redirect] => https://www.sandbox.paypal.com/webscr&cmd=_express-checkout&token=EC-1MV4621295915373C ) 1
+        }
+    }
+
+    public function complete()
+    {
+
+        // grab token & PayerID from URL
+        $token   = $this->f3->get('GET.token');
+        $payerid = $this->f3->get('GET.PayerID');
+
+        // complete the transaction
+        $this->setUpPayPal();
+        //Instantiate the PayPal Class
+        $paypal = $this->paypal;
+
+        $result = $paypal->complete($token, $payerid);
+
+        if ($result['ACK'] != 'Success' && $result['ACK'] != 'SuccessWithWarning') {
+            // Handle API error code
+            die('Error with API call - ' . $result["L_ERRORCODE0"]);
+            // $c = 'Error with API call - '.$result["L_ERRORCODE0"];
+            // $this->f3->set( 'ERROR', array( 'text' => $c ) );
+            // $this->f3->set( 'ERROR', array( 'code' => 404, 'text' => $c, 'status' => 'PayPalNot Found' ) );
+            // $this->f3->error( 404 );
+        } else {
+
+            // , ['token' => $result['TOKEN']]
+            $token_session = $this->f3->get('SESSION.paypal');
+
+            $tiz = ['payerid' => $payerid, 'result' => $result];
+            if (!empty($token_session) && is_array($token_session)) {
+
+                $tiz = array_merge($tiz, $token_session);
+            }
+
+            $this->f3->set('SESSION.paypal', $tiz);
+
+            // Update back office - save transaction id, payment status etc
+            // Display thank you/receipt to the buyer.
+            $this->f3->set('itemcount', 0);
+            $this->f3->set('txnid', $result['PAYMENTINFO_0_TRANSACTIONID']);
+            // echo \Template::instance()->render('gutscheine.html');
+
+            // array (
+            //     'payerid' => 'A7Y4A3YTX6FKC',
+            //     'result' =>
+            //     array (
+            //       'TOKEN' => 'EC-8CT21823YN5764921',
+            //       'SUCCESSPAGEREDIRECTREQUESTED' => 'false',
+            //       'TIMESTAMP' => '2020-03-10T15:30:58Z',
+            //       'CORRELATIONID' => 'b743444000802',
+            //       'ACK' => 'Success',
+            //       'VERSION' => '204.0',
+            //       'BUILD' => '54296257',
+            //       'INSURANCEOPTIONSELECTED' => 'false',
+            //       'SHIPPINGOPTIONISDEFAULT' => 'false',
+            //       'PAYMENTINFO_0_TRANSACTIONID' => '6N828890VR427831M',
+            //       'PAYMENTINFO_0_TRANSACTIONTYPE' => 'expresscheckout',
+            //       'PAYMENTINFO_0_PAYMENTTYPE' => 'instant',
+            //       'PAYMENTINFO_0_ORDERTIME' => '2020-03-10T15:30:56Z',
+            //       'PAYMENTINFO_0_AMT' => '30.00',
+            //       'PAYMENTINFO_0_FEEAMT' => '0.92',
+            //       'PAYMENTINFO_0_TAXAMT' => '0.00',
+            //       'PAYMENTINFO_0_CURRENCYCODE' => 'EUR',
+            //       'PAYMENTINFO_0_PAYMENTSTATUS' => 'Completed',
+            //       'PAYMENTINFO_0_PENDINGREASON' => 'None',
+            //       'PAYMENTINFO_0_REASONCODE' => 'None',
+            //       'PAYMENTINFO_0_PROTECTIONELIGIBILITY' => 'Ineligible',
+            //       'PAYMENTINFO_0_PROTECTIONELIGIBILITYTYPE' => 'None',
+            //       'PAYMENTINFO_0_SELLERPAYPALACCOUNTID' => 'sb-2dljz1119179@business.example.com',
+            //       'PAYMENTINFO_0_SECUREMERCHANTACCOUNTID' => 'LVUTNUTBF2KTA',
+            //       'PAYMENTINFO_0_ERRORCODE' => '0',
+            //       'PAYMENTINFO_0_ACK' => 'Success',
+            //     ),
+            //   )
+
+
+            // get coupon data from API
+            $this->bugzilla();
+
+            // set to last tab
+            $this->f3->set('SESSION.ACTIVE_TAB', 'pills-abgeschlossen');
+
+
+
+            $this->f3->reroute('/gutscheine.html');
+
+            // $this->f3->set('ACTIVE_TAB', 'pills-gutscheinauswhal');
+            // $this->index();
+        }
+    }
+
+    public function bugzilla()
+    {
+
+        $session_coupondata = $this->f3->get('SESSION.coupondata');
+
+        if (empty($session_coupondata)) {
+
+            $this->f3->set('SESSION.error', 'Gutscheine - Datenfehler');
+            $this->f3->reroute('/gutscheine.html');
+        } elseif (!is_array($session_coupondata)) {
+            $this->f3->set('SESSION.error', 'Gutscheine - Datenfehler');
+            $this->f3->reroute('/gutscheine.html');
+        }
+
+        // array (
+        //     'vorname' => 'oppo',
+        //     'strasse' => 'berlin , strasse 23',
+        //     'plz' => '1234',
+        //     'ort' => 'berlin',
+        //     'email' => 'alexander@1plus-agency.com',
+        //     'nachname' => 'Webiprog',
+        //     'diffEmail' => 'oleg@blooms.com',
+        //     'emailConfirm' => 'dalexander@1plus-agency.com',
+        //     'mobilenumber' => '016092884554',
+        //     'h_design' => '2',
+        //     'h_greetings' => 'Grußtext Grußtext',
+        //     'h_shipment' => 'per Post',
+        //     'h_amount' => '125.00',
+        //   )
+
+        // sess persDataConfirm: {"email":"oleg@blooms.com","vorname":"oppo","strasse":"berlin , strasse 23","plz":"1234","ort":"berlin","nachname":"OPOPOPOPO","salutation":"Herr","diffAdress":true,"diffEmail":"oleg@blooms.com","h_design":2,"h_greetings":"Grußtext Grußtext","h_shipment":"per Post","h_amount":"30,-"}
+
+        $gutscheinemodel = new gutscheineModel();
+
+        $giftCouponValue   = bloomArrayHelper::getValueJoom($session_coupondata, 'amount', null, 'STRING');
+        $giftCouponMessage = bloomArrayHelper::getValueJoom($session_coupondata, 'greetings', null, 'STRING');
+        $diffAdress		   = bloomArrayHelper::getValueJoom($session_coupondata, 'diffAdress', null, 'STRING');
+        $notificationEmail = bloomArrayHelper::getValueJoom($session_coupondata, 'email', null, 'STRING');
+        $phoneInvoice  		   = bloomArrayHelper::getValueJoom($session_coupondata, 'phone', null, 'STRING');
+        $salutation        = bloomArrayHelper::getValueJoom($session_coupondata, 'salutation', null, 'STRING');
+        $firstName         = bloomArrayHelper::getValueJoom($session_coupondata, 'vorname', null, 'STRING');
+        $lastName          = bloomArrayHelper::getValueJoom($session_coupondata, 'nachname', null, 'STRING');
+        $street            = bloomArrayHelper::getValueJoom($session_coupondata, 'adresse', null, 'STRING');
+        $zipCode           = bloomArrayHelper::getValueJoom($session_coupondata, 'plz', null, 'STRING');
+        $city              = bloomArrayHelper::getValueJoom($session_coupondata, 'ort', null, 'STRING');
+        $design          = bloomArrayHelper::getValueJoom($session_coupondata, 'design', null, 'STRING');
+		
+		
+        $shipment          = bloomArrayHelper::getValueJoom($session_coupondata, 'shipment', null, 'STRING');
+        $emailDelivery          = bloomArrayHelper::getValueJoom($session_coupondata, 'diffEmail', null, 'STRING');
+        $salutationDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffsalutation', null, 'STRING');
+        $firstNameDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffvorname', null, 'STRING');
+        $lastNameDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffnachname', null, 'STRING');
+        $streetDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffadresse', null, 'STRING');
+        $cityDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffort', null, 'STRING');
+        $zipCodeDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffplz', null, 'STRING');
+        $phoneDelivery		= bloomArrayHelper::getValueJoom($session_coupondata, 'diffphone', null, 'STRING');
+
+		$giftCouponMessage = strip_tags($giftCouponMessage);
+		$delivery = 'Invoice'; // Default Email
+		$content = array(
+            'giftCouponValue'   => $giftCouponValue,
+            'giftCouponMessage' => $giftCouponMessage,
+            'notificationEmail' => $notificationEmail,
+            'salutation'        => $salutation,
+            'firstName'         => $firstName,
+            'lastName'          => $lastName,
+            'street'            => $street,
+            'zipCode'           => $zipCode,
+            'city'              => $city,
+            'paymentType'       => 'PayPal',
+            'templateName'      => 'email_layout_' . $design
+		);
+		if($shipment == 'per E-Mail' && $diffAdress == '1'){
+			$content['emailDeliveryAddress'] = $emailDelivery;
+		}
+		if($shipment == 'per Post'){
+			$delivery = 'InvoicePostal';
+			$content = array(
+				'giftCouponValue'   => $giftCouponValue,
+				'giftCouponMessage' => $giftCouponMessage,
+				'emailInvoice' 		=> $notificationEmail,
+				'salutationInvoice'	=> $salutation,
+				'firstNameInvoice'	=> $firstName,
+				'phoneInvoice'		=> $phoneInvoice,
+				'lastNameInvoice'	=> $lastName,
+				'streetInvoice'		=> $street,
+				'zipCodeInvoice'	=> $zipCode,
+				'cityInvoice'		=> $city,
+				'emailDelivery' => $notificationEmail,
+				'firstNameDelivery'	=> $firstName,
+				'lastNameDelivery'	=> $lastName,
+				'streetDelivery'	=> $street,
+				'cityDelivery'		=> $city,
+				'zipCodeDelivery'	=> $zipCode,
+				'phoneDelivery'	=> $phoneDelivery,
+				'paymentType'       => 'PayPal',
+				'templateName'      => 'email_layout_' . $design,
+				'shippingValue'      => '0.00'
+				
+			);
+			if($diffAdress == '1'){
+				$content['firstNameDelivery'] =  $firstNameDelivery;
+				$content['lastNameDelivery'] =  $lastNameDelivery;
+				$content['streetDelivery']	=  $streetDelivery;
+				$content['cityDelivery'] 	=  $cityDelivery;
+				$content['zipCodeDelivery'] =  $zipCodeDelivery;
+				$content['phoneDelivery'] =  $phoneDelivery;
+				
+			}		
+				
+		}			
+
+
+	
+        $jsondata = $gutscheinemodel->getGutscheineCode($content, $delivery);
+	
+        // file_put_contents(ONEPLUS_DIR_PATH . "/GutscheineCode_content.txt", var_export($content, true), LOCK_EX);
+        // file_put_contents(ONEPLUS_DIR_PATH . "/GutscheineCode_jsondata.txt", var_export($jsondata, true), LOCK_EX);
+	
+			
+        // '{"GiftCouponCode":"J8LELT","GiftCouponPdfFileUri":null,"InvoicePdfFileUri":null,"SendMailSucceeded":false,"AdditionalInfo":"Invoice PDF file generation failed. ","ReturnCodeValue":16,"ReturnValueText":"CheckoutSavedButPdfGenerationFailed"}'
+
+        if (!empty($jsondata) && is_array($jsondata)) {
+            # code...
+	
+            $this->f3->set('SESSION.giftcouponcode', $jsondata);
+
+            $coupon_save = $gutscheinemodel->gutscheine_mapper;
+
+            $session_paypal = $this->f3->get('SESSION.paypal');
+            $txnid = $session_paypal['result']['PAYMENTINFO_0_TRANSACTIONID'];
+            // 'PAYMENTINFO_0_TRANSACTIONID' => '45Y65678BH330693H',
+            // 'PAYMENTINFO_0_TRANSACTIONTYPE' => 'expresscheckout',
+
+            $date = date('Y-m-d H:i:s', strtotime ($session_paypal['result']['PAYMENTINFO_0_ORDERTIME']));
+
+            $coupon_array = array_merge($content, ['txnid' => $txnid], ['date' => $date]);
+		
+            // array (
+            //     'giftCouponValue' => '30.00',
+            //     'giftCouponMessage' => 'oleg@blooms.com',
+            //     'notificationEmail' => 'Grußtext Grußtext',
+            //     'salutation' => 'Herr',
+            //     'firstName' => 'oppo',
+            //     'lastName' => 'OPOPOPOPO',
+            //     'street' => 'berlin , strasse 23',
+            //     'zipCode' => '1234',
+            //     'city' => 'berlin',
+            //     'paymentType' => 'PayPal',
+            //     'templateName' => 'email_layout_2',
+            //     'txnid' => '45Y65678BH330693H',
+            //   )
+
+            $coupon_save->copyFrom((array) $coupon_array);
+            $coupon_save->save();
+
+            return true;
+        }
+
+        // $biba = range(0, 180, 10);
+        // $current = 0;
+        // foreach ($biba as $key => $value) {
+        //     $current++;
+        //     $gutscheinemodel::outputProgress($current, count($biba));
+        // }
+
+        // array (
+        //     'GiftCouponCode' => 'IKWYDX',
+        //     'GiftCouponPdfFileUri' => 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf?/blooms_gutschein_015_uQdp25ipk6w67TdbbEZg.pdf',
+        //     'InvoicePdfFileUri' => 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf?/blooms_rechnung_015_uQdp25ipk6w67TdbbEZg.pdf',
+        //     'SendMailSucceeded' => true,
+        //     'AdditionalInfo' => NULL,
+        //     'ReturnCodeValue' => 0,
+        //     'ReturnValueText' => 'AllFine',
+        //   )
+
+    }
+
+    public function sys()
+    {
+        file_put_contents(ONEPLUS_DIR_PATH . "/bugzilla.txt", var_export($_REQUEST, true), LOCK_EX);
+        exit;
+    }
+
+    public function koba()
+    {
+
+        // Card Type: Visa
+
+        // Card Number: 4516218912883573
+
+        // Expiration Date: 09/2023
+
+        // CVV: 231
+
+        // *******************************************
+
+        // покупатель
+        // Email ID: oleg-buyer@webiprog.com
+
+        // Email ID:
+        // kupi@webiprog.com
+        // продавец начальник
+        // oleg-facilitator@webiprog.com
+
+        // Pass: oleg@webiprog.com
+
+        // /////////          СИНГАТУРА    oleg-facilitator@webiprog.com            //////////
+        // oleg-facilitator@webiprog.com
+
+        // CredentialSignature
+        // API Username
+        // oleg-facilitator_api1.webiprog.com
+
+        // API Password
+        // ZRDYFFLGXBN3MHEB
+
+        // Signature
+        // AiPC9BjkCyDFQXbSkoZcgqH3hpacA7NWVgitm6Zx43bnPS9kRceT8Cnh
+
+        $this->setUpPayPal();
+        //Instantiate the PayPal Class
+        $paypal = $this->paypal;
+
+        $paymentaction = "Sale"; // Can be Sale or Authorization
+        $currencycode  = "EUR"; // 3 Character currency code
+        $amount        = '100.00'; // Amount to charge
+        $cardtype      = 'Visa'; // Visa, MasterCard, Discover etc
+        $cardnumber    = '4209769767395628'; // Valid card number
+        // $expdate = '122020'; // format MMYYYY
+        $expdate   = '052023'; // format MMYYYY 09/2023
+        $cvv       = '252'; // Valid security code
+        $ipaddress = '127.0.0.1';
+
+        // $result = $paypal->dcc($paymentaction, $currencycode, $amount, $cardtype, $cardnumber, $expdate, $cvv, $ipaddress);
+
+        $options = array(
+            'BRANDNAME'               => 'Bloom Frisure',
+            'LOCALECODE'              => 'DE',
+            'PAYMENTREQUEST_0_CUSTOM' => $amount,
+            'REQCONFIRMSHIPPING'      => '0',
+            'NOSHIPPING'              => '1',
+            'ALLOWNOTE'               => '1'
+        );
+
+        $result = $paypal->create("Sale", "EUR", $amount, $options);
+
+        // $result will contain an associative array of the API response.  Store the useful bits like status & transaction ID.
+
+        if ($result['ACK'] != 'Success' && $result['ACK'] != 'SuccessWithWarning') {
+            // Handle API error code
+            die('Error with API call - ' . $result["L_ERRORCODE0"]);
+        } else {
+            exit(print_r($result));
+            // Array ( [TOKEN] => EC-1MV4621295915373C [TIMESTAMP] => 2020-03-09T14:14:39Z [CORRELATIONID] => 6cc0b7e683d86 [ACK] => Success [VERSION] => 204.0 [BUILD] => 54296257 [redirect] => https://www.sandbox.paypal.com/webscr&cmd=_express-checkout&token=EC-1MV4621295915373C ) 1
+        }
+    }
+
+ 
+
+
+    public function getPayPalPlus(){
+
+
+        $paypal_plus_client_id= $this->f3->get('paypal_plus.paypal_plus_client_id');
+        $paypal_plus_signature = $this->f3->get('paypal_plus.paypal_plus_signature');
+        $paypal_plus_endpoint = $this->f3->get('paypal_plus.paypal_plus_endpoint');
+        $paypal_plus_return = $this->home_url.'/'.$this->f3->get('paypal_plus.paypal_plus_return');
+        $paypal_plus_cancel =  $this->home_url.'/'.$this->f3->get('paypal_plus.paypal_plus_cancel');
+
+
+        if($this->f3->get('paypal_plus.paypal_plus_endpoint')=="production"){
+            $paypal_plus_endpoint = "live";
+         }else{
+            $paypal_plus_endpoint = $paypal_plus_endpoint ;
+         }
+
+
+        $apiContext = new \PayPal\Rest\ApiContext(
+            new \PayPal\Auth\OAuthTokenCredential(
+                $paypal_plus_client_id ,
+                $paypal_plus_signature      // ClientSecret
+            )
+            );
+            
+            $apiContext->setConfig(
+            array(
+            'mode' =>$paypal_plus_endpoint,'localcode'=>'de-DE'
+
+            )
+            );
+
+
+        $session_coupondata = $this->f3->get('SESSION.coupondata');
+       
+        $amountPrice        = bloomArrayHelper::getValueJoom($session_coupondata, 'amount', null, 'STRING');
+        $paymentaction = "Sale"; // Can be Sale or Authorization
+        $currencycode  = "EUR"; // 3 Character currency code
+            
+            $item1 = new \PayPal\Api\Item();
+            $item1->setName($paymentaction)
+            ->setCurrency($currencycode)
+            ->setQuantity(1)
+            ->setPrice($amountPrice);
+            
+            $itemList = new \PayPal\Api\ItemList();
+            $itemList->setItems(array($item1));
+            
+            $payer = new \PayPal\Api\Payer();
+            $payer->setPaymentMethod('paypal');
+            
+            $amount = new \PayPal\Api\Amount();
+            $amount->setCurrency('EUR');
+            $amount->setTotal($amountPrice);
+            
+            $transaction = new \PayPal\Api\Transaction();
+            $transaction->setAmount($amount);
+            $transaction->setItemList($itemList);
+            //$transaction->setInvoiceNumber(uniqid());
+            //$transaction->setDescription('Description');
+            
+            $redirectUrl = new \PayPal\Api\RedirectUrls();
+            
+            $redirectUrl->setReturnUrl($paypal_plus_return);
+            $redirectUrl->setCancelUrl($paypal_plus_cancel);
+            
+            $payment = new \PayPal\Api\Payment();
+            $payment->setIntent('sale');
+            $payment->setPayer($payer);
+            $payment->setRedirectUrls($redirectUrl);
+            $payment->setTransactions(array($transaction));
+            
+            $payment = $payment->create($apiContext);
+            
+            $approvalUrl = $payment->getApprovalLink();
+            return    $approvalUrl;
+
+    }
+
+
+
+    public function completeplus()
+    {
+
+        // grab token & PayerID from URL
+        $token   = $this->f3->get('GET.token');
+        $payerid = $this->f3->get('GET.PayerID');
+        $token   = $this->f3->get('GET.token');
+        $paymentId = $this->f3->get('GET.paymentId');
+
+     
+        // complete the transaction
+        $this->setUpPayPal();
+        //Instantiate the PayPal Class
+        $paypal = $this->paypal;
+
+        $result = $paypal->complete($token, $payerid);
+
+        
+
+        // if ($result['ACK'] != 'Success' && $result['ACK'] != 'SuccessWithWarning') {
+        //     // Handle API error code
+        //     die('Error with API call - ' . $result["L_ERRORCODE0"]);
+        //     // $c = 'Error with API call - '.$result["L_ERRORCODE0"];
+        //     // $this->f3->set( 'ERROR', array( 'text' => $c ) );
+        //     // $this->f3->set( 'ERROR', array( 'code' => 404, 'text' => $c, 'status' => 'PayPalNot Found' ) );
+        //     // $this->f3->error( 404 );
+        // } else {
+
+            // , ['token' => $result['TOKEN']]
+            $token_session = $this->f3->get('SESSION.paypal');
+
+            $tiz = ['payerid' => $payerid, 'result' => $result];
+            if (!empty($token_session) && is_array($token_session)) {
+
+                $tiz = array_merge($tiz, $token_session);
+            }
+
+            $this->f3->set('SESSION.paypal', $tiz);
+
+            // Update back office - save transaction id, payment status etc
+            // Display thank you/receipt to the buyer.
+            $this->f3->set('itemcount', 0);
+            $this->f3->set('txnid', $result['PAYMENTINFO_0_TRANSACTIONID']);
+           
+            // get coupon data from API
+            $this->bugzilla();
+
+            // set to last tab
+            $this->f3->set('SESSION.ACTIVE_TAB', 'pills-abgeschlossen');
+            $this->f3->reroute('/gutscheine.html');
+
+        //}
+    }
+
+}

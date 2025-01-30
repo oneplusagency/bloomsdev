@@ -1,0 +1,40 @@
+array (
+  'file' => 
+  array (
+    'name' => 
+    array (
+      0 => 'louis-de-funs.jpg',
+      1 => 'fantomas.jpg',
+      2 => 'louis-de-funs.jpg',
+      3 => 'fantomas.jpg',
+    ),
+    'type' => 
+    array (
+      0 => 'image/jpeg',
+      1 => 'image/jpeg',
+      2 => 'image/jpeg',
+      3 => 'image/jpeg',
+    ),
+    'tmp_name' => 
+    array (
+      0 => '/var/www/vhosts/hosting110885.a2f45.netcup.net/development/tmp/phpjJgQT7',
+      1 => '/var/www/vhosts/hosting110885.a2f45.netcup.net/development/tmp/phpedLL7y',
+      2 => '/var/www/vhosts/hosting110885.a2f45.netcup.net/development/tmp/phpelU8n0',
+      3 => '/var/www/vhosts/hosting110885.a2f45.netcup.net/development/tmp/php0a1yEr',
+    ),
+    'error' => 
+    array (
+      0 => 0,
+      1 => 0,
+      2 => 0,
+      3 => 0,
+    ),
+    'size' => 
+    array (
+      0 => 49357,
+      1 => 23362,
+      2 => 49357,
+      3 => 23362,
+    ),
+  ),
+)

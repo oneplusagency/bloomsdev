@@ -1,0 +1,547 @@
+<div class="row">
+    <div class="col-md-12">
+        <include href="layout/blooms-logo.html" />
+
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <button type="button" class="btn-close-mobile-nav d-md-none" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                            X
+                        </button>
+                        <include href="layout/menu_all.html" />
+                    </div>
+                </section>
+
+            </div>
+        </nav>
+
+        <!-- add banner  @FIX by oppo * @Date: 27.07.2020 18:11 -->
+        <check if="{{@BANNERS}}">
+            <true>
+                <article id="page-slide-index">
+                    <section class="layout-slider container mt-5 p-md-0 px-2">
+                        <!-- BEGIN slider-images -->
+                        <div id="slider-images" class="carousel slide carousel-fade" data-ride="carousel">
+
+                            <div class="carousel-inner">
+                                <repeat group="{{@BANNERS}}" key="{{@KEY}}" value="{{@BANNER}}">
+
+                                    <check if="{{@BANNER['type'] == 'img'}}">
+
+                                        <check if="{{@KEY == 0}}">
+                                            <true>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item-img carousel-item active"><img src="{{@BANNER['src']}}" class="d-block w-100" alt="Banner" /></div>
+                                            </true>
+                                            <false>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item-img carousel-item"><img src="{{@BANNER['src']}}" class="d-block w-100" alt="Banner" /></div>
+                                            </false>
+                                        </check>
+
+                                    </check>
+
+                                    <check if="{{@BANNER['type'] == 'youtube'}}">
+
+                                        <check if="{{@KEY == 0}}">
+                                            <true>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item--youtube carousel-item active">
+
+                                                    <div class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay" class="provider-youtube embed-responsive-item" src="{{@BANNER['src']}}" height="550" frameborder="0" allowfullscreen="true" scrolling="no">
+                                                        </iframe>
+                                                    </div>
+
+                                                </div>
+                                            </true>
+                                            <false>
+                                                <div data-interval="{{@BANNER['interval']}}" class="carousel-item--youtube carousel-item">
+                                                    <div class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay" class="provider-youtube embed-responsive-item" src="{{@BANNER['src']}}" height="550" frameborder="0" allowfullscreen="true" scrolling="no">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </false>
+                                        </check>
+
+                                    </check>
+
+                                </repeat>
+                            </div>
+                            <ol class="carousel-indicators">
+
+                                <repeat group="{{@BANNERS}}" key="{{@KEY}}" value="{{@BANNER}}">
+                                    <check if="{{@KEY == 0}}">
+                                        <true>
+                                            <li data-target="#slider-images" data-slide-to="{{@KEY}}" class="active"></li>
+                                        </true>
+                                        <false>
+                                            <li data-target="#slider-images" data-slide-to="{{@KEY}}"></li>
+                                        </false>
+                                    </check>
+                                </repeat>
+
+                            </ol>
+                        </div>
+                        <!-- END slider-images -->
+
+                    </section>
+                </article>
+            </true>
+        </check>
+
+        <!-- page-blooms -->
+        <article id="page-blooms" class="container p-md-0 px-2 text-center mt-md-5 mt-0">
+            <h3 class="text-center  'FuturaBT-ExtraBlack'">Herzlich, fachlich führend, fair</h3>
+
+
+
+            <div class="text-center mt-5" id="selection-tabs">
+                <button class="btn btn-page-bloom text-uppercase btn-active" onclick="showData(this,'#leitung-view')">LEITUNG
+                </button>
+
+                <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#facts-view')">FACTS</button>
+                <button class="btn btn-page-bloom text-uppercase" onclick="showDataLong(this,'#historie-view')">HISTORIE</button>
+                <!--  <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#verwaltung-view')">VERWALTUNG -->
+                </button>
+            </div>
+
+            <section id="blooms-info-data" class="layout-blooms-info-data mt-1">
+
+                <section id="leitung-view" class="layout-blooms-leitung-data">
+                    <div class="text-center"></div>
+
+                    <div id="leitung-data">
+                        <check if="{{@STAFFINFO}}">
+                            <repeat group="{{@STAFFINFO}}" key="@istaffkey" value="{{@data}}">
+                                <div class="clips-profiles text-center leitung-block blms-icon-i" data-toggle="modal" data-target="#LeitungDataModal">
+
+                                    <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="{{@istaffkey}}" data-email="{{@data.id}}">
+
+                                        <img src="{{@data.Image}}" class="img-hover-animation leitung-img" />
+                                        <i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                                        
+
+                                    </a>
+                                    <div class="cntct-sctn-ipls">
+                                    <p class="over-image-text">{{@data.FirstName}}</p>
+                                        <p>{{@data.Position}}</p>
+                                    </div>
+                                </div>
+                            </repeat>
+                        </check>
+
+<!--                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="1">
+
+                                <img src="upload/employeeimage/emp_image.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">Yvette Regionalleitung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>
+                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="2">
+
+                                <img src="{{@ASSETS}}images/verwaltung/Ceylan-Guerek_1.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">Ceylan Regionalleitung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>
+                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="3">
+
+                                <img src="{{@ASSETS}}images/verwaltung/Valerie-Inci_1.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">Valerie Regionalleitung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>
+                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="4">
+
+                                <img src="{{@ASSETS}}images/verwaltung/Joy-Diouf_1.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">Joy Regionalleitung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>
+                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="5">
+
+                                <img src="{{@ASSETS}}images/verwaltung/FP-kurz_1.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">F. Pertsch Geschäftsführung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>
+                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="6">
+
+                                <img src="{{@ASSETS}}images/verwaltung/Gabriele-Diemert-Pertsch_1.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">G. Diemert-P. Geschäftsführung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>
+                        <div class="clips-profiles text-center leitung-block" data-toggle="modal" data-target="#LeitungDataModal">
+
+                            <a class="SeminareNozdrya" href="#LeitungNozdrya" data-slide-to="7">
+
+                                <img src="{{@ASSETS}}images/verwaltung/WP-kurz_1.jpg" class="img-hover-animation leitung-img" />
+
+                                <p class="over-image-text">W. Pertsch Geschäftsführung</p>
+                            </a>
+							<i class="fa fa-info-circle ohrecha toggle-modal-sam"></i>
+                        </div>-->
+
+
+                    </div>
+                </section>
+
+                <section id="facts-view" class="layout-blooms-facts-data mt-3">
+                    <div class="text-center">
+                        <!-- <p>Willkommen bei bloom ́s</p> -->
+
+                    </div>
+                    <div id="section4-content">
+
+
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item" style="margin-top: 0px !important;">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/20_Geschäfte.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Familienunternehmen mit Ethik-Code</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/Talentierte_Mitarbeiter.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Wunderbare, talentierte Friseure</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/Eigene_Akademie.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Eigene Friseur-Akademie</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/Modebewusste_Kunden.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Wunderbare, modebewußte Kunden</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/Top_Ambiente.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Premium-Salons in der Innenstadt</p>
+                            </div>
+                        </div>
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/20000_Kunden_im _Monat.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Über 20000 Kunden im Monat</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3 item">
+                            <div class="col-md-2 col-12 px-0 icon">
+                                <img src="{{@ASSETS}}images/bewerbung/10000_Online-Termine_im_Monat.svg" />
+                            </div>
+                            <div class="col-md-10 col-12 mt-md-0">
+                                <p class="p-2">Über 10000 Online-Termine im Monat</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </section>
+
+                <section id="historie-view" class="layout-blooms-facts-data">
+                    <div id="section4-content">
+
+                        <div class="row data-from-api-1 mx-0 p-0 mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2020.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-3">
+                                <h3 class="">2020</h3>
+                                <p class="">Eröffnung des 20igsten bloom´s Geschäftes. Auch im Corona Jahr wächst bloom´s weiter und gehört mittlerweile zu der führenden Friseurunternehmen in Deutschland mit vielen zufriedenen Kunden und vielen talentierten und motivierten
+                                    Mitarbeitern!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2019.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2019</h3>
+                                <p class="p-2">Einführung von Beratungstablets. Was wurde das letzte Mal gemacht? Was gibt es zu beachten? Ziel ist die optimale Beratung und der optimale Service für alle Kunden, denn nur eine perfekte Beratung führt zu einem perfektem
+                                    Ergebnis!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2017.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2017</h3>
+                                <p class="p-2">bloom´s wächst weiter und weiter. Die Nachfrage steigt und steigt und es werden weiter Standorte eröffnet. Immer mehr Kunden und Mitarbeiter lernen bloom´s kennen und schätzen! </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2016.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2016</h3>
+                                <p class="p-2">Professionalisierung und Digitalisierung vieler Prozesse im Unternehmen für eine gute Qualitätssicherung im Unternehmen. Die bloom´s Regionalleiter nehmen Fahrt auf!</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2014.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2014</h3>
+                                <p class="p-2">Als einer der ersten Friseurgeschäfte in Deutschland startet bloom´s eine online Terminvergabe Eine komplett eigene Entwicklung mit SMS Bestätigung, damit Kunden 24h und auch am Wochenende Termine vereinbaren können.</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2011.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2011</h3>
+                                <p class="p-2">Umzug der Verwaltung nach Mannheim. Auf über 900qm im Herzen von Mannheim direkt am Wasserturm befindet sich bis heute die bloom´s Verwaltung und die bloom´s Akademie für Weiterbildung auf höchsten Niveau!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2009.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2009</h3>
+                                <p class="p-2">bloom´s wird bekannt in der Branche. Es werden die ersten Business Vorträge gehalten. bloom´s ist seit dem regelmäßig auf Benchmark-Veranstaltungen. Franz Pertsch ist ein gefragter Referent.</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/2002.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">2002</h3>
+                                <p class="p-2">Einführung eines Ausbildungssystems und die Einführung eines Weiterbildungssystems für Fachtrainer und Kommunikationstrainer. bloom´s reift heran und gewinnt gleich mit zwei Salons den Preis „Salon des Jahres”</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/1997.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">1997</h3>
+                                <p class="p-2">Damals hipp: Frisuren-Computer-Beratung. Wolfgang Pertsch präsentiert ein eigen entwickeltes System um Kunden umfassend und zielgerichtet zu beraten. </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/1994.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">1994</h3>
+                                <p class="p-2">Eröffnung des ersten eigenen Friseurgeschäftes. Ziel war die Organisation der perfekten Dienstleistung. Von der Begrüßung bis zu Verabschiedung. Nichts weniger als den Kundenwunsch zu übertreffen war von Anfang an der Anspruch.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/1984.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">1984</h3>
+                                <p class="p-2">Gabriele,Franz und Wolfgang Pertsch in den ersten Ausbildungsjahren im elterlichen Salon. Es folgen Meisterprüfungen, die Gabriele Pertsch als Kammerbeste abschließt.</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/1975.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">1975</h3>
+                                <p class="p-2">Umzug nach Ludwigshafen und Eröffnung eines Geschäftes mit Friseur, Kometik, Fußpflege, Solarium und einer Boutique für Bademoden. Die stolzen Inhaber Eva & Franz Pertsch.</p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/1973.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">1973</h3>
+                                <p class="p-2">Die heutigen Geschäftsführer Gabriele, Franz und Wolfgang Pertsch im Alter 5-8 Jahren reifen heran und durchleben gemeinsam ihre Jugend. </p>
+                            </div>
+                        </div>
+                        <div class="row data-from-api-1 mx-0 p-0  mt-3">
+                            <div class="col-md-4 col-12 px-0">
+                                <img src="{{@ASSETS}}images/blooms/1959.jpg" class="img-fluid" />
+                            </div>
+                            <div class="col-md-8 col-12 mt-md-0 px-3 py-2">
+                                <h3 class="p-2">1959</h3>
+                                <p class="p-2">Eva Pertsch, die Mutter der heutigen Geschäftsführer erhält in München ihren Meisterbrief und eröffnet mit Ihrem Mann Franz Pertsch in Hausham (südlich von München) ein Friseurgeschäft. Ganz im Stil der 1960 Jahre. Damals
+                                    hochmodern. </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+            </section>
+        </article>
+
+    </div>
+</div>
+<!-- END ROW -->
+
+
+<!-- Modal -->
+
+<div class="modal fade modal-leitung-data slider-paper-wrapper" id="LeitungDataModal" tabindex="-1" role="dialog" aria-labelledby="clipModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-leitung modal-dialog-centered modal-dialog-fullscreen" role="document">
+
+        <!-- MODAL-ARROW-LEFT -->
+        <div class="modal-arrow modal-arrow-left">
+            <button href="#LeitungNozdrya" role="button" type="button" id="sssprev-button" aria-label="Next" class="b-carousel-control-prev moveCrScroll" data-slide="prev">
+                <svg width="44" height="60">
+                    <polyline points="30 10 10 30 30 50" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
+                </svg>
+            </button>
+        </div>
+        <!-- MODAL-ARROW-RIGHT -->
+        <div class="modal-arrow modal-arrow-right">
+            <button href="#LeitungNozdrya" role="button" type="button" id="sssnext-button" aria-label="Next" class="b-carousel-control-next moveCrScroll" data-slide="next">
+                <svg width="44" height="60">
+                    <polyline points="14 10 34 30 14 50" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <div class="modal-content px-2 rounded-0">
+
+            <div class="modal-header border-0 px-0 py-1">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- modal-body -->
+            <div class="modal-body text-dark p-0">
+
+                <div id="LeitungNozdrya" class="carousel slide blooms-section-txt" data-ride="carousel" data-type="multi" data-interval="false" data-keyboard="true">
+
+                    <div class="carousel-inner">
+                        <check if="{{@STAFFINFO}}">
+                            <repeat group="{{@STAFFINFO}}" key="@sikey" value="{{@data}}">
+                                
+                                <div class="carousel-item" id="staffSlide_{{@sikey}}" data-email="{{@data.id}}">
+                                    <div class="at-row">
+                                        <div class="full-col-img">
+                                            <div class="modal-employee-containpic">
+                                                <img src="{{@data.WebImage}}" class="w-100" alt="{{@data.WebImage}}">
+                                            </div>
+                                            <div class="full-col-name">
+                                                <h3 class="mt-2 modal-title">{{@data.FirstName}}</h3>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p style="margin-bottom: 0px;">{{@data.Description}}<br>
+                                        </p>
+                                    <div class="text-center">
+                                        <a class="mt-3 mb-3 termine-url btn btn-hotel" style="text-shadow: none !important;font-weight: normal !important;" href="javascript:showcarouselformAdmin(this);">
+                                            Nachricht schreiben
+                                        </a>
+<div class="btn-hotel-after" style="display: none;">Nachricht schreiben</div>  
+                                    </div>
+                                </div>
+                            </repeat>
+                        </check>
+                        <div style="clear:both;color: #fff;text-align: center;background: #000;">
+                            
+						
+                            <form id="kontaktcarouselAdmin" enctype="multipart/form-data" style="padding: 0px 15px 15px;display:none;">
+
+                                <div class="text-center">
+                                    <p style="margin-bottom: 0px; font-family: futuraBkBT; font-size: 15px;">
+                                        Für Reklamationen bitte <a href="./feedback.html">HIER</a> klicken                  
+                                    </p> 
+                                    
+                                </div>
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="Name*" name="name" id="name" type="text">
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="E-Mail*" name="emailstaff" id="emailstaff" type="text">
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="Telefon*" name="telefon" id="telefon" type="text">
+                            <textarea maxlenght="500" id="bloom_kontakt_message" name="message" class="form-control rounded-0 md-textarea" placeholder="Nachricht*" required="" style="margin: 10px 0px;" rows="4"></textarea>
+                            
+				            <div class="row">
+                                    <div class="col-lg-3 col-md-12 col-sm-12 upload-btn">
+                                             <!------new file type------>
+                                             <input id="file" name="file" type="file" class="inputfile" data-multiple-caption="{count} files selected" multiple accept=".jpg,.pdf"/>
+                                            <label for="file"><span class="mwpl-upload-btn">Uplaod</span></label> 
+                                        <!----end new file type---->
+                                            <span class="pdf-jpgtxt"><p>PDF JPG</p></span>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mdl-div-sec">
+                                        <div id="kontact_kontakt_status"></div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-12 col-sm-12 upload-btn">
+                                            <input type="hidden"  name="email" id="adminEmail" value="{{@data.Email}}">
+                                            <button id="kontact_sendbtn" type="submit" style="background: #000;right: 0;border: 1px solid #fff;color: #fff;float: right;" class="form-control rounded-0 col-md-5">Senden</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+			</div>
+<!--                        <div class="carousel-item active"><img src="{{@ASSETS}}images/verwaltung/Rosi-Bunn-Capristo_2.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="upload/employee_webimages/emp_image.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="{{@ASSETS}}images/verwaltung/Ceylan-Guerek_2.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="{{@ASSETS}}images/verwaltung/Valerie-Inci_2.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="{{@ASSETS}}images/verwaltung/Joy-Diouf_2.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="{{@ASSETS}}images/verwaltung/FP-kurz_2.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="{{@ASSETS}}images/verwaltung/Gabriele-Diemert-Pertsch_2.jpg" class="w-100" alt=""></div>
+                        <div class="carousel-item"><img src="{{@ASSETS}}images/verwaltung/WP-kurz_2.jpg" class="w-100" alt=""></div>-->
+                    </div>
+
+                </div>
+                <!-- LeitungNozdrya -->
+
+            </div>
+            <!-- end modal-body -->
+        </div>
+    </div>
+</div>

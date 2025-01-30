@@ -1,0 +1,493 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="wel-bs-component">
+
+            <form action="{{@BASE}}/admin/settings/config/edit" method="POST" class="form-horizontal w-100 was-validated" id="setting-form">
+
+                <repeat group="{{ @ini }}" key="{{ @section }}" value="{{ @values }}">
+
+                    <input type="hidden" value="{{ @section }}" name="{{ @section }}">
+
+                    <repeat group="{{ @values }}" key="{{ @key }}" value="{{ @value }}">
+
+                        <check if="{{ @key == 'site' }}">
+                            <true>
+                                <legend>Allgemein</legend>
+
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Seiten-Titel</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" name="{{@section}}[{{@key}}]" value="{{@value}}" class="form-control" data-validation="strength" data-validation-strength="2" required>
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+
+                        <check if="{{ @key == 'carousel_interval' }}">
+                            <true>
+                                <div class="form-group tt-form-group row hide hidden">
+
+                                    <label for="input" class="col-sm-3 col-form-label">Sliding-Dauer</label>
+                                    <div class="col-sm-5 col-xs-12">
+                                        <!-- disabled -->
+                                        <input type="number" min="0" max="20000" step="200" value="2000" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                        <div class="form-text text-muted small">Intervall ist in Millisekunden. 1000 = 1 Sekunde (Wenn auf 0 gesetzt, deaktiviert)
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+
+                        <check if="{{ @key == 'site_debug' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Debug-Modus</label>
+
+                                    <div class="col-sm-5 col-xs-12">
+                                        <div class="input-group" id="debug-mode">
+
+                                            <select name="{{@section}}[{{@key}}]" class="form-control">
+                                                <option value="0" {{ @value == '0' ? 'selected' : '' }}>Kein Debug
+                                                </option>
+                                                <option value="1" {{ @value == '1' ? 'selected' : '' }}>1</option>
+                                                <option value="2" {{ @value == '2' ? 'selected' : '' }}>2</option>
+                                                <option value="3" {{ @value == '3' ? 'selected' : '' }}>3</option>
+                                            </select>
+                                            <!-- <span class="input-group-addon"></span> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'site_cache' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Cache benutzen</label>
+
+                                    <div class="col-sm-9 col-xs-12">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="{{@section}}[{{@key}}]" value="1"
+                                                {{ @value == 1 ? 'checked' : '' }}> Aktiv
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="{{@section}}[{{@key}}]" value="0"
+                                                {{ @value == 0 ? 'checked' : '' }}> Inaktiv
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+
+
+                        <check if="{{ @key == 'adminPassword' }}">
+                            <true>
+                                <hr>
+                                <legend>Sicherheit</legend>
+
+                                <div class="form-group tt-form-group row">
+
+                                    <label for="input" class="col-sm-3 col-form-label">Admin Passwort</label>
+                                    <div class="col-sm-5 col-xs-12">
+                                        <!-- disabled -->
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                        <h6 class="pull-right form-text text-muted small">sicher speichern
+                                        </h6>
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'mail_from_name' }}">
+                            <true>
+                                <hr>
+                                <legend>E-Mail</legend>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Absender-Name</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'mail_from_email' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Admin E-Mail</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="email" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="email" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'noreply_emal' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Noreply E-Mail</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="email" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="email" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <!-- Paypal -->
+                        <check if="{{ @key == 'paypal_user' }}">
+                            <true>
+                                <hr />
+                                <div class="pull-right small"><a target="_blank" href="https://developer.paypal.com/developer/accounts"><span
+                                            class="small form-text text-muted">developer.paypal.com</span></a></div>
+                                <!-- https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
+                                <legend>Paypal API Anmeldeinformationen</legend>
+
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label"><span class="badge badge-warning">Paypal API Benutzername</span></label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+                        <check if="{{ @key == 'paypal_pass' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label"><span class="badge badge-warning">Paypal API Passwort</span></label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'paypal_signature' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label"><span class="badge badge-warning">Paypal API Signatur</span></label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'paypal_endpoint' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Umgebungsmodus</label>
+
+                                    <div class="col-sm-9 col-xs-12">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="{{@section}}[{{@key}}]" value="sandbox"
+                                                {{ @value == 'sandbox' ? 'checked' : '' }}> Sandbox
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="{{@section}}[{{@key}}]" value="production"
+                                                {{ @value == 'production' ? 'checked' : '' }}> Produktion
+
+                                        </label>
+                                        <span class="small form-text text-muted">Die PayPal-Sandbox ist
+                                            eine eigenständige virtuelle Testumgebung, die die Live-PayPal-Produktionsumgebung
+                                            nachahmt.</span>
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+
+                        <check if="{{ @key == 'paypal_apiver' }}">
+                            <!-- paypal_apiver -->
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Paypal Version</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+
+                        <check if="{{ @key == 'paypal_return' }}">
+                            <!-- paypal_return -->
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Rückleitungs-URL</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" readonly />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+
+                        <check if="{{ @key == 'paypal_cancel' }}">
+                            <!-- paypal_cancel -->
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Storno-URL url</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" />
+                                    </div>
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'paypal_log' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label">Paypal Log</label>
+
+                                    <div class="col-sm-9 col-xs-12">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="{{@section}}[{{@key}}]" value="1"
+                                                {{ @value == '1' ? 'checked' : '' }}> Aktiv
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="{{@section}}[{{@key}}]" value="0"
+                                                {{ @value == '0' ? 'checked' : '' }}> Inaktiv
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'paypal_emal' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label"><kbd>Paypal E-Mail
+                                            ID</kbd></label>
+
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="email" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="email" />
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'paypal_account_id' }}">
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label"><kbd>Paypal Konto
+                                            ID</kbd></label>
+
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" />
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+                        <check if="{{ @key == 'paypal_client_id' }}">
+                            <!-- Client ID -->
+                            <!-- Default Application App display name:Default Application  SANDBOX API CREDENTIALS -->
+                            <true>
+                                <div class="form-group tt-form-group row">
+                                    <label for="input" class="col-sm-3 col-form-label"><kbd>Kunden ID</kbd></label>
+
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" />
+                                    </div>
+
+                                </div>
+                            </true>
+                        </check>
+
+                       <!-- paypal plus -->
+                         <!-- Paypal Plus -->
+  <check if="{{ @key == 'paypal_plus_user' }}">
+    <true>
+        <hr />
+        <div class="pull-right small"><a target="_blank" href="https://developer.paypal.com/developer/accounts"><span
+                    class="small form-text text-muted">developer.paypal.com</span></a></div>
+        <!-- https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
+        <legend>Paypal Plus API Anmeldeinformationen</legend>
+
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label"><span class="badge badge-warning">Paypal Plus API Benutzername</span></label>
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+            </div>
+        </div>
+    </true>
+</check>
+<check if="{{ @key == 'paypal_plus_pass' }}">
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label"><span class="badge badge-warning">Paypal Plus API Passwort</span></label>
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+            </div>
+        </div>
+    </true>
+</check>
+
+<check if="{{ @key == 'paypal_plus_signature' }}">
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label"><span class="badge badge-warning">Paypal Plus API Signatur</span></label>
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+            </div>
+        </div>
+    </true>
+</check>
+
+<check if="{{ @key == 'paypal_plus_endpoint' }}">
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label">Umgebungsmodus</label>
+
+            <div class="col-sm-9 col-xs-12">
+                <label class="radio-inline">
+                    <input type="radio" name="{{@section}}[{{@key}}]" value="sandbox"
+                        {{ @value == 'sandbox' ? 'checked' : '' }}> Sandbox
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="{{@section}}[{{@key}}]" value="production"
+                        {{ @value == 'production' ? 'checked' : '' }}> Produktion
+
+                </label>
+                <span class="small form-text text-muted">Die PayPal-Sandbox ist
+                    eine eigenständige virtuelle Testumgebung, die die Live-PayPal-Produktionsumgebung
+                    nachahmt.</span>
+            </div>
+
+        </div>
+    </true>
+</check>
+
+
+<check if="{{ @key == 'paypal_plus_apiver' }}">
+    <!-- paypal_plus_apiver -->
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label">Paypal Plus Version</label>
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" required />
+            </div>
+        </div>
+    </true>
+</check>
+
+
+<check if="{{ @key == 'paypal_plus_return' }}">
+    <!-- paypal_plus_return -->
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label">Rückleitungs-URL</label>
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" readonly />
+            </div>
+        </div>
+    </true>
+</check>
+
+
+<check if="{{ @key == 'paypal_plus_cancel' }}">
+    <!-- paypal_plus_cancel -->
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label">Storno-URL url</label>
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" />
+            </div>
+        </div>
+    </true>
+</check>
+
+<check if="{{ @key == 'paypal_plus_log' }}">
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label">Paypal Plus Log</label>
+
+            <div class="col-sm-9 col-xs-12">
+                <label class="radio-inline">
+                    <input type="radio" name="{{@section}}[{{@key}}]" value="1"
+                        {{ @value == '1' ? 'checked' : '' }}> Aktiv
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="{{@section}}[{{@key}}]" value="0"
+                        {{ @value == '0' ? 'checked' : '' }}> Inaktiv
+                </label>
+            </div>
+
+        </div>
+    </true>
+</check>
+
+<check if="{{ @key == 'paypal_plus_emal' }}">
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label"><kbd>Paypal Plus E-Mail
+                    ID</kbd></label>
+
+            <div class="col-sm-9 col-xs-12">
+                <input type="email" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="email" />
+            </div>
+
+        </div>
+    </true>
+</check>
+
+<check if="{{ @key == 'paypal_plus_account_id' }}">
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label"><kbd>Paypal Plus Konto
+                    ID</kbd></label>
+
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" />
+            </div>
+
+        </div>
+    </true>
+</check>
+
+<check if="{{ @key == 'paypal_plus_client_id' }}">
+    <!-- Client ID -->
+    <!-- Default Application App display name:Default Application  SANDBOX API CREDENTIALS -->
+    <true>
+        <div class="form-group tt-form-group row">
+            <label for="input" class="col-sm-3 col-form-label"><kbd>Kunden ID</kbd></label>
+
+            <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{@value}}" name="{{@section}}[{{@key}}]" class="form-control" data-validation="strength" data-validation-strength="2" />
+            </div>
+
+        </div>
+    </true>
+</check>
+
+
+
+
+                    </repeat>
+                    <!-- <br /> -->
+                </repeat>
+                <!-- btn-block btn-sm -->
+                <div class="card-footer-text-muted">
+                    <input type="submit" class="btn btn-dark btn-next mt-3 position-relative" value="Änderungen speichern" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .form-group .badge {
+        font-size: 100%;
+    }
+</style>

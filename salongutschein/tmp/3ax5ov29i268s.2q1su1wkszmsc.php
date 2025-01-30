@@ -1,0 +1,41 @@
+<nav id="toolbar" class="navbar navbar-default navbar-fixed-bottom no-bg no-border" role="navigation">
+    <div class="container-fluid">
+
+        <a href="<?= ($BASE) ?>/admin" type="button" class="btn btn-default tool-btn">
+            <span class="fa fa-arrow-left"></span> &nbsp; Zurück
+        </a>
+        <!-- <button type="button" class="btn btn-default tool-btn" data-toggle="modal" data-target="#youtubeModal">
+          <span class="fa fa-video-camera"></span> &nbsp; Video
+      </button>
+      -->
+        <a href="<?= ($BASE) ?>" type="button" class="btn btn-default tool-btn pull-right">
+            <span class="fa fa-arrow-right"></span> &nbsp; Titelseite
+        </a>
+    </div>
+</nav>
+<section class="layout-admin-settings container pt-1 m-auto vh-100">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <h4 style="color: #000;" class="card-header">Einstellungen</h4>
+                <!-- <h4 class="card-title">Settings</h4> -->
+                <div class="card-body">
+                    <ul class="hide nav nav-tabs nav-pills">
+                        <li class="<?= ($component == 'config' ? 'nav-item active buba' : 'nav-item buba') ?>">
+                            <a class="<?= ($component == 'config' ? 'nav-link active  disabled' : 'nav-link  disabled') ?>" href="<?= ($BASE) ?>/admin/settings/config">Einstellungen</a>
+                        </li>
+                        <li class="<?= ($component == 'users' ? 'nav-item active buba' : 'nav-item buba') ?>">
+                            <a class="<?= ($component == 'users' ? 'nav-link active  disabled' : 'nav-link  disabled') ?>" href="<?= ($BASE) ?>/admin/settings/users">users</a>
+                        </li>
+                    </ul>
+                    <br />
+                    <div class="card-text-bubu">
+                        <?php echo $this->render($section,NULL,get_defined_vars(),0); ?>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

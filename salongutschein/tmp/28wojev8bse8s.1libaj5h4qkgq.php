@@ -1,0 +1,116 @@
+<div id="agb-section" class="row">
+
+    <div class="col-md-12">
+
+        <?php echo $this->render('layout/blooms-logo.html',NULL,get_defined_vars(),0); ?>
+
+
+        <article id="page-impressum" class="container p-md-0 mt-5">
+            <section class="layout-impressum">
+
+                <section class="mt-3">
+
+                    <div class="row">
+                        <div class="col-11">
+                            <h5 class="mt-3 mb-0">Allgemeine Geschäftsbedingungen für den Kauf von Gutscheinen bei bloom´s Friseur  (AGB´s)</h5>
+                            <h5 class="mb-0">„bloom´s Friseur“ ist eine eingetragene Marke der Pertsch GmbH und der blooms1 GmbH, vertreten durch die Geschäftsführer Gabriele Diemert-Pertsch, Franz Pertsch und Wolfgang Pertsch N7,8, 68161 Mannheim.</h5>
+
+                            <div class="mt-5">
+                                <h5><strong>§ 1 Geltungsbereich; Vertragssprache; keine Geltung entgegenstehender AGB</strong>
+                                </h5>
+                                <p>(1) Die nachfolgenden allgemeinen Geschäftsbedingungen (AGB) gelten für den Erwerb von Gutscheinen.  </p>
+                                <p>(2) Vertragssprache ist deutsch.</p>
+                                <p>(3) Allgemeine Geschäftsbedingungen des Kunden werden nicht anerkannt und finden auf den Erwerb von Gutscheinen keine Anwendung.</p>
+
+                                <div class="mt-5">
+                                    <h5><strong>§ 2 Anwendbares Recht; Verbraucherschutzvorschriften</strong></h5>
+                                    <p>Auf die zwischen uns und unseren Kunden auf Grundlage dieser AGB geschlossenen Verträge findet deutsches Recht unter Ausschluss des UN-Kaufrechts Anwendung. Zwingende Verbraucherschutzvorschriften des Rechts des Staates, in dem ein Kunde, der Verbraucher ist, seinen gewöhnlichen Aufenthalt hat, bleiben davon unberührt. Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können.</p>
+                                </div>
+
+
+                                <div class="mt-5">
+                                    <h5><strong>§ 3 Vertragsabschluss; Berichtigungshinweis</strong></h5>
+                                    <p>(1) Die Darstellung der Produkte in unserem Webshop stellt kein rechtlich bindendes Angebot, sondern eine Aufforderung zur Bestellung (invitatio ad offerendum) dar. Die über die Webseite gekauften Gutscheine können in allen bloom´s Friseurgeschäften zur Bezahlung ausschließlich von Dienstleistungen eingelöst werden. Ein Auszahlung von Restbeträgen im Salon ist nicht möglich.</p>
+                                    <p>(2) Durch Anklicken des „Gutschein kaufen“-Buttons im letzten Schritt des Bestellprozesses geben Sie ein verbindliches Angebot zum Kauf des in der Bestellübersicht angezeigten Gutscheins ab. Unmittelbar nach Absenden der Bestellung erhalten Sie eine Bestellbestätigung, die jedoch noch keine Annahme Ihres Vertragsangebots darstellt. Ein Vertrag zwischen Ihnen und uns kommt zustande, sobald wir Ihnen den Gutschein per E-Mail zusenden bzw. ihn in den Versand per Post geben. Bitte prüfen Sie regelmäßig den SPAM-Ordner Ihres E-Mail-Postfachs.</p>
+                                    <p>(3) Sie können auf unserer Webseite einen Gutschein auswählen, indem Sie im ersten Schritt den gewünschten Betrag und die Versandart (per E-Mail oder per Post) auswählen. Nach Klick auf den Button „Weiter“ werden Sie im nächsten Schritt gebeten, ggf. ein Design des Gutscheins auszuwählen und Sie können optional einen persönlichen Grußtext hinzufügen. Mit Klick auf den Button „Weiter“ gelangen Sie zu einer Bestellübersichtsseite, auf der Sie Ihre Auswahl und Ihre Angaben noch einmal überprüfen können. Wenn Sie die Bestellung abschließen wollen, klicken Sie bitte auf „Gutschein kaufen“. Damit geben Sie ein verbindliches Angebot, gerichtet auf den Kauf eines Gutscheins ab. Bis zu diesem Zeitpunkt können Sie Ihre Eingaben korrigieren bzw. von der Vertragserklärung Abstand nehmen, indem Sie auf „Zurück“ klicken oder einfach den Browser schließen. Anschließend werden Sie durch den Bezahlvorgang geleitet.</p>
+                                </div>
+                                <div class="mt-5">
+                                    <h5><strong>§ 4 Kundeninformation: Speicherung des Vertragstextes</strong></h5>
+                                    <p>Die Vertragsbestimmungen mit Angaben zu den bestellten Gutscheinen einschließlich dieser allgemeinen Geschäftsbedingungen sind jederzeit einsehbar. Eine Speicherung der Vertragsbestimmungen für Sie durch uns erfolgt nicht.</p>
+                                </div>
+                                <div class="mt-5">
+                                    <h5><strong>§ 5 Widerrufsbelehrung für Verbraucher</strong></h5>
+                                    <p>Wenn Sie Verbraucher im Sinne des § 13 Bürgerliches Gesetzbuch (BGB) sind, steht Ihnen nach Maßgabe der nachfolgenden Belehrungen ein Widerrufsrecht zu. Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können.</p>
+                                    <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, den Gutschein erhalten hat. Um Ihr Widerrufsrecht auszuüben, müssen Sie mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden. Bitte senden Sie Ihren Widerruf an: </p>
+                                </div>
+                                <div class="mt-5">
+
+                                    <div class="impressum-paragraph mt-4">
+                                        <p>bloom´s Friseur</p>
+                                        <p>Pertsch GmbH</p>
+                                        <p>N7, 8</p>
+                                        <p>68161 Mannheim</p>
+                                        <p>Telefon: 0621 / 5680-444</p>
+                                        <p>E-Mail: kundenservice(at)bloom-s.de</p>
+                                    </div>
+                                </div>
+                                <div class="impressum-paragraph mt-5">
+                                    <p>Muster-Widerrufsformular:</p>
+                                </div>
+
+                                <div class="impressum-paragraph mt-4">
+                                    <p>Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf von Gutscheinen</p>
+                                    <ul>
+                                        <li>Bestellt am:</li>
+                                        <li>Erhalten am:</li>
+                                        <li>Name Kunde:</li>
+                                        <li>Anschrift:</li>
+                                        <li>Unterschrift:</li>
+                                        <li>Datum:</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-5">
+                                    <h5><strong>Folgen des Widerrufs</strong></h5>
+                                    <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Die Rückzahlung erfolgt ausschließlich als Banküberweisung , es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. 
+                                    </p>
+                                </div>
+
+                                <div class="mt-5">
+                                    <h5><strong>§ 6 Fälligkeit des Kaufpreises</strong></h5>
+                                    <p>Die Zahlung des Kaufpreises für den Gutschein wird unmittelbar mit Absenden Ihrer Bestellung fällig.</p>
+                                </div>
+
+                                <div class="mt-5">
+                                    <h5><strong>§ 7 Kundenservice</strong></h5>
+                                    <p>Bei Anfragen zu unseren Services oder Produkten wenden Sie sich bitte an unseren Kundenservice unter 0621 / 5680-444 oder an kundenservice(at)bloom-s.de.</p>
+
+                                </div>
+
+                                <div class="mt-5">
+                                    <h5><strong>§ 8 Beschränkung unserer Haftung</strong></h5>
+                                    <p>Wir haften, gleich aus welchem Rechtsgrund, ausschließlich nach Maßgabe der nachstehenden Regelungen.</p>
+                                </div>
+
+                                <div class="mt-5">
+                                    <h5><strong>§ 9 Salvatorische Klausel</strong></h5>
+                                    <p>Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam oder undurchführbar sein oder nach Vertragsschluss unwirksam oder undurchführbar werden, so bleibt die Gültigkeit im Übrigen unberührt.</p>
+
+                                </div>
+
+                                <div class="mt-5">
+                                    <h6><strong>Stand 15.02.2021</strong></h6>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-1"><button onclick="window.opener=null; window.close(); return false;" class="btn btn-light rounded-0 sticky-top">Schließen</button></div>
+                    </div>
+
+                </section>
+
+            </section>
+        </article>
+    </div>
+</div>

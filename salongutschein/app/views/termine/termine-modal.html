@@ -1,0 +1,88 @@
+<!-- Modal -->
+<div class="modal fade modal-salon-subpage" id="termineDataModal" tabindex="-1" role="dialog"
+    aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+        <!-- MODAL-ARROW-LEFT -->
+        <div class="modal-arrow modal-arrow-left">
+            <button type="button" id="" aria-label="Next" class="">
+                <svg width="44" height="60">
+                    <polyline points="30 10 10 30 30 50" stroke="rgb(255,255,255)" stroke-width="4"
+                        stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
+                </svg>
+            </button>
+        </div>
+        <!-- MODAL-ARROW-RIGHT -->
+        <div class="modal-arrow modal-arrow-right">
+            <button type="button" id="next-button" aria-label="Next" class="">
+                <svg width="44" height="60">
+                    <polyline points="14 10 34 30 14 50" stroke="rgb(255,255,255)" stroke-width="4"
+                        stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
+                </svg>
+            </button>
+        </div>
+        <!-- MODAL-CONTENT  -->
+        <div class="modal-content emp-modal">
+
+            <div class="modal-header border-0 p-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body text-center text-dark">
+
+                <div class="at-row">
+
+                    <div class="full-col-img">
+
+                        <div class="modal-employee-containpic">
+                            <!-- style="background-image: url('https://developservice.de/kunden/blooms/1plus/upload/employee_webimages/2/1011_behlul_osmic_2_1589964903.jpg');" -->
+                            <a class="modal-employee-img text-center w-100" href="javascript:void(0);"></a>
+                        </div>
+
+                        <div class="full-col-name">
+                            <h3 class="mt-2 modal-title"><span> </span></h3>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="mt-3 mb-3 text-left employee_description"></div>
+
+                <!-- <a class="mt-3 mb-3 termine-url btn btn-hotel" href="{{ @BASE }}/termine.html">Termin vereinbaren</a> -->
+
+
+                <div class="yakcho-nema mt-2">
+                    <a id="stylebook-modal" class="mt-0 stylebook-modal" href="javascript:void(0)"><strong>Stylebook
+                            anschauen</strong></a>
+
+                    <div id="stylebook-data" class="row no-hide">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div id="stylist-slider" class="stylist-slider-modal mt-1 carousel slide carousel-fade"
+                                data-ride="carousel">
+                                <div class="carousel-inner">
+
+                                </div>
+                                <a class="carousel-control-prev" href="#stylist-slider" role="button" data-slide="prev">
+                                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#stylist-slider" role="button" data-slide="next">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  25.05.2020 12:01 if not stylebook - hide -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end modal content -->
+
+    </div>
+</div>

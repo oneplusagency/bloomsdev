@@ -1,0 +1,7 @@
+upload_tmp_dir = "var/www/vhosts/hosting110885.a2f45.netcup.net/development/kunden/blooms/1plus/tmp"
+file_uploads = On
+upload_max_filesize = 10M
+max_execution_time = 90
+max_input_time = 90
+memory_limit = 196M
+post_max_size = 10M

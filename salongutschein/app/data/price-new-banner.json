@@ -1,0 +1,58 @@
+{
+    "4": {
+        "_id": "da76cfcff9f442b08c6b0f4516d79b65bca351d2fb6a05eb3c5c20b9a3318a67",
+        "name": "Modellbedienung Frauen",
+        "description": "",
+        "items": [
+            {
+                "_id": "22477ff1bf50860eb91e003c8c84b9d5c0b644181a3c7cb7c2194d37f3fbe25f",
+                "title": "Modell Schnitt Frauen",
+                "description": "",
+                "price": "29,-",
+                "extra_info": [
+                    "Kompetente Beratung mit mehreren Vorschl\u00e4gen \u2022 Individuell auf ihre Haarstruktur abgestimmter Haarschnitt  \u2022 Professionelles Finish mit Rundb\u00fcrste, Lockenstab oder Gl\u00e4tteisen"
+                ]
+            },
+            {
+                "_id": "0bd7ff7780238e1e6082b8852c8f22c243ece655e9ebfca1f7acdbf9b87b85db",
+                "title": "Modell Farbe+Schnitt",
+                "description": "",
+                "price": "49,-",
+                "extra_info": [
+                    "Perfekte Farbauswahl und Beratung mit mehreren Vorschl\u00e4gen \u2022 Farbe mit hoher Deckkraft und Haltbarkeit \u2022 Individuell auf ihre Haarstruktur abgestimmter Haarschnitt  \u2022 Professionelles Finish mit Rundb\u00fcrste, Lockenstab oder Gl\u00e4tteisen"
+                ]
+            },
+            {
+                "_id": "0520ea72ba5b6ae4964568a6fc509cef6c81fdd662c8387c144049cf5ba87134",
+                "title": "Modell Folienstr\u00e4hnen+Schnitt",
+                "description": "",
+                "price": "69,-",
+                "extra_info": [
+                    "Perfekte Farbauswahl und Beratung mit mehreren Vorschl\u00e4gen \u2022 Str\u00e4hnen inkl. Nuancierung f\u00fcr beste Ergebnisse  \u2022 Individuell auf ihre Haarstruktur abgestimmter Haarschnitt  \u2022 Professionelles Finish mit Rundb\u00fcrste, Lockenstab oder Gl\u00e4tteisen"
+                ]
+            },
+            {
+                "_id": "eaa138dec17f31c9245f7214be925781d75e534c10ed721965778a73f56b6b3a",
+                "title": "Modell Balayage+Schnitt",
+                "description": "",
+                "price": "89,-",
+                "extra_info": [
+                    "Balayage in Perfektion \u2022 Perfekte Farbauswahl und Beratung \u2022 Individuell auf ihre Haarstruktur abgestimmter Haarschnitt  \u2022 Professionelles Finish mit Rundb\u00fcrste, Lockenstab oder Gl\u00e4tteisen"
+                ]
+            }
+        ]
+    },
+    "5": {
+        "_id": "c46a511cea6b4a5a3a06f9f0fd4487c6e33cb023a31df3a5464f108c2fc310af",
+        "name": "Modellbedienung M\u00e4nner",
+        "description": "",
+        "items": [
+            {
+                "_id": "5a2805a3daa1e1e2a5dcc80d4c53ab46ec78c6209c06c74322c3c42d3b9a3bb3",
+                "title": "Modell Schnitt M\u00e4nner",
+                "description": "",
+                "price": "19,-"
+            }
+        ]
+    }
+}

@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="col-md-12">
+        <include href="layout/blooms-logo.html" />
+
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <include href="layout/menu_all.html" />
+                    </div>
+                </section>
+
+            </div>
+        </nav>
+
+        <article id="page-stylebook-gallery" class="container px-0 mt-5">
+
+            <p class="text-center mb-0">Iernen Sie den blooms Style kennen</p>
+            <p class="text-center mb-0">Stylebeschreibung: klasse aspruchsvolle aktuelle haarfarbe, natürliche asprucksvolle</p>
+            <p class="text-center mb-0">Stylings von kurz bis lang // pflegeleicht für zu Hause / ästhetisch</p>
+
+
+            <check if="{{@STYLEBOOK_PICTURE}}">
+                <true>
+                    <div class="layout-stylebook-gallery mt-5 text-center">
+
+                        <repeat group="{{@STYLEBOOK_PICTURE}}" value="{{@data}}">
+
+                            <div class="stylebook-gallery-grid-img">
+                                <div class="position-relative d-flex justify-content-center w-100" data-employeeId="{{@data.Id}}" data-salonid="{{@data.SALONID}}" data-termine_url="{{@BASE}}/termine/salon/{{@data.SALONID}}" data-title_employee="{{@data.Name}}" data-img_employee="{{@data.PICTURE}}"
+                                    data-toggle="modal" data-target="#stylistModal">
+                                    <!-- data-stylebook_src -->
+                                    <img class="gop-image" src="{{@data.TH_PICTURE}}" alt="{{@data.ALT}}" />
+                                    <!-- data-toggle="modal" data-target="#stylistModal" -->
+                                    <p style="cursor: pointer;" class="over-image-text-stylebook-grid-img">Stylist: {{@data.Name}}</p>
+                                </div>
+                            </div>
+
+                        </repeat>
+                    </div>
+                </true>
+                <false>
+                    <div class="alert text-center mt-2 text-warning">
+                        Sie haben derzeit keine Sachen in unserem Stylebook.
+                    </div>
+                </false>
+            </check>
+        </article>
+
+    </div>
+</div>
+<!-- END ROW -->
+
+<!-- Modal -->
+<div class="modal fade modal-salon-subpage" id="stylistModal" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+
+        <!-- ALEX told hide 06.02.2020 13:11 -->
+        <check if="{{false}}">
+            <div class="modal-arrow modal-arrow-left">
+                <button type="button" id="" aria-label="Next" class="emptt">
+                <svg width="44" height="60">
+                    <polyline points="30 10 10 30 30 50" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
+                </svg>
+            </button>
+            </div>
+            <div class="modal-arrow modal-arrow-right">
+                <button type="button" id="next-button" aria-label="Next" class="emptt">
+                <svg width="44" height="60">
+                    <polyline points="14 10 34 30 14 50" stroke="rgb(255,255,255)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
+                </svg>
+            </button>
+            </div>
+        </check>
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0 p-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body text-center text-dark">
+
+                <div class="modal-stylebook-containpic">
+                    <a class="modal-stylebook-img stylist-modal-img text-center w-100" href="javascript:void(0);"></a>
+                </div>
+
+                <!-- Selina -->
+                <h3 class="mt-2 modal-title"><span> </span></h3>
+                <!-- ALEX told hide 06.02.2020 13:11 -->
+                <div class="text-left hide">
+                    <ul>
+                        <li>Ausführlicher Beschreibungstext // Text2 /</li>
+                        <li>Salonleitung, Friseurmeisterin</li>
+                        <li>Bayalage hochstecken</li>
+                        <li>Fachtrainerin</li>
+                        <li>Erfahrung:10 Jahre bei bloom´s</li>
+                        <li>
+                            “Ich liebe mein Team und meine kunden”
+                        </li>
+                        <li>Preiskatrgorie (laden)</li>
+                    </ul>
+                </div>
+                <a class="my-5 termine-url" href="{{@BASE}}/termine.html"><strong>Termin vereinbaren</strong></a>
+                <br />
+                <a class="mt-2 stylebook-url" href="{{@BASE}}/stylebook.html"><strong>Stylebook anschauen</strong></a>
+                <!-- end gallery -->
+            </div>
+        </div>
+
+    </div>
+</div>

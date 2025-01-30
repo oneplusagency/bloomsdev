@@ -1,0 +1,93 @@
+$(document).ready(function(){
+    
+
+    console.log("info");
+
+//////////
+
+$('#kontaktformularForm').submit(function(event) {
+    event.preventDefault();
+    
+        $('#kontact_kontakt_status').html('Laden...');
+          let data = new FormData(document.getElementById("kontaktformularForm"));
+          var files = $('#fileStaff')[0].files[0];
+          data.append('image', files);
+         
+          $.ajax({
+              url: BloombaseUrl + '/kontaktformular/sendinfo',
+              type: 'post',
+              data: data,
+              dataType: 'text',
+              contentType: false,
+              processData: false,
+              cache: false,
+              beforeSend: function() {
+                  $('#kontact_sendbtn').buttonSalo('loading');
+              },
+              success: function(response) {
+                  // alert(response)
+                  $('#kontact_kontakt_status').html(response);
+                  
+
+                  $('#bloom_kontakt_submit').removeAttr('disabled');
+                  if(response != '<div class="alert alert-danger rounded-0" role="alert">Falsches Dateiformat</div>'){
+                    console.log("Resp "+response);
+                    $('#bloom_kontakt_submit').buttonSalo('reset');                   
+                   
+                  }
+                  
+              },
+              error: function(XMLHttpRequest, textStatus, errorThrown) {
+                  // alert("Status: " + textStatus);
+                  // alert("Error: " + errorThrown);
+                  $('#kontact_kontakt_status').html('<div class="alert alert-danger rounded-0" role="alert">Something went wrong.Please try after some time.</div>');
+                  console.log("Status: " + textStatus);
+                  console.log("Error: " + errorThrown);
+                  $('#bloom_kontakt_submit').buttonSalo('reset');
+              }
+          });
+          return false;
+     
+    });
+
+///////////////////
+
+
+//     $('#kontaktformularForm').submit(function(event) {
+//         event.preventDefault();
+//         // var dats = JSON.stringify($(this).serializeArray());
+        
+//         $('#status').html('<div class="mt-2 mb-2">Laden...</div>');
+        
+//         let data = new FormData(this);
+//         $.ajax({
+//             url: BloombaseUrl + '/kontaktformular/sendInfo',
+//             type: 'post',
+//             data: data,
+//             dataType: 'text',
+//             contentType: false,
+//             processData: false,
+//             cache: false,
+//             beforeSend: function() {
+//                 $('#bloom_kontakt_submit').buttonSalo('loading');
+//             },
+//             success: function(response) {
+//                 // alert(response)
+//                 $('#status').hide().html(response).fadeIn().delay(2000).fadeOut(800);
+//                 $('#bloom_kontakt_submit').buttonSalo('reset');
+//                 $('#bloom_kontakt_submit').removeAttr('disabled');
+//                 $("#kontaktformularForm")[0].reset();
+                
+                
+//             },
+//             error: function(XMLHttpRequest, textStatus, errorThrown) {
+//                 // alert("Status: " + textStatus);
+//                 // alert("Error: " + errorThrown);
+//                 console.log("Status: " + textStatus);
+//                 console.log("Error: " + errorThrown);
+//                 $('#bloom_kontakt_submit').buttonSalo('reset');
+//             }
+//         });
+//         return false;
+//     });
+});

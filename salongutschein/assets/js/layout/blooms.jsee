@@ -1,0 +1,33 @@
+(function($) {
+    $('#team-view').hide();
+    $('#werte-view').hide();
+    $('#facts-view').hide();
+    $('#historie-view').hide();
+    $('#verwaltung-view').hide();
+})(jQuery);
+
+function showData(selection, div) {
+    let buttons = $('#selection-tabs').find('button');
+
+    for (let i = 0; i < buttons.length; i++) {
+        jQuery(buttons[i]).removeClass('btn-active');
+    }
+
+    jQuery('#team-view').fadeOut("slow");
+    jQuery('#werte-view').fadeOut("slow");
+    jQuery('#facts-view').fadeOut("slow");
+    jQuery('#historie-view').fadeOut("slow");
+    jQuery('#verwaltung-view').fadeOut("slow");
+
+    jQuery(selection).addClass('btn-active');
+    jQuery(div).fadeIn("slow");
+}
+
+function modalthis(who){
+	var img = jQuery(who).attr('src-alt');
+	jQuery('.modal.modal-salon-subpage .modal-body img').attr('src',img);
+}
+
+jQuery(document).ready(function($) {
+    $('[data-toggle="tooltip"]').tooltip();
+});

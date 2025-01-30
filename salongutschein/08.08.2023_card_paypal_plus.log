@@ -1,0 +1,36 @@
+[08-08-2023 11:06:12] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[08-08-2023 11:06:13] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 11:06:13] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[08-08-2023 11:06:13] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 11:06:13] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[08-08-2023 11:06:13] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 11:16:24] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[08-08-2023 11:16:24] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 11:16:24] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[08-08-2023 11:16:25] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 11:16:25] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[08-08-2023 11:16:25] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 11:17:57] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[08-08-2023 11:17:57] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 11:17:57] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MTJAP2I15C67972YW119874J
+[08-08-2023 11:17:57] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 11:17:57] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-MTJAP2I15C67972YW119874J/execute
+[08-08-2023 11:17:58] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 16:00:49] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[08-08-2023 16:00:50] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 16:00:50] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[08-08-2023 16:00:50] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 16:00:50] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[08-08-2023 16:00:50] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 16:47:50] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[08-08-2023 16:47:51] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 16:47:51] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[08-08-2023 16:47:51] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 16:47:51] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[08-08-2023 16:47:51] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[08-08-2023 16:53:01] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[08-08-2023 16:53:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 16:53:02] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-MTJFLFY2N773971FF4571333
+[08-08-2023 16:53:02] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[08-08-2023 16:53:02] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-MTJFLFY2N773971FF4571333/execute
+[08-08-2023 16:53:03] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200

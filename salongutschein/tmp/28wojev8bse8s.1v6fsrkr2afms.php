@@ -1,0 +1,123 @@
+<div class="row" id="abmeldung_page">
+    <div class="col-md-12" style="clear:both;color: #fff;text-align: center;background: #000;">
+        <?php echo $this->render('layout/blooms-logo.html',NULL,get_defined_vars(),0); ?>
+
+        <center>
+            <div class="col-md-6">
+                <?php echo $this->render('layout/abmeldung-logo.html',NULL,get_defined_vars(),0); ?>
+                <p>&nbsp;</p>
+            </div>
+            <div class="col-md-6 ">
+
+
+                <div class="p-md-0 mt-md-3 mt-0" id="terminstornierung_form_container">
+                    <article>
+
+                        <section class="justify-content-center">
+                            <?php if (isset($CONTENT)): ?>
+                                
+                                    <?= ($CONTENT)."
+" ?>
+                                
+                            <?php endif; ?>
+                        </section>
+
+
+                    </article>
+                    <div style="clear:both;color: #fff;text-align: center;background: #000;">
+
+
+                        <form id="TerminstornierungAdmin" enctype="multipart/form-data" style="padding: 0px 15px 15px;">
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50"
+                                aria-required="true" aria-invalid="false" style="margin: 10px 0px;" placeholder="Name*"
+                                name="name" id="name" type="text">
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50"
+                                aria-required="true" aria-invalid="false" style="margin: 10px 0px;"
+                                placeholder="E-Mail*" name="emailstaff" id="emailstaff" type="email">
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50"
+                                aria-required="true" aria-invalid="false" style="margin: 10px 0px;"
+                                placeholder="Telefon*" name="telefon" id="telefon" type="text">
+
+
+                            <p class="mt-5">Hiermit storniere ich meinen Termin am:</p>
+
+                            <input type="text" id="datepicker" name="date" readonly="readonly"
+                                class="date_picker form-control rounded-0" placeholder="Datum" required value="" />
+                            <input name="iso_date" id="thealtdate" type="hidden" />
+
+                            <input class="form-control rounded-0" required="required" pattern=".{2,}" maxlenght="50"
+                                aria-required="true" aria-invalid="false" style="margin: 10px 0px;"
+                                placeholder="Uhrzeit*" name="uhrzeit" id="uhrzeit" type="text">
+
+                            <select id="option_salon" name="option_salon" class="form-control rounded-0"
+                                style="color:grey;" required>
+
+                                <?php foreach (($OPTION_SALON?:[]) as $data): ?>
+                                    <?= ($data)."
+" ?>
+                                <?php endforeach; ?>
+                            </select>
+
+                        </form>
+
+                    </div>
+
+                    <div>
+
+                        <p class="mt-5 mb-5">
+                            Bitte beachten Sie, dass nur Termine bis 24 Stunden vor Terminbeginn kostenfrei
+                            storniert werden können. <a href="/termineagb.html" target="_blank"
+                                style="text-decoration:underline ;">AGBs
+                                Terminvergabe</a>
+                        </p>
+
+
+                        <div class="row mt-4">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <input type="checkbox" id="callback" name="callback" form="TerminstornierungAdmin">
+                                <label for="callback">Bitte rufen Sie
+                                    mich zurück.</label>
+                            </div>
+                            <div class="col-lg-3 col-md-12 col-sm-12 mdl-div-sec">
+                            </div>
+                            <div class="col-lg-3 col-md-12 col-sm-12 upload-btn">
+                                <button id="terminstornierung_sendbtn" type="submit" form="TerminstornierungAdmin"
+                                    style="background: #000;right: 0;border: 1px solid #fff;color: #fff;float: right;"
+                                    class="form-control rounded-0 col-md-5">Senden</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="editor"></div>
+                <div class="col-md-8 p-md-0 mt-md-3 mt-0" id="terminstornierung_success_container"
+                    style="display: none">
+                    <div class="d-flex flex-column ">
+                        <p id="terminstornierung_success_message" style="margin-bottom:4rem;align-self: stretch;"></p>
+                        <!-- <p>
+                            <button type="button"
+                                style="height: auto; background: #000;right: 0;border: 1px solid #fff;color: #fff;"
+                                class="form-control rounded-0 col-md-5" onclick="window.print();">Seite drucken</button>
+                        </p> -->
+                        <!-- <p>
+                            <button type="button"
+                                style="height: auto;background: #000;right: 0;border: 1px solid #fff;color: #fff;"
+                                class="form-control rounded-0 col-md-5" onclick="savePagePdf()">Seite als PDF
+                                speichern</button>
+                        </p> -->
+                        <a href="/termine.html"
+                            style="align-items: center;margin-bottom: 1.5rem;height: auto;background: #000;right: 0;border: 1px solid #fff;color: #fff;padding: 0.5rem 0.5rem;font-family: 'FuturaBT-ExtraBlack' !important;">
+                            <div class="rounded-0">Neuen Termin vereinbaren</div>
+                        </a>
+
+                        <a href="/"
+                            style="align-items: center;height: auto;background: #000;right: 0;border: 1px solid #fff;color: #fff;padding: 0.5rem 0.5rem;font-family: 'FuturaBT-ExtraBlack' !important">
+                            <div class="rounded-0">Seite schließen</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </center>
+    </div>
+</div>

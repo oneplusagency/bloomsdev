@@ -1,0 +1,439 @@
+<div class="row">
+    <div class="col-md-12">
+        <?php echo $this->render('layout/blooms-logo.html',NULL,get_defined_vars(),0); ?>
+
+        <nav class="page-nav-others text-vanukin navbar navbar-dark navbar-expand-md mt-5 py-0">
+            <div class="container p-md-0 w-100">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse pr-3 order-md-1 order-2" id="myTogglerNav">
+                    <div class="navbar-nav ml-auto w-100 justify-content-around px-5">
+                        <?php echo $this->render('layout/menu_all.html',NULL,get_defined_vars(),0); ?>
+                    </div>
+                </section>
+
+            </div>
+        </nav>
+
+        <!-- add banner  @FIX by oppo * @Date: 27.07.2020 18:11 -->
+        <?php if ($BANNERS): ?>
+            
+                <article id="page-slide-index">
+                    <section class="layout-slider container mt-5 p-md-0 px-2">
+                        <!-- BEGIN slider-images -->
+                        <div id="slider-images" class="carousel slide carousel-fade" data-ride="carousel">
+
+                            <div class="carousel-inner">
+                                <?php foreach (($BANNERS?:[]) as $KEY=>$BANNER): ?>
+
+
+                                    <?php if ($BANNER['type'] == 'img'): ?>
+
+                                        <?php if ($KEY == 0): ?>
+                                            
+                                                <div data-interval="<?= ($BANNER['interval']) ?>" class="carousel-item-img carousel-item active"><img src="<?= ($BANNER['src']) ?>" class="d-block w-100" alt="Banner" /></div>
+                                            
+                                            <?php else: ?>
+                                                <div data-interval="<?= ($BANNER['interval']) ?>" class="carousel-item-img carousel-item"><img src="<?= ($BANNER['src']) ?>" class="d-block w-100" alt="Banner" /></div>
+                                            
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+
+
+                                    <?php if ($BANNER['type'] == 'youtube'): ?>
+
+                                        <?php if ($KEY == 0): ?>
+                                            
+                                                <div data-interval="<?= ($BANNER['interval']) ?>" class="carousel-item--youtube carousel-item active">
+
+                                                    <div class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay" class="provider-youtube embed-responsive-item" src="<?= ($BANNER['src']) ?>" height="550" frameborder="0" allowfullscreen="true" scrolling="no">
+                                                                </iframe>
+                                                    </div>
+
+                                                </div>
+                                            
+                                            <?php else: ?>
+                                                <div data-interval="<?= ($BANNER['interval']) ?>" class="carousel-item--youtube carousel-item">
+                                                    <div class="embed-responsive embed-responsive-21by9 embed-responsive-16by9 embed-responsive-550">
+                                                        <iframe allow="autoplay" class="provider-youtube embed-responsive-item" src="<?= ($BANNER['src']) ?>" height="550" frameborder="0" allowfullscreen="true" scrolling="no">
+                                                            </iframe>
+                                                    </div>
+                                                </div>
+                                            
+                                        <?php endif; ?>
+
+                                    <?php endif; ?>
+
+                                <?php endforeach; ?>
+                            </div>
+                            <ol class="carousel-indicators">
+
+                                <?php foreach (($BANNERS?:[]) as $KEY=>$BANNER): ?>
+                                    <?php if ($KEY == 0): ?>
+                                        
+                                            <li data-target="#slider-images" data-slide-to="<?= ($KEY) ?>" class="active"></li>
+                                        
+                                        <?php else: ?>
+                                            <li data-target="#slider-images" data-slide-to="<?= ($KEY) ?>"></li>
+                                        
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+
+                            </ol>
+
+                        </div>
+                        <!-- END slider-images -->
+                    </section>
+                </article>
+            
+        <?php endif; ?>
+
+        <article id="page-karriere" class="container p-md-0 mt-5">
+            <section class="layout-karriere">
+
+                <div id="selection-tabs" class="text-center">
+                    <button class="btn btn-page-bloom text-uppercase btn-active" onclick="showData(this,'#karriere-contact-data');">Kontakt
+                    </button>
+                    <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#karriere-info-data');">
+                        Infos
+                    </button>
+                    <button class="btn btn-page-bloom text-uppercase" onclick="showData(this,'#karriere-team-data');">Team
+                    </button>
+                </div>
+
+                <section id="karriere-contact-data" class="layout-karriere-contact text-dark mt-5 px-3">
+                    <div class="row">
+                        <div class="col-12 order-md-0 order-1 mt-md-0 mt-4">
+                            <div class="text-center">
+                                <h3 class="text-center text-light futuraLtBk">Jetzt einfach Kontakt aufnehmen..</h3>
+                            </div>
+
+                            <div class="mt-5 d-flex flex-md-row justify-content-md-between flex-column align-items-center">
+                                <div class="box-kontakt-data mt-md-0 mt-2" data-toggle="modal" data-target="#employeeModal">
+                                    <p class="text-center"><i class="fa fa-phone fa-3x"></i></p>
+                                    <h4 class="text-center">Telefon</h4>
+                                </div>
+                                <div class="box-kontakt-data mt-md-0 mt-2" data-toggle="modal" data-target="#employeeModal2">
+                                    <p class="text-center"><i class="fa fa-envelope-square fa-3x"></i></p>
+                                    <h4 class="text-center">E-Mail</h4>
+                                </div>
+                                <div class="box-kontakt-data mt-md-0 mt-2" data-toggle="modal" data-target="#employeeModal3">
+                                    <p class="text-center"><i class="fa fa-facebook-f fa-3x"></i></p>
+                                    <h4 class="text-center">Facebook</h4>
+                                </div>
+                                <div class="box-kontakt-data mt-md-0 mt-2" data-toggle="modal" data-target="#employeeModal4">
+                                    <p class="text-center"><i class="fa fa-whatsapp fa-3x"></i></p>
+                                    <h4 class="text-center">Whatsapp</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section id="karriere-info-data" class="layout-karriere-info mt-5">
+                    <div class="text-center">
+                        <h3 class="text-center text-light futuraLtBk">MIT HERZ UND VERSTAND! </h3>
+                        <p>Nichts menschliches Fremd, wertschätzend....</p>
+                    </div>
+
+                    <section class="layout-karriere-info-data text-center mt-5">
+                        <div class="mt-5" id="section2-content">
+
+                            <div class="row data-from-api-1 mx-0 p-0 mt-3">
+                                <div class="col-md-4 col-12 px-0">
+                                    <img src="<?= ($ASSETS) ?>images/bleach.PNG" alt="Bleach hair Image" class="" />
+                                </div>
+                                <div class="col-md-8 col-12 mt-md-0">
+                                    <p class="p-2">Bei bloom´s wird jeder Kunde individuell und ausführlich beraten </p>
+                                </div>
+                            </div>
+
+                            <div class="row data-from-api-1 p-0 mx-0 mt-3">
+                                <div class="col-md-4 col-12 px-0">
+                                    <img src="<?= ($ASSETS) ?>images/leaf.jpg" alt="Bleach hair Image" class="img-fluid" />
+                                </div>
+                                <div class="col-md-8 col-12">
+                                    <p class="p-2">Werte: Faire Preis faire Löhne // soziale Verantwortung // ökologische Veratnwortung // sharity Aktionen // Umgang untereinander // Ehrlich // Bildung // Weiterbildung // handwerkliche Perfektion // Karriere.... NOGOs
+                                        (
+                                    </p>
+                                    <p class="p-2">Themen mit Icons untertützend visualisiert </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="karriere-team-data" class="layout-karriere-team mt-5">
+
+                    <div class="row">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-4 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="<?= ($ASSETS) ?>images/sarah_emp.jpg" alt="Employee Image" class="karriere-team-employee-image">
+                                            <p class="over-image-text px-3">Sarah</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12 bg-white text-dark p-3">
+                                    <h3>Sarah</h3>
+                                    <p>Salonleitung, Friseurmeisterin</p>
+                                    <p>Bayalage hochstecken</p>
+                                    <p>Fachtrainerin</p>
+                                    <p>Erfahrung:10 Jahre bei bloom´s</p>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="“Ich liebe mein Team">“Ich liebe mein
+                                                Team</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-4 col-12 px-md-0">
+                                    <div class="at-team-person align-items-center d-flex justify-content-center text-center">
+                                        <div class="at-team-person__cont position-relative">
+                                            <img src="<?= ($ASSETS) ?>images/kevin_emp.jpg" alt="Employee Image" class="karriere-team-employee-image">
+                                            <p class="over-image-text px-3">Kevin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12 bg-white text-dark p-3">
+                                    <h3>Kevin</h3>
+                                    <p>Salonleitung, Friseurmeisterin</p>
+                                    <p>Bayalage hochstecken</p>
+                                    <p>Fachtrainerin</p>
+                                    <p>Erfahrung:10 Jahre bei bloom´s</p>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="“Ich liebe mein Team">“Ich liebe mein
+                                                Team</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 bg-light">
+                            <div class="row">
+                                <div class="col-md-4 col-12 px-md-0">
+                                    <div class="position-relative d-flex justify-content-center text-center">
+                                        <img src="<?= ($ASSETS) ?>images/anna_emp.jpg" alt="Employee Image" class="karriere-team-employee-image">
+                                        <p class="over-image-text px-3">Anna</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12 bg-white text-dark p-3">
+                                    <h3>Anna</h3>
+                                    <p>Salonleitung, Friseurmeisterin</p>
+                                    <p>Bayalage hochstecken</p>
+                                    <p>Fachtrainerin</p>
+                                    <p>Erfahrung:10 Jahre bei bloom´s</p>
+                                    <blockquote class="blockquote">
+                                        <footer class="blockquote-footer"><cite title="“Ich liebe mein Team">“Ich liebe mein
+                                                Team</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+        </article>
+
+    </div>
+</div>
+<!-- END ROW -->
+
+<!--modal phone-->
+<div class="modal fade modal-stylist-modal" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body text-center text-dark">
+
+                <h3 class="mt-5 ml-5 text-left">01776596128</h3>
+                <h3 class="mt-5 ml-5 text-left">Sie erreichen uns zwischen 9 und 18 Uhr.</h3>
+                <h3 class="mt-5 ml-5 text-left">Vielen Dank.</h3>
+                <h3 class="mt-5 ml-5 mb-5 text-left">Rückrufbitte via SMS</h3>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--modal mail-->
+<div class="modal fade modal-stylist-modal" id="employeeModal2" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body text-center text-dark modal-biluy">
+
+
+                <div class="w-100">
+
+                    <div class="row justify-content-center">
+
+                        <!-- col-md-6 col-12 order-md-0 order-1 -->
+                        <div class="col-12 col-md-12 pb-0">
+
+                            <!--Form with header-->
+                            <form role="form" method="post" id="bloom_kontakt_form" class="w-100 has-validator has-recaptcha-v3">
+                                <div class="card border-light rounded-0">
+                                    <div class="card-header p-0">
+                                        <div class="bg-dark text-white text-center py-2">
+                                            <h3><i class="fa fa-envelope"></i> Kontakt</h3>
+                                            <p class="m-0">Einfach Mail schreiben oder anrufen 0621 5680444.</p>
+                                        </div>
+                                    </div>
+                                    <!-- ajax message -->
+                                    <div class="mt-2" id="bloom_kontakt_status"></div>
+                                    <div class="card-body p-3">
+                                        <!--Body-->
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-user text-secondary"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Name und Nachname" required="required" pattern=".{2,}" maxlenght="50" aria-required="true" aria-invalid="false" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-envelope text-secondary"></i></div>
+                                                </div>
+                                                <input type="email" name="email" id="jform_email" placeholder="E-Mail" class="form-control input-lg required" required="required" maxlenght="50" autocomplete="on" aria-required="true" aria-invalid="false" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-map-marker text-secondary"></i></div>
+                                                </div>
+                                                <input type="text" name="strasse" id="strasse" maxlenght="50" class="form-control" required placeholder="Straße" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-map-marker text-secondary"></i></div>
+                                                </div>
+                                                <input type="text" name="city" id="city" maxlenght="50" class="form-control" required placeholder="Stadt" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-phone text-secondary"></i></div>
+                                                </div>
+                                                <input type="tel" name="phone" id="phone" maxlenght="20" class="form-control" required placeholder="Telefon" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-tag prefix text-secondary"></i></div>
+                                                </div>
+                                                <input type="text" id="professional" name="professional" maxlenght="50" class="form-control" required placeholder="Fachkraft vs. Azubi" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-comment text-secondary"></i></div>
+                                                </div>
+                                                <textarea maxlenght="500" id="bloom_kontakt_message" name="message" class="form-control" placeholder="Bemerkung:" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" data-original-text="Senden" data-loading-text="Laden..." id="bloom_kontakt_submit" class="rounded-0 py-2 btn btn-dark btn-submit position-relative">Senden</button>
+                                        </div>
+                                        <div class="row gutscheinauswahl-form-agb">
+                                            <div class="col-12">
+                                                <div class="mt-3">
+                                                    <p class="mb-0 mt-md-0 mt-4">Bitte nehmen Sie unsere <a href="<?= ($BASE) ?>/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--Form with header-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--modal facebook-->
+<div class="modal fade modal-stylist-modal" id="employeeModal3" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body text-center text-dark">
+
+                <h3 class="mt-5 ml-5 text-left">Facebook</h3>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--modal chat -->
+<div class="modal fade modal-stylist-modal" id="employeeModal4" tabindex="-1" role="dialog" aria-labelledby="stylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body text-center text-dark">
+
+                <h3 class="mt-5 ml-5 text-left">Chatfenster</h3>
+
+            </div>
+        </div>
+
+    </div>
+</div>

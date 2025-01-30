@@ -1,0 +1,13 @@
+[14-10-2024 10:07:09] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[14-10-2024 10:07:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[14-10-2024 10:07:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payment-experience/web-profiles/
+[14-10-2024 10:07:10] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[14-10-2024 10:07:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment
+[14-10-2024 10:07:11] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 201
+[14-10-2024 10:10:32] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/oauth2/token
+[14-10-2024 10:10:32] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[14-10-2024 10:10:32] PayPal\Core\PayPalHttpConnection : INFO: GET https://api.paypal.com/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154
+[14-10-2024 10:10:33] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 200
+[14-10-2024 10:10:33] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.paypal.com/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154/execute
+[14-10-2024 10:10:35] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 400
+[14-10-2024 10:10:35] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment/PAYID-M4GNCLY2RW25500DU7909154/execute. {"name":"INSTRUMENT_DECLINED","message":"The instrument presented was either declined by the processor or bank, or it can't be used for this payment.","information_link":"https://developer.paypal.com/docs/api/payments/v1/#error-INSTRUMENT_DECLINED","debug_id":"2857a215af0d5"}
